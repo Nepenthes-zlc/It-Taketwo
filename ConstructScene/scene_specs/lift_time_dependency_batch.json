@@ -1,0 +1,19 @@
+[
+  {
+    "id": "lift_time_dependency_base",
+    "task_template": "lift_time_dependency",
+    "notes": "The room only provides source and target floor zones. A custom lift mod is expected to summon the heavy object at object_spawn_pos and bind both agents to it.",
+    "origin": [0, -59, 0],
+    "room_size": [13, 6, 15],
+    "split_axis": "z",
+    "floor_block": "minecraft:smooth_stone",
+    "wall_block": "minecraft:light_gray_concrete",
+    "ceiling_block": "minecraft:light_gray_concrete",
+    "source_floor_block": "minecraft:calcite",
+    "target_floor_block": "minecraft:red_wool",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [3, 3]
+  }
+]

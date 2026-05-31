@@ -1,0 +1,8 @@
+# Auto-generated batch setup
+function multiagent_scene:elevator_gallery_white_stone/setup
+function multiagent_scene:elevator_wood_lodge_green/setup
+function multiagent_scene:elevator_deepslate_orange/setup
+function multiagent_scene:elevator_aqua_prismarine/setup
+function multiagent_scene:elevator_crimson_black/setup
+function multiagent_scene:elevator_pink_cherry/setup
+function multiagent_scene:elevator_warped_lapis/setup

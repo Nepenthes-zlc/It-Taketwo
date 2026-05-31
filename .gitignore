@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Runtime outputs and large external repos.
+runs/
+logs/
+test_results/
+outputs/
+verl/
+
+# EnvMine is a symlink to the existing runtime tree.
+EnvMine
