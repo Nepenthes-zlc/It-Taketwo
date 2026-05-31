@@ -1,6 +1,6 @@
 # EnvMineVerl
 
-EnvMineVerl is the training bundle for online EnvMine Minecraft rollouts with verl GRPO. It keeps the small, reviewable training adapter in git, vendors the scene construction code and generated datapack/tasks needed by training, and leaves heavyweight runtimes (`EnvMine`, `verl`, model weights, logs) outside normal git tracking.
+EnvMineVerl is the training bundle for online EnvMine Minecraft rollouts with verl GRPO. It keeps the training adapter, scene construction code, generated datapack/tasks, and the Minecraft runtime template needed to create batch workers in one repository. Model weights, `verl`, logs, and generated rollout outputs stay outside normal git tracking.
 
 ## What is included
 
@@ -10,34 +10,50 @@ EnvMineVerl/
   configs/                     # AgentLoop configs, using repository-relative paths
   ConstructScene/              # scene builder code, scene specs, generated datapack/tasks
   data/envmine_lowlevel/       # small JSONL prompt data for train/test smoke runs
+  mc_runtime/EnvMine/          # local MC/TickGate/Puppet runtime template and EnvMine runner code
   scripts/                     # setup, data prep, rollout, GRPO, and packaging commands
   pyproject.toml               # editable adapter package
   ONLINE_GRPO.md               # shorter online GRPO notes
 ```
 
-Runtime directories are intentionally not committed by default:
+Runtime outputs are intentionally not committed by default:
 
-- `EnvMine` is a symlink or checkout containing Minecraft/TickGate/Puppet instances.
 - `verl` is the upstream verl checkout.
-- `runs/`, `outputs/`, `logs/`, and `test_results/` are generated outputs.
+- `mc_runtime/EnvMine/envs/qwen-batch-*` are generated worker copies.
+- `runs/`, `outputs/`, `logs/`, `test_results/`, and runtime logs are generated outputs.
 
 ## Quick start
 
 ```bash
 cd /home/zlc/Multiagent/EnvMineVerl
 
-# 1. Make sure EnvMine runtime is available. On this machine it is a symlink:
-ln -sfn ../EnvMine EnvMine
-
-# 2. Fetch or repair the upstream verl checkout when network is available.
+# 1. Fetch or repair the upstream verl checkout when network is available.
 ./scripts/bootstrap_verl.sh
 
-# 3. Install the adapter and verl dependencies into the local training env.
+# 2. Install the adapter and verl dependencies into the local training env.
 ./scripts/install_verl_env.sh
 
-# 4. Check Python imports.
+# 3. Create local Minecraft batch worker directories from the committed template.
+python3 mc_runtime/EnvMine/prepare_qwen_batch_envs.py --count 2 --base-port 25590 --parallel 2 --force
+
+# 4. Check Python imports and local paths.
 /home/zlc/.conda/envs/envmine-verl/bin/python scripts/check_verl_env.py
 ```
+
+The committed Minecraft runtime template is:
+
+```text
+mc_runtime/EnvMine/envs/qwen-runtime-task12-purevision
+```
+
+`prepare_qwen_batch_envs.py` copies that template into runtime workers such as:
+
+```text
+mc_runtime/EnvMine/envs/qwen-batch-1
+mc_runtime/EnvMine/envs/qwen-batch-2
+```
+
+and writes `mc_runtime/EnvMine/configs/qwen_batch_lowlevel.json`, which is what the training adapter reads.
 
 ## Scene construction
 
@@ -126,7 +142,17 @@ DATA_FORMAT=parquet bash scripts/run_envmine_grpo.sh
 LOGGER='["console","wandb"]' bash scripts/run_envmine_grpo.sh
 ```
 
-The AgentLoop is registered as `envmine_lowlevel` in `configs/envmine_agent_loop.yaml`. Each rollout acquires one EnvMine instance lock, refreshes or uses the scene datapack, captures first-person screenshots for AgentA and AgentB, asks the policy for JSON low-level actions, executes them through Puppet/TickGate, and returns the online reward to verl.
+The AgentLoop is registered as `envmine_lowlevel` in `configs/envmine_agent_loop.yaml`. It reads `mc_runtime/EnvMine/configs/qwen_batch_lowlevel.json`. Each rollout acquires one local EnvMine instance lock, refreshes or uses the scene datapack, captures first-person screenshots for AgentA and AgentB, asks the policy for JSON low-level actions, executes them through Puppet/TickGate, and returns the online reward to verl.
+
+To create more workers for larger rollout parallelism:
+
+```bash
+python3 mc_runtime/EnvMine/prepare_qwen_batch_envs.py \
+  --count 8 \
+  --base-port 25590 \
+  --parallel 8 \
+  --force
+```
 
 ## Packaging
 
@@ -136,9 +162,9 @@ Create a source training bundle from git-visible files:
 ./scripts/package_training_bundle.sh
 ```
 
-The archive path is printed, usually under `dist/`. This default package contains the adapter, configs, scripts, scene builder, generated datapack/tasks, and small data files. It does not include large runtimes or outputs.
+The archive path is printed, usually under `dist/`. This default package contains the adapter, configs, scripts, scene builder, generated datapack/tasks, small data files, and the committed `mc_runtime/EnvMine` runtime template. It does not include generated `qwen-batch-*` workers, `verl`, model weights, or outputs.
 
-For a heavier offline archive that also dereferences the local `EnvMine` runtime symlink and includes `verl` when present:
+For a heavier offline archive that also includes `verl` when present:
 
 ```bash
 INCLUDE_RUNTIME=1 ./scripts/package_training_bundle.sh /tmp/envmine_verl_full_runtime.tar.gz
@@ -153,4 +179,4 @@ git add .gitignore README.md ONLINE_GRPO.md pyproject.toml adapter configs scrip
 git status --short
 ```
 
-Ignored by design: `EnvMine`, `verl`, `runs`, `outputs`, `logs`, `test_results`, caches, and package metadata. This keeps commits focused on reproducible training code and scene assets while avoiding large generated outputs.
+Ignored by design: legacy external `EnvMine` symlinks, `verl`, generated `mc_runtime/EnvMine/envs/qwen-batch-*` workers, `runs`, `outputs`, `logs`, `test_results`, caches, and package metadata. This keeps commits focused on reproducible training code, scene assets, and the reusable MC runtime template while avoiding generated outputs.

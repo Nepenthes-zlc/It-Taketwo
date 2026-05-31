@@ -11,6 +11,14 @@ logs/
 test_results/
 outputs/
 verl/
+mc_runtime/EnvMine/logs/
+mc_runtime/EnvMine/test_results/
+mc_runtime/EnvMine/envs/qwen-batch-*/
+mc_runtime/EnvMine/envs/*/run/logs/
+mc_runtime/EnvMine/envs/*/run/crash-reports/
+mc_runtime/EnvMine/envs/*/run/saves/*/session.lock
+mc_runtime/EnvMine/envs/*/run/socketpuppet_data/*
+!mc_runtime/EnvMine/envs/*/run/socketpuppet_data/.gitkeep
 
-# EnvMine is a symlink to the existing runtime tree.
-EnvMine
+# Legacy root-level EnvMine may be a symlink to an external runtime tree.
+/EnvMine

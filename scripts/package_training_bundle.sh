@@ -14,11 +14,6 @@ trap 'rm -f "$MANIFEST"' EXIT
   cd "$ROOT"
   git ls-files -co --exclude-standard
   if [[ "$INCLUDE_RUNTIME" == "1" ]]; then
-    if [[ -e EnvMine ]]; then
-      find -L EnvMine \
-        \( -path '*/logs/*' -o -path '*/test_results/*' -o -path '*/__pycache__/*' \) -prune \
-        -o -type f -print
-    fi
     if [[ -d verl ]]; then
       find verl \
         \( -path 'verl/.git/*' -o -path '*/__pycache__/*' -o -path '*/.pytest_cache/*' \) -prune \

@@ -1,10 +1,10 @@
 - name: envmine_lowlevel
   _target_: envmine_verl.agent_loop.EnvMineLowLevelAgentLoop
   envmine:
-    batch_config: EnvMine/configs/qwen_batch_lowlevel.json
+    batch_config: mc_runtime/EnvMine/configs/qwen_batch_lowlevel.json
     tasks: ConstructScene/generated/generated_tasks.json
     pack_src: ConstructScene/generated/datapacks/multiagent_scene_pack
-    log_dir: EnvMine/logs
+    log_dir: mc_runtime/EnvMine/logs
     lock_dir: runs/locks
     output_root: runs/online_envmine
     acquire_timeout: 600

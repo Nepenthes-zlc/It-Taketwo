@@ -17,10 +17,13 @@ class WorkspacePaths:
 def discover_workspace(start: Path | None = None) -> WorkspacePaths:
     current = (start or Path(__file__)).resolve()
     for candidate in [current, *current.parents]:
-        if (candidate / "EnvMine").exists() and (candidate / "adapter").exists():
+        local_envmine = candidate / "mc_runtime" / "EnvMine"
+        legacy_envmine = candidate / "EnvMine"
+        if (local_envmine.exists() or legacy_envmine.exists()) and (candidate / "adapter").exists():
+            envmine = local_envmine if local_envmine.exists() else legacy_envmine
             return WorkspacePaths(
                 root=candidate,
-                envmine=(candidate / "EnvMine").resolve(),
+                envmine=envmine.resolve(),
                 verl=(candidate / "verl").resolve(),
                 adapter=(candidate / "adapter").resolve(),
                 configs=(candidate / "configs").resolve(),
