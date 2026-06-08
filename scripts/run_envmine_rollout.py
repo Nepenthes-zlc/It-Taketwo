@@ -17,7 +17,7 @@ from envmine_verl import EnvMineRolloutConfig, discover_workspace, run_batch_rol
 def parse_args() -> argparse.Namespace:
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     workspace = discover_workspace(WORKSPACE)
-    parser = argparse.ArgumentParser(description="Run EnvMine batch rollout from the EnvMineVerl wrapper workspace.")
+    parser = argparse.ArgumentParser(description="Run EnvMine batch rollout from the It-Taketwo wrapper workspace.")
     parser.add_argument("--config", type=Path, default=workspace.envmine / "configs" / "qwen_batch_lowlevel.json")
     parser.add_argument("--task-indices", default="0")
     parser.add_argument("--episodes-per-task", type=int, default=1)

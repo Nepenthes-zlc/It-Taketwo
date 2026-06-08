@@ -17,7 +17,7 @@
 ## Task 1: Add first-person forcing + camera-entity model hiding to the mod
 
 **Files:**
-- Modify: `Puppet/src/main/java/com/example/socketpuppet/SocketPuppet.java`
+- Modify: `mods/socketpuppet/src/main/java/com/example/socketpuppet/SocketPuppet.java`
   - imports near top (after existing `net.minecraft.*` imports)
   - new static field near the other camera state (~line 94)
   - `pov` handler block (lines 424-451)
@@ -107,7 +107,7 @@ Expected: `BUILD SUCCESSFUL`. If it fails on `getCameraType()`/`getEntity()` sym
 
 ```bash
 cd /local_nvme/zhanglechao/EnvMineVerl
-git add Puppet/src/main/java/com/example/socketpuppet/SocketPuppet.java
+git add mods/socketpuppet/src/main/java/com/example/socketpuppet/SocketPuppet.java
 git commit -m "fix(puppet): pov <entity> renders true first-person (force FIRST_PERSON, hide camera entity model)"
 ```
 
@@ -116,7 +116,7 @@ git commit -m "fix(puppet): pov <entity> renders true first-person (force FIRST_
 ## Task 2: Build and deploy the jar
 
 **Files:**
-- Build output: `Puppet/build/libs/socketpuppet-1.0.0.jar`
+- Build output: `mods/socketpuppet/build/libs/socketpuppet-1.0.0.jar`
 - Deploy target: `mc_runtime/EnvMine/envs/qwen-batch-1/run/mods/socketpuppet-1.0.0.jar`
 
 - [ ] **Step 1: Full build**
@@ -131,8 +131,8 @@ Expected: `BUILD SUCCESSFUL`, jar present at `build/libs/socketpuppet-1.0.0.jar`
 
 Run:
 ```bash
-ls -la /local_nvme/zhanglechao/EnvMineVerl/Puppet/build/libs/socketpuppet-1.0.0.jar
-unzip -l /local_nvme/zhanglechao/EnvMineVerl/Puppet/build/libs/socketpuppet-1.0.0.jar | grep SocketPuppet.class
+ls -la /local_nvme/zhanglechao/EnvMineVerl/mods/socketpuppet/build/libs/socketpuppet-1.0.0.jar
+unzip -l /local_nvme/zhanglechao/EnvMineVerl/mods/socketpuppet/build/libs/socketpuppet-1.0.0.jar | grep SocketPuppet.class
 ```
 Expected: jar mtime is now; `SocketPuppet.class` listed.
 
@@ -140,7 +140,7 @@ Expected: jar mtime is now; `SocketPuppet.class` listed.
 
 Run:
 ```bash
-cp /local_nvme/zhanglechao/EnvMineVerl/Puppet/build/libs/socketpuppet-1.0.0.jar /local_nvme/zhanglechao/EnvMineVerl/mc_runtime/EnvMine/envs/qwen-batch-1/run/mods/socketpuppet-1.0.0.jar
+cp /local_nvme/zhanglechao/EnvMineVerl/mods/socketpuppet/build/libs/socketpuppet-1.0.0.jar /local_nvme/zhanglechao/EnvMineVerl/mc_runtime/EnvMine/envs/qwen-batch-1/run/mods/socketpuppet-1.0.0.jar
 ls -la /local_nvme/zhanglechao/EnvMineVerl/mc_runtime/EnvMine/envs/qwen-batch-1/run/mods/socketpuppet-1.0.0.jar
 ```
 Expected: deployed jar mtime is now.

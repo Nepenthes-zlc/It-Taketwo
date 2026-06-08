@@ -18,7 +18,7 @@ fi
 PY="$ENV_PREFIX/bin/python"
 PIP="$PY -m pip"
 
-echo "[install_verl_env] installing EnvMineVerl adapter editable"
+echo "[install_verl_env] installing It-Taketwo adapter editable"
 $PIP install -e "$ROOT"
 
 echo "[install_verl_env] installing verl core dependencies"

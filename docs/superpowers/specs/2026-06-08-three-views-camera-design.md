@@ -31,7 +31,7 @@
 
 ### 组件 1：模组 Java — `pov <entity>` 真第一人称
 
-文件：`Puppet/src/main/java/com/example/socketpuppet/SocketPuppet.java`
+文件：`mods/socketpuppet/src/main/java/com/example/socketpuppet/SocketPuppet.java`
 
 - 在 `pendingCameraEntityName` 处理块里，`setCameraEntity(best)` 成功后，**强制** `mc.options.setCameraType(CameraType.FIRST_PERSON)`。
 - 新增字段 `public static volatile Entity hiddenCameraEntity`(或记录当前相机实体)，在 `pov` 成功时设为该实体；切回 `pov self` 时清空。
@@ -66,7 +66,7 @@
 ### 组件 4：编译与部署
 
 - `cd Puppet && ./gradlew build`(JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64)。
-- jar 在 `Puppet/build/libs/socketpuppet-1.0.0.jar`。
+- jar 在 `mods/socketpuppet/build/libs/socketpuppet-1.0.0.jar`。
 - 拷到 `mc_runtime/EnvMine/envs/qwen-batch-1/run/mods/`(覆盖旧 jar)。
 - 版本兼容：构建针对 NeoForge 21.1.60，运行时 21.1.230，依赖范围 `[21,)` / `[1.21,1.22)`，同为 MC 1.21.1，jar 跨 21.1.x 可加载(现有部署 jar 同理)。
 

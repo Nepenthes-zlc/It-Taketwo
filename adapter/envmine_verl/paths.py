@@ -29,4 +29,4 @@ def discover_workspace(start: Path | None = None) -> WorkspacePaths:
                 configs=(candidate / "configs").resolve(),
                 scripts=(candidate / "scripts").resolve(),
             )
-    raise FileNotFoundError("could not discover EnvMineVerl workspace root")
+    raise FileNotFoundError("could not discover It-Taketwo workspace root")
