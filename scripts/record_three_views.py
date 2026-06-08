@@ -101,23 +101,10 @@ def write_view(out_dir: Path, label: str, pose: dict[str, Any], image: dict[str,
     }
 
 
-def run(args: argparse.Namespace) -> dict[str, Any]:
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
-    out_dir = args.output_dir / f"three_views_task{args.task_index}_{stamp}"
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    config_data = json.loads(args.config.read_text(encoding="utf-8"))
-    if "instances" in config_data:
-        config = load_batch_config(str(args.config)).instances[0]
-    else:
-        config = load_instance_config(str(args.config))
-    pack_dst = config.root / "run" / "saves" / "New World" / "datapacks" / "multiagent_scene_pack"
-    if not pack_dst.exists():
-        pack_dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copytree(args.pack_src, pack_dst)
-
-    task_data = json.loads(args.tasks.read_text(encoding="utf-8"))
-    task = task_data["tasks"][args.task_index]
+def capture_task(
+    runner: InstanceRunner, task: dict[str, Any], out_dir: Path, pov_args: SimpleNamespace
+) -> dict[str, Any]:
+    """Set up one task on an already-running runner and capture the three views."""
     player_a = task["players"]["player_a"]
     player_b = task["players"]["player_b"]
     plate = player_a["goal"]["target_pos"]
@@ -127,62 +114,43 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     scene_setup = task["scene_setup_function"]
     scene_clear = task["scene_clear_function"]
 
-    pov_args = SimpleNamespace(
-        capture_ticks=args.capture_ticks,
-        capture_render_frames=args.capture_render_frames,
-        capture_timeout=args.capture_timeout,
-        pov_camera_settle_ticks=args.pov_camera_settle_ticks,
-        pov_extra_settle_ticks=args.pov_extra_settle_ticks,
-        pov_settle_render_frames=args.pov_settle_render_frames,
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Reset state from any previous task: Dev out of spectator, remove old dummies.
+    game_cmd(runner, "gamemode creative Dev", 5)
+    game_cmd(runner, "kill @e[type=player,name=AgentA]", 5)
+    game_cmd(runner, "kill @e[type=player,name=AgentB]", 5)
+
+    # Setup scene; A and B are symmetric Carpet dummies.
+    game_cmd(runner, f"function {scene_clear}", 20)
+    game_cmd(runner, f"function {scene_setup}", 40)
+    game_cmd(runner, "player AgentA spawn", 40)
+    game_cmd(runner, "gamemode creative AgentA", 5)
+    game_cmd(runner, "player AgentB spawn", 40)
+    game_cmd(runner, "gamemode creative AgentB", 5)
+
+    game_cmd(
+        runner,
+        f"tp AgentA {plate[0] + 0.5:.3f} {plate[1]:.3f} {plate[2] + 0.5:.3f} {a_start_rot[0]:.3f} {a_start_rot[1]:.3f}",
+        30,
     )
+    game_cmd(
+        runner,
+        f"tp AgentB {b_target[0]:.3f} {b_target[1]:.3f} {b_target[2]:.3f} {b_start_rot[0]:.3f} {b_start_rot[1]:.3f}",
+        30,
+    )
+    runner.tickgate.cmd("advance_wait 20 1", timeout=90.0)
 
-    runner = InstanceRunner(config, WORKSPACE / "scripts" / "logs")
+    pose_a = query_agent_pose(runner, "AgentA")
+    pose_b = query_agent_pose(runner, "AgentB")
+
     views: list[dict[str, Any]] = []
-    try:
-        runner.start()
-        game_cmd(runner, "reload", 40)
-        game_cmd(runner, "gamerule commandBlockOutput false", 5)
-
-        # Setup scene; A and B are symmetric Carpet dummies.
-        game_cmd(runner, f"function {scene_clear}", 20)
-        game_cmd(runner, f"function {scene_setup}", 40)
-        game_cmd(runner, "player AgentA spawn", 40)
-        game_cmd(runner, "gamemode creative AgentA", 5)
-        game_cmd(runner, "player AgentB spawn", 40)
-        game_cmd(runner, "gamemode creative AgentB", 5)
-
-        game_cmd(
-            runner,
-            f"tp AgentA {plate[0] + 0.5:.3f} {plate[1]:.3f} {plate[2] + 0.5:.3f} {a_start_rot[0]:.3f} {a_start_rot[1]:.3f}",
-            30,
-        )
-        game_cmd(
-            runner,
-            f"tp AgentB {b_target[0]:.3f} {b_target[1]:.3f} {b_target[2]:.3f} {b_start_rot[0]:.3f} {b_start_rot[1]:.3f}",
-            30,
-        )
-        runner.tickgate.cmd("advance_wait 20 1", timeout=90.0)
-
-        # Read poses (yaw/pitch) for A and B.
-        pose_a = query_agent_pose(runner, "AgentA")
-        pose_b = query_agent_pose(runner, "AgentB")
-
-        # View A: first-person from AgentA.
-        image_a = capture_agent_pov(runner, "AgentA", pose_a, pov_args)
-        views.append(write_view(out_dir, "player_a_AgentA", pose_a, image_a))
-
-        # View B: first-person from AgentB.
-        image_b = capture_agent_pov(runner, "AgentB", pose_b, pov_args)
-        views.append(write_view(out_dir, "player_b_AgentB", pose_b, image_b))
-
-        # Observer: Dev spectator free-cam framing both.
-        image_obs, pose_obs = capture_observer(runner, pose_a, pose_b, pov_args)
-        views.append(write_view(out_dir, "observer", pose_obs, image_obs))
-
-        time.sleep(0.5)
-        log_path = str(runner.log_path) if runner.log_path else None
-    finally:
-        runner.close()
+    image_a = capture_agent_pov(runner, "AgentA", pose_a, pov_args)
+    views.append(write_view(out_dir, "player_a_AgentA", pose_a, image_a))
+    image_b = capture_agent_pov(runner, "AgentB", pose_b, pov_args)
+    views.append(write_view(out_dir, "player_b_AgentB", pose_b, image_b))
+    image_obs, pose_obs = capture_observer(runner, pose_a, pose_b, pov_args)
+    views.append(write_view(out_dir, "observer", pose_obs, image_obs))
 
     result = {
         "time_utc": datetime.now(timezone.utc).isoformat(),
@@ -191,16 +159,119 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "description": task["task_description"],
         "output_dir": str(out_dir),
         "views": views,
-        "log": log_path,
+        "log": str(runner.log_path) if runner.log_path else None,
     }
     (out_dir / "views.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     return result
 
 
+def _load_config(args: argparse.Namespace) -> Any:
+    config_data = json.loads(args.config.read_text(encoding="utf-8"))
+    if "instances" in config_data:
+        config = load_batch_config(str(args.config)).instances[0]
+    else:
+        config = load_instance_config(str(args.config))
+    pack_dst = config.root / "run" / "saves" / "New World" / "datapacks" / "multiagent_scene_pack"
+    if not pack_dst.exists():
+        pack_dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copytree(args.pack_src, pack_dst)
+    return config
+
+
+def _pov_args(args: argparse.Namespace) -> SimpleNamespace:
+    return SimpleNamespace(
+        capture_ticks=args.capture_ticks,
+        capture_render_frames=args.capture_render_frames,
+        capture_timeout=args.capture_timeout,
+        pov_camera_settle_ticks=args.pov_camera_settle_ticks,
+        pov_extra_settle_ticks=args.pov_extra_settle_ticks,
+        pov_settle_render_frames=args.pov_settle_render_frames,
+    )
+
+
+def run(args: argparse.Namespace) -> dict[str, Any]:
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+    out_dir = args.output_dir / f"three_views_task{args.task_index}_{stamp}"
+    config = _load_config(args)
+    task_data = json.loads(args.tasks.read_text(encoding="utf-8"))
+    task = task_data["tasks"][args.task_index]
+    pov_args = _pov_args(args)
+
+    runner = InstanceRunner(config, WORKSPACE / "scripts" / "logs")
+    try:
+        runner.start()
+        game_cmd(runner, "reload", 40)
+        game_cmd(runner, "gamerule commandBlockOutput false", 5)
+        result = capture_task(runner, task, out_dir, pov_args)
+        time.sleep(0.5)
+    finally:
+        runner.close()
+    return result
+
+
+def run_batch(args: argparse.Namespace, indices: list[int]) -> dict[str, Any]:
+    """Record several tasks reusing a single launched instance."""
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+    batch_dir = args.output_dir / f"three_views_batch_{stamp}"
+    config = _load_config(args)
+    task_data = json.loads(args.tasks.read_text(encoding="utf-8"))
+    pov_args = _pov_args(args)
+
+    runner = InstanceRunner(config, WORKSPACE / "scripts" / "logs")
+    results: list[dict[str, Any]] = []
+    errors: list[dict[str, Any]] = []
+    try:
+        runner.start()
+        game_cmd(runner, "reload", 40)
+        game_cmd(runner, "gamerule commandBlockOutput false", 5)
+        for idx in indices:
+            task = task_data["tasks"][idx]
+            out_dir = batch_dir / f"task{idx:02d}_{task['scene_id']}"
+            print(f"[batch] task {idx} ({task['scene_id']}) ...", flush=True)
+            try:
+                results.append(capture_task(runner, task, out_dir, pov_args))
+            except Exception as exc:  # one task failing must not abort the batch
+                print(f"[batch] task {idx} FAILED: {exc!r}", flush=True)
+                errors.append({"task_index": idx, "error": repr(exc)})
+            time.sleep(0.3)
+    finally:
+        runner.close()
+
+    batch_dir.mkdir(parents=True, exist_ok=True)
+    summary = {
+        "time_utc": datetime.now(timezone.utc).isoformat(),
+        "batch_dir": str(batch_dir),
+        "task_indices": indices,
+        "ok_count": len(results),
+        "error_count": len(errors),
+        "errors": errors,
+        "results": [
+            {
+                "task_id": r["task_id"],
+                "scene_id": r["scene_id"],
+                "output_dir": r["output_dir"],
+                "views": [
+                    {"view": v["view"], "yaw": v["yaw"], "pitch": v["pitch"], "pose_error": v["pose_error"]}
+                    for v in r["views"]
+                ],
+            }
+            for r in results
+        ],
+    }
+    (batch_dir / "batch_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    return summary
+
+
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Record A/B/observer views for one ConstructScene task.")
+    parser = argparse.ArgumentParser(description="Record A/B/observer views for ConstructScene tasks.")
     parser.add_argument("--tasks", type=Path, default=DEFAULT_TASKS)
     parser.add_argument("--task-index", type=int, default=0)
+    parser.add_argument(
+        "--task-indices",
+        type=str,
+        default=None,
+        help="Comma-separated task indices to batch in one instance, e.g. '0,3,6'. Overrides --task-index.",
+    )
     parser.add_argument("--pack-src", type=Path, default=DEFAULT_PACK_SRC)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
@@ -214,7 +285,12 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
-    result = run(parse_args())
+    args = parse_args()
+    if args.task_indices:
+        indices = [int(x) for x in args.task_indices.split(",") if x.strip() != ""]
+        result = run_batch(args, indices)
+    else:
+        result = run(args)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 
