@@ -1,0 +1,26 @@
+entry: three_views
+python: /home/azvm/miniconda3/envs/verl/bin/python
+runner:
+  print_command: false
+env:
+  JAVA_HOME: /usr
+args:
+  dry_run: true
+  task_index: 0
+  task_indices:
+  refresh_pack: false
+  fail_fast: false
+  keep_running: false
+  device: cpu
+  ready_timeout: 180
+  puppet_host: 127.0.0.1
+  puppet_port: 0
+  puppet_timeout: 60
+  tickgate_host: 127.0.0.1
+  tickgate_port:
+  capture_ticks: 2
+  capture_render_frames: 2
+  capture_timeout: 90
+  pov_camera_settle_ticks: 16
+  pov_extra_settle_ticks: 8
+  pov_settle_render_frames: 10

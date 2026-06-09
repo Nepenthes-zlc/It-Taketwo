@@ -1,24 +1,27 @@
+# Local runtime state
+/env/
+/runs/
+/tmp/
+
+# Python caches
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-*.egg-info/
 
-# Runtime outputs and large external repos.
-runs/
-logs/
-test_results/
-outputs/
-verl/
-mc_runtime/EnvMine/logs/
-mc_runtime/EnvMine/test_results/
-mc_runtime/EnvMine/envs/qwen-batch-*/
-mc_runtime/EnvMine/envs/*/run/logs/
-mc_runtime/EnvMine/envs/*/run/crash-reports/
-mc_runtime/EnvMine/envs/*/run/saves/*/session.lock
-mc_runtime/EnvMine/envs/*/run/socketpuppet_data/*
-!mc_runtime/EnvMine/envs/*/run/socketpuppet_data/.gitkeep
+# Logs and generated media
+*.log
+*.mp4
+*.avi
+*.mov
+*.webm
 
-# Legacy root-level EnvMine may be a symlink to an external runtime tree.
-/EnvMine
+# Minecraft transient runtime files
+**/run/logs/
+**/run/crash-reports/
+**/run/downloads/
+**/run/socketpuppet_data/port.txt
+**/run/socketpuppet_data/*.jsonl
+**/run/socketpuppet_data/*.csv
+**/run/saves/**/session.lock

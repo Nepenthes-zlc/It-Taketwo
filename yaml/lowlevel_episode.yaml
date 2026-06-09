@@ -1,0 +1,48 @@
+entry: lowlevel_episode
+python: /home/azvm/miniconda3/envs/verl/bin/python
+runner:
+  print_command: false
+env:
+  JAVA_HOME: /usr
+args:
+  task_index: 0
+  policy: fixed
+  fixed_agent_a_action: wait
+  fixed_agent_b_action: forward
+  config: yaml/instance_single.yaml
+  model: qwen2.5-vl-7b
+  agent_a_provider: openai_compatible
+  agent_a_model: qwen2.5-vl-7b
+  agent_a_api_base_url: http://127.0.0.1:3888/v1/
+  agent_a_api_key: EMPTY
+  agent_a_api_key_env:
+  agent_b_provider: openai_compatible
+  agent_b_model: qwen2.5-vl-7b
+  agent_b_api_base_url: http://127.0.0.1:3888/v1/
+  agent_b_api_key: EMPTY
+  agent_b_api_key_env:
+  agent_temperature: 0
+  agent_max_tokens: 256
+  api_base_url: http://127.0.0.1:3888/v1/
+  api_key: EMPTY
+  max_steps: 2
+  action_ticks: 4
+  capture_ticks: 2
+  capture_render_frames: 2
+  capture_timeout: 90
+  camera_settle_ticks: 10
+  camera_settle_render_frames: 6
+  pov_eye_height: 1.35
+  pov_forward_offset: 0.25
+  pov_camera_settle_ticks: 16
+  pov_extra_settle_ticks: 8
+  pov_settle_render_frames: 10
+  fps: 2
+  write_video: false
+  fail_on_video_error: false
+  hide_hud: true
+  refresh_pack: false
+  randomize_starts: false
+  random_seed:
+  start_position_jitter: 0.6
+  start_yaw_jitter: 35

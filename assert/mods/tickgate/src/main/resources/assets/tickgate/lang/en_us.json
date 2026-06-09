@@ -1,0 +1,10 @@
+{
+  "tickgate.configuration.title": "TickGate Configs",
+  "tickgate.configuration.section.tickgate.common.toml": "TickGate Configs",
+  "tickgate.configuration.section.tickgate.common.toml.title": "TickGate Configs",
+  "tickgate.configuration.ipcEnabled": "Enable TCP IPC server",
+  "tickgate.configuration.ipcHost": "IPC bind host",
+  "tickgate.configuration.ipcPort": "IPC port",
+  "tickgate.configuration.pauseOnStartup": "Pause world on startup",
+  "tickgate.configuration.defaultTickRate": "Default server tick rate (Hz)"
+}

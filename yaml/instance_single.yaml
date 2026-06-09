@@ -1,0 +1,12 @@
+instance:
+  name: instance-test-01
+  root: ../env/instance-test-01
+  device: cpu
+  ready_timeout: 180
+  puppet_host: 127.0.0.1
+  puppet_port: 0
+  puppet_timeout: 60
+  tickgate_host: 127.0.0.1
+  tickgate_port: 25590
+  use_puppet: true
+  keep_running: false

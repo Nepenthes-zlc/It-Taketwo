@@ -1,0 +1,8 @@
+# Auto-generated batch clear
+function multiagent_scene:elevator_gallery_white_stone/clear
+function multiagent_scene:elevator_wood_lodge_green/clear
+function multiagent_scene:elevator_deepslate_orange/clear
+function multiagent_scene:elevator_aqua_prismarine/clear
+function multiagent_scene:elevator_crimson_black/clear
+function multiagent_scene:elevator_pink_cherry/clear
+function multiagent_scene:elevator_warped_lapis/clear

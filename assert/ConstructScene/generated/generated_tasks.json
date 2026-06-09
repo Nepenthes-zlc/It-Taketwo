@@ -1,0 +1,1795 @@
+{
+  "manifest_path": "generated/scene_manifest.json",
+  "namespace": "multiagent_scene",
+  "task_count": 21,
+  "task_template_filter": "elevator_hold_door",
+  "tasks_per_scene": 3,
+  "seed": 20260528,
+  "tasks": [
+    {
+      "id": 0,
+      "scene_id": "elevator_gallery_white_stone",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_gallery_white_stone/setup",
+      "scene_clear_function": "multiagent_scene:elevator_gallery_white_stone/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            5.5,
+            -58.0,
+            2.5
+          ],
+          "start_rotation": [
+            -11.3,
+            -8.0
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              6.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            2.5,
+            -58.0,
+            3.5
+          ],
+          "start_rotation": [
+            -40.6,
+            -5.0
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              5,
+              -58,
+              7,
+              6,
+              -56,
+              7
+            ],
+            "target_pos": [
+              5.5,
+              -58,
+              7.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            6,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            5,
+            -58,
+            7,
+            6,
+            -56,
+            7
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "scene_id": "elevator_gallery_white_stone",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_gallery_white_stone/setup",
+      "scene_clear_function": "multiagent_scene:elevator_gallery_white_stone/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            11.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            97.6,
+            -9.8
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              6.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            2.0,
+            -58.0,
+            4.0
+          ],
+          "start_rotation": [
+            21.4,
+            -8.4
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              5,
+              -58,
+              7,
+              6,
+              -56,
+              7
+            ],
+            "target_pos": [
+              5.5,
+              -58,
+              7.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            6,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            5,
+            -58,
+            7,
+            6,
+            -56,
+            7
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "scene_id": "elevator_gallery_white_stone",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_gallery_white_stone/setup",
+      "scene_clear_function": "multiagent_scene:elevator_gallery_white_stone/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            5.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            171.4,
+            8.5
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              6.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            8.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            93.8,
+            2.7
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              5,
+              -58,
+              7,
+              6,
+              -56,
+              7
+            ],
+            "target_pos": [
+              5.5,
+              -58,
+              7.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            6,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            5,
+            -58,
+            7,
+            6,
+            -56,
+            7
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "scene_id": "elevator_wood_lodge_green",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_wood_lodge_green/setup",
+      "scene_clear_function": "multiagent_scene:elevator_wood_lodge_green/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            24.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            14.6,
+            -17.4
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              28.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            30.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            -167.3,
+            -12.8
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              27,
+              -58,
+              8,
+              29,
+              -56,
+              8
+            ],
+            "target_pos": [
+              28.0,
+              -58,
+              8.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            28,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            27,
+            -58,
+            8,
+            29,
+            -56,
+            8
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "scene_id": "elevator_wood_lodge_green",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_wood_lodge_green/setup",
+      "scene_clear_function": "multiagent_scene:elevator_wood_lodge_green/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            22.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            -109.1,
+            7.1
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              28.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            33.0,
+            -58.0,
+            4.0
+          ],
+          "start_rotation": [
+            125.4,
+            7.9
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              27,
+              -58,
+              8,
+              29,
+              -56,
+              8
+            ],
+            "target_pos": [
+              28.0,
+              -58,
+              8.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            28,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            27,
+            -58,
+            8,
+            29,
+            -56,
+            8
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "scene_id": "elevator_wood_lodge_green",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_wood_lodge_green/setup",
+      "scene_clear_function": "multiagent_scene:elevator_wood_lodge_green/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            28.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            -20.9,
+            15.4
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              28.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            33.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            -3.7,
+            4.8
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              27,
+              -58,
+              8,
+              29,
+              -56,
+              8
+            ],
+            "target_pos": [
+              28.0,
+              -58,
+              8.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            28,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            27,
+            -58,
+            8,
+            29,
+            -56,
+            8
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "scene_id": "elevator_deepslate_orange",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_deepslate_orange/setup",
+      "scene_clear_function": "multiagent_scene:elevator_deepslate_orange/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            47.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            10.7,
+            -1.9
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              49.0,
+              -58.0,
+              4.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            45.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            74.3,
+            1.1
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              48,
+              -58,
+              6,
+              49,
+              -55,
+              6
+            ],
+            "target_pos": [
+              48.5,
+              -58,
+              6.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            49,
+            -58,
+            4
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            48,
+            -58,
+            6,
+            49,
+            -55,
+            6
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "scene_id": "elevator_deepslate_orange",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_deepslate_orange/setup",
+      "scene_clear_function": "multiagent_scene:elevator_deepslate_orange/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            45.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            -116.9,
+            5.3
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              49.0,
+              -58.0,
+              4.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            53.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            48.1,
+            -7.6
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              48,
+              -58,
+              6,
+              49,
+              -55,
+              6
+            ],
+            "target_pos": [
+              48.5,
+              -58,
+              6.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            49,
+            -58,
+            4
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            48,
+            -58,
+            6,
+            49,
+            -55,
+            6
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "scene_id": "elevator_deepslate_orange",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_deepslate_orange/setup",
+      "scene_clear_function": "multiagent_scene:elevator_deepslate_orange/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            53.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            -140.8,
+            0.9
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              49.0,
+              -58.0,
+              4.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            46.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            178.5,
+            6.2
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              48,
+              -58,
+              6,
+              49,
+              -55,
+              6
+            ],
+            "target_pos": [
+              48.5,
+              -58,
+              6.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            49,
+            -58,
+            4
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            48,
+            -58,
+            6,
+            49,
+            -55,
+            6
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "scene_id": "elevator_aqua_prismarine",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_aqua_prismarine/setup",
+      "scene_clear_function": "multiagent_scene:elevator_aqua_prismarine/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            66.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            77.4,
+            3.5
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              71.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            78.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            -169.1,
+            1.5
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              70,
+              -58,
+              9,
+              72,
+              -55,
+              9
+            ],
+            "target_pos": [
+              71.0,
+              -58,
+              9.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            71,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            70,
+            -58,
+            9,
+            72,
+            -55,
+            9
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "scene_id": "elevator_aqua_prismarine",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_aqua_prismarine/setup",
+      "scene_clear_function": "multiagent_scene:elevator_aqua_prismarine/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            67.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            159.5,
+            0.5
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              71.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            77.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            89.7,
+            -9.3
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              70,
+              -58,
+              9,
+              72,
+              -55,
+              9
+            ],
+            "target_pos": [
+              71.0,
+              -58,
+              9.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            71,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            70,
+            -58,
+            9,
+            72,
+            -55,
+            9
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "scene_id": "elevator_aqua_prismarine",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_aqua_prismarine/setup",
+      "scene_clear_function": "multiagent_scene:elevator_aqua_prismarine/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            76.0,
+            -58.0,
+            4.0
+          ],
+          "start_rotation": [
+            -166.7,
+            9.2
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              71.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            72.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            -135.4,
+            -13.3
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              70,
+              -58,
+              9,
+              72,
+              -55,
+              9
+            ],
+            "target_pos": [
+              71.0,
+              -58,
+              9.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            71,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            70,
+            -58,
+            9,
+            72,
+            -55,
+            9
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "scene_id": "elevator_crimson_black",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_crimson_black/setup",
+      "scene_clear_function": "multiagent_scene:elevator_crimson_black/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            90.0,
+            -58.0,
+            4.0
+          ],
+          "start_rotation": [
+            149.7,
+            19.9
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              95.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            94.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            89.4,
+            -7.9
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              94,
+              -58,
+              8,
+              95,
+              -54,
+              8
+            ],
+            "target_pos": [
+              94.5,
+              -58,
+              8.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            95,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            94,
+            -58,
+            8,
+            95,
+            -54,
+            8
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "scene_id": "elevator_crimson_black",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_crimson_black/setup",
+      "scene_clear_function": "multiagent_scene:elevator_crimson_black/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            97.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            -90.4,
+            -7.8
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              95.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            92.0,
+            -58.0,
+            4.0
+          ],
+          "start_rotation": [
+            -147.5,
+            -7.0
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              94,
+              -58,
+              8,
+              95,
+              -54,
+              8
+            ],
+            "target_pos": [
+              94.5,
+              -58,
+              8.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            95,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            94,
+            -58,
+            8,
+            95,
+            -54,
+            8
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "scene_id": "elevator_crimson_black",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_crimson_black/setup",
+      "scene_clear_function": "multiagent_scene:elevator_crimson_black/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            94.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            61.9,
+            10.7
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              95.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            89.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            -120.1,
+            -19.8
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              94,
+              -58,
+              8,
+              95,
+              -54,
+              8
+            ],
+            "target_pos": [
+              94.5,
+              -58,
+              8.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            95,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            94,
+            -58,
+            8,
+            95,
+            -54,
+            8
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "scene_id": "elevator_pink_cherry",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_pink_cherry/setup",
+      "scene_clear_function": "multiagent_scene:elevator_pink_cherry/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            120.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            163.3,
+            17.7
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              118.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            111.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            82.6,
+            1.4
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              116,
+              -58,
+              7,
+              119,
+              -56,
+              7
+            ],
+            "target_pos": [
+              117.5,
+              -58,
+              7.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            118,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            116,
+            -58,
+            7,
+            119,
+            -56,
+            7
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "scene_id": "elevator_pink_cherry",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_pink_cherry/setup",
+      "scene_clear_function": "multiagent_scene:elevator_pink_cherry/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            118.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            109.5,
+            -10.6
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              118.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            114.0,
+            -58.0,
+            1.0
+          ],
+          "start_rotation": [
+            -124.7,
+            14.7
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              116,
+              -58,
+              7,
+              119,
+              -56,
+              7
+            ],
+            "target_pos": [
+              117.5,
+              -58,
+              7.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            118,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            116,
+            -58,
+            7,
+            119,
+            -56,
+            7
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "scene_id": "elevator_pink_cherry",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_pink_cherry/setup",
+      "scene_clear_function": "multiagent_scene:elevator_pink_cherry/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            122.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            -93.6,
+            -2.8
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              118.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            116.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            146.8,
+            19.2
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              116,
+              -58,
+              7,
+              119,
+              -56,
+              7
+            ],
+            "target_pos": [
+              117.5,
+              -58,
+              7.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            118,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            116,
+            -58,
+            7,
+            119,
+            -56,
+            7
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "scene_id": "elevator_warped_lapis",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_warped_lapis/setup",
+      "scene_clear_function": "multiagent_scene:elevator_warped_lapis/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            142.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            -60.7,
+            17.8
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              143.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            137.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            8.5,
+            -18.3
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              141,
+              -58,
+              9,
+              143,
+              -54,
+              9
+            ],
+            "target_pos": [
+              142.0,
+              -58,
+              9.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            143,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            141,
+            -58,
+            9,
+            143,
+            -54,
+            9
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "scene_id": "elevator_warped_lapis",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_warped_lapis/setup",
+      "scene_clear_function": "multiagent_scene:elevator_warped_lapis/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            139.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            27.4,
+            12.4
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              143.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            148.0,
+            -58.0,
+            3.0
+          ],
+          "start_rotation": [
+            10.1,
+            -9.5
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              141,
+              -58,
+              9,
+              143,
+              -54,
+              9
+            ],
+            "target_pos": [
+              142.0,
+              -58,
+              9.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            143,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            141,
+            -58,
+            9,
+            143,
+            -54,
+            9
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "scene_id": "elevator_warped_lapis",
+      "task_template": "elevator_hold_door",
+      "scene_setup_function": "multiagent_scene:elevator_warped_lapis/setup",
+      "scene_clear_function": "multiagent_scene:elevator_warped_lapis/clear",
+      "task_description": "Player A must hold the pressure plate so Player B can pass through the elevator door.",
+      "players": {
+        "player_a": {
+          "role": "door_holder",
+          "start_pos": [
+            139.0,
+            -58.0,
+            2.0
+          ],
+          "start_rotation": [
+            -172.1,
+            4.0
+          ],
+          "goal": {
+            "type": "hold_position",
+            "target_pos": [
+              143.0,
+              -58.0,
+              5.0
+            ],
+            "description": "Move onto the pressure plate and keep the elevator door open."
+          }
+        },
+        "player_b": {
+          "role": "elevator_entry",
+          "start_pos": [
+            144.0,
+            -58.0,
+            4.0
+          ],
+          "start_rotation": [
+            -138.3,
+            -16.5
+          ],
+          "goal": {
+            "type": "reach_region",
+            "target_region": [
+              141,
+              -58,
+              9,
+              143,
+              -54,
+              9
+            ],
+            "target_pos": [
+              142.0,
+              -58,
+              9.0
+            ],
+            "description": "Enter the elevator doorway while Player A is still holding the pressure plate."
+          }
+        }
+      },
+      "success_conditions": [
+        {
+          "type": "block_state",
+          "target_pos": [
+            143,
+            -58,
+            5
+          ],
+          "expected_block_state": "pressure_plate_powered",
+          "description": "The pressure plate is being pressed by Player A."
+        },
+        {
+          "type": "player_in_region",
+          "player": "player_b",
+          "target_region": [
+            141,
+            -58,
+            9,
+            143,
+            -54,
+            9
+          ],
+          "description": "Player B is inside the elevator door region."
+        }
+      ]
+    }
+  ]
+}
