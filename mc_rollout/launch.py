@@ -336,7 +336,7 @@ def _default_config_for(entry: str) -> Path:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run an It-Taketwo rollout test.")
+    parser = argparse.ArgumentParser(description="Run an It-Taketwo Minecraft rollout.")
     parser.add_argument("--entry", choices=["three_views", "lowlevel_episode", "lowlevel_batch"], required=True)
     parser.add_argument("--tasks", type=Path, default=DEFAULT_TASKS)
     parser.add_argument("--task-index", type=int, default=0)

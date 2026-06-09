@@ -184,7 +184,7 @@ def run_three_views(args: argparse.Namespace) -> dict[str, Any]:
     }
     (batch_dir / "batch_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     if errors:
-        raise RuntimeError(f"three-view test had {len(errors)} errors; see {batch_dir / 'batch_summary.json'}")
+        raise RuntimeError(f"three-view rollout had {len(errors)} errors; see {batch_dir / 'batch_summary.json'}")
     return summary
 
 

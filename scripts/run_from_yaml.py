@@ -17,15 +17,15 @@ ROOT = Path(__file__).resolve().parents[1]
 YAML_DIR = ROOT / "yaml"
 ENTRYPOINTS = {
     "three_views": {
-        "script": ROOT / "test" / "launch.py",
+        "script": ROOT / "mc_rollout" / "launch.py",
         "description": "capture AgentA, AgentB, and observer screenshots",
     },
     "lowlevel_episode": {
-        "script": ROOT / "test" / "launch.py",
+        "script": ROOT / "mc_rollout" / "launch.py",
         "description": "run one low-level action rollout episode",
     },
     "lowlevel_batch": {
-        "script": ROOT / "test" / "launch.py",
+        "script": ROOT / "mc_rollout" / "launch.py",
         "description": "run batched/parallel low-level rollout episodes",
     },
 }
@@ -133,7 +133,7 @@ def list_configs() -> None:
             dry_run = args.get("dry_run") if isinstance(args, dict) else None
             if entry:
                 suffix = f"\tdry_run={dry_run}" if dry_run is not None else ""
-                print(f"{path.relative_to(ROOT)}\ttype=test\tentry={entry}{suffix}")
+                print(f"{path.relative_to(ROOT)}\ttype=rollout\tentry={entry}{suffix}")
             else:
                 kind = "batch_runtime_config" if "instances" in config else "single_runtime_config" if "instance" in config else "config"
                 print(f"{path.relative_to(ROOT)}\ttype={kind}")
@@ -142,7 +142,7 @@ def list_configs() -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run an It-Taketwo test entrypoint from a YAML config.")
+    parser = argparse.ArgumentParser(description="Run an It-Taketwo rollout entrypoint from a YAML config.")
     parser.add_argument("--config", type=Path, help="YAML config path, usually yaml/*.yaml")
     parser.add_argument("--entry", choices=sorted(ENTRYPOINTS), default=None, help="Override or supply YAML entry.")
     parser.add_argument("--print-command", action="store_true", help="Print the resolved command before running.")

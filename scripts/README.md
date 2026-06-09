@@ -4,7 +4,7 @@ Recommended flow: use one generic script and switch behavior by choosing a YAML 
 
 ## Generic Scripts
 
-- `run_test.sh`: run the test described by a YAML file.
+- `run_test.sh`: run the rollout described by a YAML file.
 - `check_test_yaml.sh`: validate a YAML file and print the resolved command without running it.
 - `list_test_configs.sh`: list available `yaml/*.yaml` configs and their `entry` values.
 - `list_test_entries.sh`: list supported entry names.

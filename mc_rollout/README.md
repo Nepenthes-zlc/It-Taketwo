@@ -1,6 +1,6 @@
 # Rollout Test Code
 
-`test/` is organized as one rollout system. The shell scripts under `scripts/` load a YAML file from `yaml/`, then call `test/launch.py --entry ...`.
+`mc_rollout/` is organized as one rollout system. The shell scripts under `scripts/` load a YAML file from `yaml/`, then call `mc_rollout/launch.py --entry ...`.
 
 ## Files
 
@@ -20,11 +20,11 @@
 ```text
 YAML config
   -> scripts/run_test.sh
-  -> test/launch.py
-  -> test/rollout.py
-  -> test/agent_driver.py
-  -> test/closed_model.py only when provider is closed_api/cloudgpt/gpt/gpt55
-  -> test/game_functions.py + test/completion.py
+  -> mc_rollout/launch.py
+  -> mc_rollout/rollout.py
+  -> mc_rollout/agent_driver.py
+  -> mc_rollout/closed_model.py only when provider is closed_api/cloudgpt/gpt/gpt55
+  -> mc_rollout/game_functions.py + mc_rollout/completion.py
   -> outputs under runs/
 ```
 
