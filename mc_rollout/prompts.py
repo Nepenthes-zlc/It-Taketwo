@@ -69,7 +69,6 @@ Action meanings:
 - forward/backward/strafe_left/strafe_right move relative to the current view.
 - turn_left/turn_right rotate the view.
 - look_up/look_down adjust camera pitch.
-- jump jumps briefly.
 - wait stops movement for this step.
 
 Step index: {step_index}

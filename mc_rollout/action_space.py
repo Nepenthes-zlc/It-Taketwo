@@ -13,4 +13,6 @@ ACTION_TO_PUPPET = {
     "look_down": "turn 0 15 0.1",
 }
 
-ALLOWED_ACTIONS = list(ACTION_TO_PUPPET)
+# Jump is intentionally excluded from policy actions for the door/pressure-plate rollout.
+# Keeping the low-level mapping lets manual tests still call it explicitly if needed.
+ALLOWED_ACTIONS = [action for action in ACTION_TO_PUPPET if action != "jump"]

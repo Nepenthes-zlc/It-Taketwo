@@ -25,3 +25,5 @@ __pycache__/
 **/run/socketpuppet_data/*.jsonl
 **/run/socketpuppet_data/*.csv
 **/run/saves/**/session.lock
+# Generated VERL parquet data
+/data/verl_minecraft/*.parquet

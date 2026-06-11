@@ -1,0 +1,17 @@
+# Custom AgentLoop loaded by verl when actor_rollout_ref.rollout.mode=async.
+# This uses the real Minecraft runtime from mc_rollout.
+- name: minecraft_agent
+  _target_: verl_adapter.minecraft_agent_loop.MinecraftAgentLoop
+  rollout_yaml: yaml/lowlevel_train_episode.yaml
+  max_steps: 20
+  max_action_tokens: 64
+  history_window_images: 3
+  history_max_tokens: 3072
+  mock_env: false
+  train_instance_prefix: instance-train
+  train_instance_count: 4
+  train_tickgate_base_port: 25690
+  use_images: true
+  image_view: agent_pov
+  image_max_width: 384
+  image_max_height: 216

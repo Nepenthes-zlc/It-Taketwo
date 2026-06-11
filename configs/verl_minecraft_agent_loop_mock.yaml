@@ -1,0 +1,10 @@
+# Same AgentLoop API, but uses the in-process mock environment for fast adapter checks.
+- name: minecraft_agent
+  _target_: verl_adapter.minecraft_agent_loop.MinecraftAgentLoop
+  rollout_yaml: yaml/lowlevel_episode.yaml
+  max_steps: 4
+  max_action_tokens: 64
+  history_window_images: 3
+  history_max_tokens: 3072
+  mock_env: true
+  use_images: false

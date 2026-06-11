@@ -283,12 +283,14 @@ class InstanceRunner:
 
     def _start_log_pump(self) -> None:
         assert self.proc is not None and self.proc.stdout is not None and self.log_path is not None
+        quiet_logs = os.environ.get("IT_TAKETWO_QUIET_MC_LOGS", "").lower() in {"1", "true", "yes", "on"}
 
         def pump() -> None:
             assert self.proc is not None and self.proc.stdout is not None and self.log_path is not None
             with self.log_path.open("w", encoding="utf-8") as log:
                 for line in self.proc.stdout:
-                    print(f"[{self.config.name}] {line}", end="")
+                    if not quiet_logs:
+                        print(f"[{self.config.name}] {line}", end="")
                     log.write(line)
                     log.flush()
 
