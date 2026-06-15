@@ -66,7 +66,7 @@ You may choose exactly one action from this allowed list:
 {json.dumps(allowed_actions)}
 
 Action meanings:
-- forward/backward/strafe_left/strafe_right move relative to the current view.
+- forward moves relative to the current view.
 - turn_left/turn_right rotate the view.
 - look_up/look_down adjust camera pitch.
 - wait stops movement for this step.

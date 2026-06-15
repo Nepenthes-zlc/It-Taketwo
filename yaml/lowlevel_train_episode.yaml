@@ -42,7 +42,9 @@ args:
   fail_on_video_error: false
   hide_hud: true
   refresh_pack: false
-  randomize_starts: false
+  randomize_starts: true
   random_seed:
   start_position_jitter: 0.6
   start_yaw_jitter: 35
+  start_pitch_min: 20
+  start_pitch_max: 40

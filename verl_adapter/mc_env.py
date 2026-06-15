@@ -69,6 +69,7 @@ class MinecraftEnvConfig:
     train_tickgate_base_port: int = 25690
     use_images: bool = False
     image_view: str = "agent_pov"
+    persistent_instance: bool = False
     save_trace: bool = True
     trace_root: Path | None = None
 
@@ -118,6 +119,8 @@ def make_rollout_args(config: MinecraftEnvConfig) -> argparse.Namespace:
     raw_args.setdefault("randomize_starts", False)
     raw_args.setdefault("start_position_jitter", 0.6)
     raw_args.setdefault("start_yaw_jitter", 35.0)
+    raw_args.setdefault("start_pitch_min", 20.0)
+    raw_args.setdefault("start_pitch_max", 40.0)
     raw_args.setdefault("action_ticks", 4)
     raw_args.setdefault("max_steps", 20)
     raw_args.setdefault("write_video", False)
@@ -166,6 +169,10 @@ class MinecraftRolloutEnv:
             "AgentB": [2.5, -58.0, 3.5],
         }
 
+    @staticmethod
+    def _task_done(markers: dict[str, Any]) -> bool:
+        return bool(markers.get("agent_b_fully_in_second_room"))
+
     def _make_trace_dir(self) -> Path | None:
         if self.config.mock or not self.config.save_trace:
             return None
@@ -193,6 +200,8 @@ class MinecraftRolloutEnv:
                 self.config.instance_index,
                 self.config.train_tickgate_base_port,
             )
+        if self.config.persistent_instance:
+            instance_config = replace(instance_config, keep_running=True)
         pack_dst = self.args.pack_dst or datapack_dst(instance_config.root)
         ensure_datapack(self.args.pack_src, pack_dst, refresh=getattr(self.args, "refresh_pack", False))
         self.runner = InstanceRunner(instance_config, Path(self.args.log_dir))
@@ -263,7 +272,7 @@ class MinecraftRolloutEnv:
                 "description": self.task.get("task_description"),
                 "poses": poses,
                 "markers": dict(self.markers),
-                "done": all(self.markers.values()),
+                "done": self._task_done(self.markers),
             }
             self._annotate_reward(observation)
             self.last_observation = observation
@@ -280,7 +289,7 @@ class MinecraftRolloutEnv:
             "description": self.task.get("task_description"),
             "poses": poses,
             "markers": dict(self.markers),
-            "done": all(self.markers.values()),
+            "done": self._task_done(self.markers),
         }
         image = self._capture_observation_image(poses)
         if image is not None:
@@ -360,12 +369,10 @@ class MinecraftRolloutEnv:
 
     def _compute_reward_breakdown(self, observation: dict[str, Any]) -> dict[str, Any]:
         markers = observation.get("markers") if isinstance(observation.get("markers"), dict) else {}
-        binary_reward = 1.0 if all(bool(markers.get(name)) for name in self.markers) else 0.0
-        marker_reward = (
-            (0.3 if markers.get("pressure_plate_powered") else 0.0)
-            + (0.3 if markers.get("door_block_air") else 0.0)
-            + (0.4 if markers.get("agent_b_fully_in_second_room") else 0.0)
-        )
+        binary_reward = 1.0 if self._task_done(markers) else 0.0
+        plate_reward = 0.5 if markers.get("pressure_plate_powered") else 0.0
+        pass_reward = 1.0 if self._task_done(markers) else 0.0
+        marker_reward = max(plate_reward, pass_reward)
         distances = self._goal_distances(observation.get("poses"))
         if self.initial_goal_distances is None:
             self.initial_goal_distances = dict(distances)
@@ -378,22 +385,24 @@ class MinecraftRolloutEnv:
             self.initial_goal_distances.get("agent_b_to_second_room"),
             distances.get("agent_b_to_second_room"),
         )
-        progress_reward = 0.0
-        if not markers.get("pressure_plate_powered"):
-            progress_reward += 0.05 * agent_a_progress
-        if not markers.get("agent_b_fully_in_second_room"):
-            progress_reward += 0.05 * agent_b_progress
+        target_alignment = self._target_alignment(observation.get("poses"))
+        agent_a_alignment = target_alignment.get("AgentA", {}).get("score", 0.0)
+        agent_b_alignment = target_alignment.get("AgentB", {}).get("score", 0.0)
+        look_reward = 0.10 * (0.6 * float(agent_a_alignment) + 0.4 * float(agent_b_alignment))
+        progress_reward = 0.20 * max(agent_a_progress, agent_b_progress)
 
-        shaped_reward = min(1.0, max(binary_reward, marker_reward + progress_reward))
+        shaped_reward = min(1.0, max(binary_reward, marker_reward) + progress_reward + look_reward)
         return {
             "shaped_reward": shaped_reward,
             "binary_reward": binary_reward,
             "marker_reward": marker_reward,
+            "plate_reward": plate_reward,
+            "pass_reward": pass_reward,
             "progress_reward": progress_reward,
+            "look_reward": look_reward,
             "marker_weights": {
-                "pressure_plate_powered": 0.3,
-                "door_block_air": 0.3,
-                "agent_b_fully_in_second_room": 0.4,
+                "pressure_plate_powered": 0.5,
+                "agent_b_fully_in_second_room": 1.0,
             },
             "markers": dict(markers),
             "progress": {
@@ -402,6 +411,18 @@ class MinecraftRolloutEnv:
             },
             "distances": distances,
             "initial_distances": dict(self.initial_goal_distances or {}),
+            "target_alignment": target_alignment,
+        }
+
+    def _target_alignment(self, poses: Any) -> dict[str, dict[str, float | str | list[float]]]:
+        poses = poses if isinstance(poses, dict) else {}
+        plate = self.task["players"]["player_a"]["goal"]["target_pos"]
+        plate_target = [float(plate[0]) + 0.5, float(plate[1]) + 0.05, float(plate[2]) + 0.5]
+        b_goal = second_room_entry_goal(self.task)["target_center"]
+        door_target = [float(b_goal[0]), float(b_goal[1]) + 1.0, float(b_goal[2])]
+        return {
+            "AgentA": view_alignment(poses.get("AgentA"), plate_target, "pressure_plate", self.args.pov_eye_height),
+            "AgentB": view_alignment(poses.get("AgentB"), door_target, "second_room_entry", self.args.pov_eye_height),
         }
 
     def _goal_distances(self, poses: Any) -> dict[str, float | None]:
@@ -422,9 +443,9 @@ class MinecraftRolloutEnv:
         return {
             "task_id": self.task.get("id"),
             "scene_id": self.task.get("scene_id"),
-            "success": all(self.markers.values()),
+            "success": self._task_done(self.markers),
             "reward": self.reward(),
-            "binary_reward": 1.0 if all(self.markers.values()) else 0.0,
+            "binary_reward": 1.0 if self._task_done(self.markers) else 0.0,
             "reward_breakdown": self.last_reward_breakdown,
             "markers": dict(self.markers),
             "step_count": self.step_index,
@@ -444,6 +465,39 @@ def agent_key(agent: str) -> str:
 def normalize_action(value: Any) -> str:
     action = str(value).strip()
     return action if action in ALLOWED_ACTIONS else "wait"
+
+
+def angle_delta_degrees(current: float, target: float) -> float:
+    return (float(current) - float(target) + 180.0) % 360.0 - 180.0
+
+
+def view_alignment(pose: Any, target: list[float], target_name: str, eye_height: float) -> dict[str, float | str | list[float]]:
+    if not isinstance(pose, dict):
+        return {"target": target_name, "score": 0.0, "error": "missing_pose"}
+    pos = pose.get("pos")
+    if not isinstance(pos, list) or len(pos) < 3:
+        return {"target": target_name, "score": 0.0, "error": "missing_position"}
+
+    eye = [float(pos[0]), float(pos[1]) + float(eye_height), float(pos[2])]
+    dx = float(target[0]) - eye[0]
+    dy = float(target[1]) - eye[1]
+    dz = float(target[2]) - eye[2]
+    horizontal = max(math.hypot(dx, dz), 0.001)
+    desired_yaw = math.degrees(math.atan2(-dx, dz))
+    desired_pitch = math.degrees(math.atan2(-dy, horizontal))
+    yaw_error = abs(angle_delta_degrees(float(pose.get("yaw", 0.0)), desired_yaw))
+    pitch_error = abs(float(pose.get("pitch", 0.0)) - desired_pitch)
+    yaw_score = max(0.0, 1.0 - yaw_error / 90.0)
+    pitch_score = max(0.0, 1.0 - pitch_error / 45.0)
+    score = yaw_score * pitch_score
+    return {
+        "target": target_name,
+        "score": round(score, 4),
+        "yaw_error": round(yaw_error, 2),
+        "pitch_error": round(pitch_error, 2),
+        "desired_yaw": round(desired_yaw, 2),
+        "desired_pitch": round(desired_pitch, 2),
+    }
 
 
 def xz_distance(pose: Any, target_xz: list[float]) -> float | None:
@@ -579,14 +633,24 @@ def format_agent_observation(observation: dict[str, Any], agent_name: str) -> st
     poses = observation.get("poses") if isinstance(observation.get("poses"), dict) else {}
     if agent_name == "AgentA":
         role_goal = "You are AgentA. Your job is to find, step onto, and keep holding the pressure plate when needed."
+        visual_focus = (
+            "The pressure plate is on the floor. If you cannot see it, prefer look_down until the floor area in "
+            "front of you is visible. Then use turn_left/turn_right to center the pressure plate and move forward "
+            "only when it is aligned. Once on it, keep it centered and hold it."
+        )
     else:
         role_goal = "You are AgentB. Your job is to move through the doorway/elevator door into the second room when it is open."
+        visual_focus = (
+            "Focus on the doorway and second-room entrance. If the doorway is not near the center of your view, "
+            "use turn_left/turn_right to bring it toward the center before moving forward through it."
+        )
     compact = {
         "step": observation.get("step"),
         "task": observation.get("description"),
         "your_agent": agent_name,
         "teammate": teammate,
         "your_role": role_goal,
+        "visual_focus_instruction": visual_focus,
         "your_pose": _compact_pose(poses.get(agent_name)),
         "teammate_pose": _compact_pose(poses.get(teammate)),
         "markers": observation.get("markers"),

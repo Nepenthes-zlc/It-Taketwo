@@ -12,6 +12,11 @@ if [ -n "${TASKS:-}" ]; then
   TASK_ARGS=(--tasks "${TASKS}")
 fi
 
+SHUFFLE_ARGS=()
+if [ "${SHUFFLE_TASKS:-0}" = "1" ]; then
+  SHUFFLE_ARGS=(--shuffle)
+fi
+
 "${PYTHON_BIN}" "${ROOT_DIR}/verl_adapter/build_dataset.py" \
   "${TASK_ARGS[@]}" \
   --output-dir "${OUTPUT_DIR:-${ROOT_DIR}/data/verl_minecraft}" \
@@ -19,4 +24,5 @@ fi
   --val-size "${VAL_SIZE:-1}" \
   --seed "${SEED:-20260609}" \
   --train-instance-count "${TRAIN_INSTANCE_COUNT:-4}" \
+  "${SHUFFLE_ARGS[@]}" \
   "$@"

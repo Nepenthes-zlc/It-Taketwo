@@ -52,6 +52,7 @@ class MinecraftAgentLoop(AgentLoopBase):
         train_tickgate_base_port: int = 25690,
         use_images: bool = True,
         image_view: str = "agent_pov",
+        persistent_minecraft: bool = False,
         image_max_width: int = 384,
         image_max_height: int = 216,
         history_window_images: int = 3,
@@ -68,6 +69,7 @@ class MinecraftAgentLoop(AgentLoopBase):
         self.train_tickgate_base_port = int(os.environ.get("IT_TAKETWO_TRAIN_TICKGATE_BASE_PORT", train_tickgate_base_port))
         self.use_images = _env_flag("IT_TAKETWO_USE_IMAGES", bool(use_images)) and not self.mock_env and self.processor is not None
         self.image_view = os.environ.get("IT_TAKETWO_IMAGE_VIEW", image_view)
+        self.persistent_minecraft = _env_flag("IT_TAKETWO_PERSISTENT_MC", bool(persistent_minecraft)) and not self.mock_env
         self.image_max_width = int(os.environ.get("IT_TAKETWO_IMAGE_MAX_WIDTH", image_max_width))
         self.image_max_height = int(os.environ.get("IT_TAKETWO_IMAGE_MAX_HEIGHT", image_max_height))
         self.response_length = int(self.rollout_config.response_length)
@@ -125,6 +127,7 @@ class MinecraftAgentLoop(AgentLoopBase):
                 train_tickgate_base_port=self.train_tickgate_base_port,
                 use_images=self.use_images,
                 image_view=self.image_view,
+                persistent_instance=self.persistent_minecraft,
             )
         )
         request_id = uuid4().hex
@@ -444,12 +447,17 @@ class MinecraftAgentLoop(AgentLoopBase):
         if has_image:
             text = (
                 f"You are {agent_name}. Use the attached first-person image from YOUR own eyes. "
-                "Choose exactly one low-level action for only yourself.\n" + text
+                "Focus on your assigned target object. Prefer actions that bring that target toward the center "
+                "of your view, then move toward it when it is aligned. Choose exactly one low-level action for only yourself.\n"
+                + text
             )
         elif image_omitted:
             text = f"You are {agent_name}. Your image was omitted because the token budget was too small.\n" + text
         else:
-            text = f"You are {agent_name}. Choose exactly one low-level action for only yourself.\n" + text
+            text = (
+                f"You are {agent_name}. Focus on your assigned target object and choose exactly one low-level action "
+                "for only yourself.\n" + text
+            )
         text += '\nReturn ONLY compact JSON: {"action":"one_allowed_action","reason":"short reason"}'
         if has_image:
             return {"role": "user", "content": [{"type": "image"}, {"type": "text", "text": text}]}

@@ -254,11 +254,21 @@ def capture_fresh_camera_image(runner: Any, args: Any) -> dict[str, Any]:
     return runner.capture_image(ticks=args.capture_ticks, render_frames=args.capture_render_frames, timeout=args.capture_timeout)
 
 
-def randomized_reset_pose(base_pos: list[float], rng: Any, position_jitter: float, yaw_jitter: float) -> tuple[list[float], float, float]:
+def randomized_reset_pose(
+    base_pos: list[float],
+    rng: Any,
+    position_jitter: float,
+    yaw_jitter: float,
+    pitch_min: float = 20.0,
+    pitch_max: float = 40.0,
+) -> tuple[list[float], float, float]:
     x_jitter = rng.uniform(-position_jitter, position_jitter)
     z_jitter = rng.uniform(-position_jitter, position_jitter)
     yaw = rng.uniform(-yaw_jitter, yaw_jitter)
-    return [float(base_pos[0]) + x_jitter, float(base_pos[1]), float(base_pos[2]) + z_jitter], yaw, 0.0
+    low = min(float(pitch_min), float(pitch_max))
+    high = max(float(pitch_min), float(pitch_max))
+    pitch = rng.uniform(low, high)
+    return [float(base_pos[0]) + x_jitter, float(base_pos[1]), float(base_pos[2]) + z_jitter], yaw, pitch
 
 
 def capture_three_agent_pov(runner: Any, agent: str, pose: dict[str, Any], args: Any) -> dict[str, Any]:

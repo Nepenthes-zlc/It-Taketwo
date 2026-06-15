@@ -1,0 +1,49 @@
+experiment_name_prefix: qwen25vl7b_b8n4_32rollout_100step_save50
+
+env:
+  MODEL_PATH: /local_nvme/guanyiming/models/Qwen/Qwen2.5-VL-7B-Instruct
+  DATA_DIR: data/verl_minecraft/{experiment_name}
+  TRAIN_SIZE: 168
+  VAL_SIZE: 21
+  SHUFFLE_TASKS: 1
+  TOTAL_EPOCHS: 100
+  TOTAL_TRAINING_STEPS: 100
+  SAVE_FREQ: 50
+  TEST_FREQ: -1
+  TRAIN_BATCH_SIZE: 8
+  PPO_MINI_BATCH_SIZE: 8
+  ROLLOUT_N: 4
+  NGPUS_PER_NODE: 4
+  TRAIN_INSTANCE_COUNT: 32
+  AGENT_WORKERS: 32
+  PERSISTENT_MINECRAFT: 1
+  PREWARM_MINECRAFT: 1
+  PREWARM_PARALLEL: 8
+  PREWARM_RETRIES: 3
+  PREWARM_RETRY_DELAY: 5
+  PREWARM_READY_TIMEOUT: 600
+  PREWARM_PUPPET_TIMEOUT: 180
+  AGENT_LOOP_CONFIG: configs/verl_minecraft_agent_loop_7b_n4.yaml
+  USE_VLM_IMAGES: 1
+  MAX_PROMPT_LENGTH: 3072
+  MAX_RESPONSE_LENGTH: 8192
+  IT_TAKETWO_HISTORY_WINDOW_IMAGES: 3
+  IT_TAKETWO_HISTORY_MAX_TOKENS: 3072
+  IT_TAKETWO_IMAGE_MAX_WIDTH: 256
+  IT_TAKETWO_IMAGE_MAX_HEIGHT: 144
+  ROLLOUT_GPU_MEMORY_UTILIZATION: 0.45
+  ROLLOUT_MAX_NUM_SEQS: 32
+
+snapshot_files:
+  - scripts/train_qwen25vl7b_n4_100step.sh
+  - scripts/run_verl_online_rl.sh
+  - scripts/prepare_verl_minecraft_data.sh
+  - scripts/prepare_train_instances.sh
+  - scripts/prewarm_train_instances.py
+  - yaml/train_qwen25vl7b_n4_100step.yaml
+  - yaml/lowlevel_train_episode.yaml
+  - yaml/instance_train_single.yaml
+  - configs/verl_minecraft_agent_loop_7b_n4.yaml
+  - verl_adapter/minecraft_agent_loop.py
+  - verl_adapter/mc_env.py
+  - verl_adapter/build_dataset.py

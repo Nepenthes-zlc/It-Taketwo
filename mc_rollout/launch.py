@@ -149,6 +149,14 @@ def instance_config_from_cli(args: argparse.Namespace) -> InstanceConfig:
     )
 
 
+def tcp_ready(host: str, port: int, timeout: float = 0.25) -> bool:
+    try:
+        with socket.create_connection((host, port), timeout=timeout):
+            return True
+    except OSError:
+        return False
+
+
 def wait_for_tcp(host: str, port: int, timeout: float) -> None:
     deadline = time.time() + timeout
     last_error: OSError | None = None
@@ -240,6 +248,11 @@ class InstanceRunner:
         self.log_path: Path | None = None
 
     def start(self) -> None:
+        if self.config.keep_running and tcp_ready(self.config.tickgate_host, self.config.tickgate_port):
+            self._connect_tickgate()
+            if self.config.use_puppet:
+                self._connect_puppet()
+            return
         self._start_launcher()
         self._connect_tickgate()
         if self.config.use_puppet:
@@ -252,13 +265,16 @@ class InstanceRunner:
 
     def close(self) -> None:
         if self.puppet:
-            try:
-                self.puppet.send("stop", wait=True)
-            except Exception:
-                pass
+            if not self.config.keep_running:
+                try:
+                    self.puppet.send("stop", wait=True)
+                except Exception:
+                    pass
             self.puppet.close()
+            self.puppet = None
         if self.tickgate:
             self.tickgate.close()
+            self.tickgate = None
         if self.proc and not self.config.keep_running:
             self._terminate_process()
 
@@ -269,16 +285,31 @@ class InstanceRunner:
         log_dir = self.log_root / self.config.name
         log_dir.mkdir(parents=True, exist_ok=True)
         self.log_path = log_dir / f"launch-{datetime.now().strftime('%Y%m%d-%H%M%S')}.log"
-        self.proc = subprocess.Popen(
-            [str(launcher), "--device", self.config.device],
-            cwd=str(self.config.root),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            bufsize=1,
-            preexec_fn=os.setsid,
-        )
-        self._start_log_pump()
+        if self.config.keep_running:
+            log_file = self.log_path.open("a", encoding="utf-8")
+            try:
+                self.proc = subprocess.Popen(
+                    [str(launcher), "--device", self.config.device],
+                    cwd=str(self.config.root),
+                    stdout=log_file,
+                    stderr=subprocess.STDOUT,
+                    text=True,
+                    bufsize=1,
+                    preexec_fn=os.setsid,
+                )
+            finally:
+                log_file.close()
+        else:
+            self.proc = subprocess.Popen(
+                [str(launcher), "--device", self.config.device],
+                cwd=str(self.config.root),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                bufsize=1,
+                preexec_fn=os.setsid,
+            )
+            self._start_log_pump()
         print(f"[{self.config.name}] launch log: {self.log_path}")
 
     def _start_log_pump(self) -> None:
@@ -408,6 +439,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--random-seed", type=int, default=None)
     parser.add_argument("--start-position-jitter", type=float, default=0.6)
     parser.add_argument("--start-yaw-jitter", type=float, default=35.0)
+    parser.add_argument("--start-pitch-min", type=float, default=20.0)
+    parser.add_argument("--start-pitch-max", type=float, default=40.0)
     args = parser.parse_args()
     if args.config is None:
         args.config = _default_config_for(args.entry)

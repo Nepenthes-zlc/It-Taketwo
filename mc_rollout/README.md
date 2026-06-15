@@ -5,7 +5,7 @@
 ## Files
 
 - `launch.py`: startup layer. It parses CLI args, reads instance YAML/JSON configs, starts Minecraft, connects TickGate/Puppet, captures raw images, and dispatches to the rollout flow.
-- `action_space.py`: action space. It defines the allowed low-level actions and maps them to Puppet commands.
+- `action_space.py`: action space. It defines the allowed low-level actions and maps them to Puppet commands. Policy actions currently are `wait`, `forward`, `turn_left`, `turn_right`, `look_up`, and `look_down`; `backward`, `strafe_left`, and `strafe_right` are kept commented out, and `jump` remains excluded from `ALLOWED_ACTIONS`.
 - `agent_driver.py`: AgentA/AgentB driver layer. It supports `fixed`, `random`, local Qwen-style OpenAI-compatible APIs, and closed API models configured per agent.
 - `closed_model.py`: closed-source GPT/CloudGPT caller. It mirrors the `wm_eval` GPT style: `get_openai_client()` for CloudGPT when no key/base_url is supplied, direct `OpenAI(api_key, base_url)` when those values are supplied, GPT-5.5 temperature compatibility, and retry handling.
 - `prompts.py`: prompt templates and JSON response parsing for AI-driven agent actions.
@@ -77,3 +77,9 @@ cd /local_nvme/zhanglechao/It-Taketwo
 ```
 
 Runtime configs live in `yaml/instance_single.yaml` and `yaml/instances_batch.yaml`.
+
+## Training-Oriented Rollout Details
+
+- Randomized starts can now sample an initial downward camera pitch via `start_pitch_min` and `start_pitch_max`; `yaml/lowlevel_train_episode.yaml` enables this curriculum with a 20-40 degree range.
+- `lowlevel_episode` and VERL training configs should assume the reduced policy action set: `wait`, `forward`, `turn_left`, `turn_right`, `look_up`, and `look_down`.
+- Prompt action descriptions are kept in sync with that reduced action set so models are not encouraged to choose disabled lateral/backward moves.

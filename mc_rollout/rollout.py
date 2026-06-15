@@ -236,8 +236,22 @@ def reset_agents(runner: InstanceRunner, commands: list[str], task: dict[str, An
     b_pitch = b_rotation[1] if len(b_rotation) > 1 else 0.0
     if args.randomize_starts:
         rng = random.Random(args.random_seed)
-        a_start, a_yaw, a_pitch = randomized_reset_pose(a_start, rng, args.start_position_jitter, args.start_yaw_jitter)
-        b_start, b_yaw, b_pitch = randomized_reset_pose(b_start, rng, args.start_position_jitter, args.start_yaw_jitter)
+        a_start, a_yaw, a_pitch = randomized_reset_pose(
+            a_start,
+            rng,
+            args.start_position_jitter,
+            args.start_yaw_jitter,
+            args.start_pitch_min,
+            args.start_pitch_max,
+        )
+        b_start, b_yaw, b_pitch = randomized_reset_pose(
+            b_start,
+            rng,
+            args.start_position_jitter,
+            args.start_yaw_jitter,
+            args.start_pitch_min,
+            args.start_pitch_max,
+        )
     reset_state = {
         "randomize_starts": args.randomize_starts,
         "random_seed": args.random_seed,
