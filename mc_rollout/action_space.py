@@ -3,7 +3,7 @@ from __future__ import annotations
 ACTION_TO_PUPPET = {
     "wait": "stop",
     "forward": "w 0.12",
-    # "backward": "s 0.12",
+    "backward": "s 0.12",
     # "strafe_left": "a 0.12",
     # "strafe_right": "d 0.12",
     "jump": "jump 0.2",

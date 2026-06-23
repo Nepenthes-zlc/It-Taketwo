@@ -20,6 +20,43 @@ DEFAULT_SUPPORTED_FORMATS = [48, 81]
 FUNCTION_DIR_NAMES = ("function", "functions")
 DEFAULT_SCENE_GAP = 8
 
+BLOCK_RGB = {
+    "minecraft:white_concrete": (230, 235, 235),
+    "minecraft:light_gray_concrete": (125, 125, 115),
+    "minecraft:gray_concrete": (55, 58, 62),
+    "minecraft:black_concrete": (8, 10, 15),
+    "minecraft:red_concrete": (140, 30, 30),
+    "minecraft:orange_concrete": (220, 105, 20),
+    "minecraft:yellow_concrete": (240, 175, 35),
+    "minecraft:lime_concrete": (95, 170, 25),
+    "minecraft:green_concrete": (70, 90, 35),
+    "minecraft:cyan_concrete": (20, 120, 135),
+    "minecraft:blue_concrete": (45, 55, 160),
+    "minecraft:purple_concrete": (100, 35, 150),
+    "minecraft:magenta_concrete": (170, 50, 160),
+    "minecraft:stone_pressure_plate": (125, 125, 125),
+    "minecraft:polished_blackstone_pressure_plate": (25, 22, 28),
+    "minecraft:birch_pressure_plate": (205, 185, 120),
+    "minecraft:quartz_block": (235, 230, 220),
+    "minecraft:gold_block": (245, 190, 35),
+    "minecraft:lapis_block": (25, 65, 180),
+}
+
+HIGH_CONTRAST_ELEVATOR_PALETTES = [
+    # Uniform light shell (floor + walls + divider + ceiling) with DARK targets
+    # (elevator door + pressure-plate region) so the goal pops in the agent POV.
+    {
+        "floor_block": "minecraft:white_concrete",
+        "wall_block": "minecraft:white_concrete",
+        "divider_block": "minecraft:white_concrete",
+        "ceiling_block": "minecraft:white_concrete",
+        "plate_pad_block": "minecraft:black_concrete",
+        "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+        "elevator_block": "minecraft:black_concrete",
+    },
+]
+
+
 
 @dataclass(frozen=True)
 class Vec3:
@@ -40,6 +77,15 @@ def fill_cmd(start: Vec3, end: Vec3, block: str) -> str:
 
 def setblock_cmd(pos: Vec3, block: str) -> str:
     return f"setblock {pos.to_cmd()} {block}"
+
+
+def region_positions(min_pos: Vec3, max_pos: Vec3) -> List[Vec3]:
+    return [
+        Vec3(x, y, z)
+        for x in range(min_pos.x, max_pos.x + 1)
+        for y in range(min_pos.y, max_pos.y + 1)
+        for z in range(min_pos.z, max_pos.z + 1)
+    ]
 
 
 def say_cmd(text: str) -> str:
@@ -126,6 +172,64 @@ def normalize_options(value: Any) -> List[str]:
     if isinstance(value, list) and value and all(isinstance(item, str) for item in value):
         return value
     raise ValueError("Block option must be a string or a non-empty list of strings.")
+
+
+def block_rgb(block: str) -> Tuple[int, int, int]:
+    return BLOCK_RGB.get(str(block), (128, 128, 128))
+
+
+def color_distance(left: str, right: str) -> float:
+    a = block_rgb(left)
+    b = block_rgb(right)
+    return round(sum((a[i] - b[i]) ** 2 for i in range(3)) ** 0.5, 2)
+
+
+def luminance(block: str) -> float:
+    r, g, b = block_rgb(block)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def visual_contrast_summary(spec: Dict[str, Any]) -> Dict[str, Any]:
+    floor = str(spec.get("floor_block", "minecraft:smooth_stone"))
+    pad = str(spec.get("plate_pad_block", floor))
+    plate = str(spec.get("pressure_plate_block", "minecraft:stone_pressure_plate"))
+    wall = str(spec.get("divider_block", spec.get("wall_block", "minecraft:white_concrete")))
+    door = str(spec.get("elevator_block", "minecraft:iron_block"))
+    return {
+        "floor_block": floor,
+        "plate_pad_block": pad,
+        "pressure_plate_block": plate,
+        "wall_block": wall,
+        "elevator_block": door,
+        "plate_floor_distance": color_distance(plate, floor),
+        "plate_pad_distance": color_distance(plate, pad),
+        "pad_floor_distance": color_distance(pad, floor),
+        "door_wall_distance": color_distance(door, wall),
+        "door_plate_distance": color_distance(door, plate),
+        "plate_pad_luminance_gap": round(abs(luminance(plate) - luminance(pad)), 2),
+        "door_wall_luminance_gap": round(abs(luminance(door) - luminance(wall)), 2),
+    }
+
+
+def apply_high_contrast_elevator_palette(spec: Dict[str, Any]) -> Dict[str, Any]:
+    if str(spec.get("task_template", "elevator_hold_door")) != "elevator_hold_door":
+        return dict(spec)
+    if spec.get("preserve_materials") or spec.get("auto_contrast_materials") is False:
+        return dict(spec)
+
+    item = dict(spec)
+    scene_id = sanitize_name(str(item.get("id", "scene")))
+    digest = int(hashlib.sha1(scene_id.encode("utf-8")).hexdigest()[:8], 16)
+    palette = HIGH_CONTRAST_ELEVATOR_PALETTES[digest % len(HIGH_CONTRAST_ELEVATOR_PALETTES)]
+    item.update(palette)
+    item["auto_contrast_materials"] = True
+    item["visual_contrast"] = visual_contrast_summary(item)
+    original_notes = str(item.get("notes", "")).strip()
+    contrast_note = (
+        "Auto high-contrast materials: pressure plate/pad/floor and elevator door/wall colors are separated for VLM visibility."
+    )
+    item["notes"] = f"{original_notes} {contrast_note}".strip()
+    return item
 
 
 def expand_specs(specs: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -415,6 +519,7 @@ def finalize_scene(
 
 
 def build_elevator_scene(spec: Dict[str, Any], namespace: str) -> Dict[str, Any]:
+    spec = apply_high_contrast_elevator_palette(spec)
     common = prepare_common(spec)
     scene_id = common["scene_id"]
     ox, oy, oz = common["origin"].x, common["origin"].y, common["origin"].z
@@ -432,40 +537,65 @@ def build_elevator_scene(spec: Dict[str, Any], namespace: str) -> Dict[str, Any]
     door_width = get_required_int(spec, "door_width")
     door_height = get_required_int(spec, "door_height")
     plate_offset = get_required_int(spec, "plate_offset")
+    door_lateral_offset = int(spec.get("door_lateral_offset", 0))
+    plate_lateral_offset = int(spec.get("plate_lateral_offset", 0))
+    pressure_plate_size = int(spec.get("pressure_plate_size", 3))
+    if pressure_plate_size < 1 or pressure_plate_size % 2 != 1:
+        raise ValueError(f"{scene_id}: pressure_plate_size must be a positive odd integer.")
+    plate_radius = pressure_plate_size // 2
 
     if divider_axis == "z":
         divider_coord = oz + depth // 2
-        door_x0 = ox + (width - door_width) // 2
+        door_center_x = ox + width // 2 + door_lateral_offset
+        door_x0 = door_center_x - door_width // 2
         door_x1 = door_x0 + door_width - 1
         door_min = Vec3(door_x0, oy + 1, divider_coord)
         door_max = Vec3(door_x1, oy + door_height, divider_coord)
         divider_start = Vec3(ox + 1, oy + 1, divider_coord)
         divider_end = Vec3(x1 - 1, y1 - 1, divider_coord)
-        plate_pos = Vec3(ox + width // 2, oy + 1, divider_coord - plate_offset)
-        if plate_pos.z <= oz:
-            raise ValueError(f"{scene_id}: pressure plate is outside the room.")
+        plate_pos = Vec3(ox + width // 2 + plate_lateral_offset, oy + 1, divider_coord - plate_offset)
+        plate_min = Vec3(plate_pos.x - plate_radius, plate_pos.y, plate_pos.z - plate_radius)
+        plate_max = Vec3(plate_pos.x + plate_radius, plate_pos.y, plate_pos.z + plate_radius)
+        if door_x0 <= ox or door_x1 >= x1:
+            raise ValueError(f"{scene_id}: elevator door is outside the room wall.")
+        if plate_min.x <= ox or plate_max.x >= x1 or plate_min.z <= oz or plate_max.z >= divider_coord:
+            raise ValueError(f"{scene_id}: pressure plate region is outside the first room.")
+        if divider_coord - plate_max.z < 1:
+            raise ValueError(f"{scene_id}: pressure plate region must be at least 1 block away from the elevator door.")
     else:
         divider_coord = ox + width // 2
-        door_z0 = oz + (depth - door_width) // 2
+        door_center_z = oz + depth // 2 + door_lateral_offset
+        door_z0 = door_center_z - door_width // 2
         door_z1 = door_z0 + door_width - 1
         door_min = Vec3(divider_coord, oy + 1, door_z0)
         door_max = Vec3(divider_coord, oy + door_height, door_z1)
         divider_start = Vec3(divider_coord, oy + 1, oz + 1)
         divider_end = Vec3(divider_coord, y1 - 1, z1 - 1)
-        plate_pos = Vec3(divider_coord - plate_offset, oy + 1, oz + depth // 2)
-        if plate_pos.x <= ox:
-            raise ValueError(f"{scene_id}: pressure plate is outside the room.")
+        plate_pos = Vec3(divider_coord - plate_offset, oy + 1, oz + depth // 2 + plate_lateral_offset)
+        plate_min = Vec3(plate_pos.x - plate_radius, plate_pos.y, plate_pos.z - plate_radius)
+        plate_max = Vec3(plate_pos.x + plate_radius, plate_pos.y, plate_pos.z + plate_radius)
+        if door_z0 <= oz or door_z1 >= z1:
+            raise ValueError(f"{scene_id}: elevator door is outside the room wall.")
+        if plate_min.x <= ox or plate_min.z <= oz or plate_max.z >= z1 or plate_max.x >= divider_coord:
+            raise ValueError(f"{scene_id}: pressure plate region is outside the first room.")
+        if divider_coord - plate_max.x < 1:
+            raise ValueError(f"{scene_id}: pressure plate region must be at least 1 block away from the elevator door.")
 
     if door_height >= height - 1:
         raise ValueError(f"{scene_id}: door_height is too large for room height.")
+
+    plate_positions = region_positions(plate_min, plate_max)
+    plate_pad_block = str(spec.get("plate_pad_block", common["floor_block"]))
+    pad_min = Vec3(max(ox + 1, plate_min.x - 1), plate_pos.y - 1, max(oz + 1, plate_min.z - 1))
+    pad_max = Vec3(min(x1 - 1, plate_max.x + 1), plate_pos.y - 1, min(z1 - 1, plate_max.z + 1))
 
     setup_lines = list(common["setup_lines"])
     setup_lines.extend(
         [
             fill_cmd(divider_start, divider_end, divider_block),
             fill_cmd(door_min, door_max, elevator_block),
-            setblock_cmd(plate_pos.shift(dy=-1), common["floor_block"]),
-            setblock_cmd(plate_pos, plate_block),
+            fill_cmd(pad_min, pad_max, plate_pad_block),
+            *[setblock_cmd(pos, plate_block) for pos in plate_positions],
             "",
             "# Command blocks that keep the elevator door open while the plate is pressed.",
             f"function {namespace}:{scene_id}/place_command_blocks",
@@ -475,25 +605,31 @@ def build_elevator_scene(spec: Dict[str, Any], namespace: str) -> Dict[str, Any]
     active_plate_block = f"{plate_block}[{plate_state}]"
     open_cmd = fill_cmd(door_min, door_max, "minecraft:air")
     close_cmd = fill_cmd(door_min, door_max, elevator_block)
+    close_condition = " ".join(f"unless block {pos.to_cmd()} {active_plate_block}" for pos in plate_positions)
     command_base = common["command_base"]
+    open_command_lines = [
+        (
+            f'setblock {command_base.shift(dx=index).to_cmd()} minecraft:repeating_command_block[facing=east]'
+            f'{{auto:1b,Command:"execute if block {pos.to_cmd()} {active_plate_block} run {open_cmd}"}}'
+        )
+        for index, pos in enumerate(plate_positions)
+    ]
+    close_command_line = (
+        f'setblock {command_base.shift(dx=len(plate_positions)).to_cmd()} minecraft:repeating_command_block[facing=east]'
+        f'{{auto:1b,Command:"execute {close_condition} run {close_cmd}"}}'
+    )
     place_command_blocks_lines = [
         f"# Place command blocks for scene: {scene_id}",
-        (
-            f'setblock {command_base.to_cmd()} minecraft:repeating_command_block[facing=east]'
-            f'{{auto:1b,Command:"execute if block {plate_pos.to_cmd()} {active_plate_block} run {open_cmd}"}}'
-        ),
-        (
-            f'setblock {command_base.shift(dx=1).to_cmd()} minecraft:repeating_command_block[facing=east]'
-            f'{{auto:1b,Command:"execute unless block {plate_pos.to_cmd()} {active_plate_block} run {close_cmd}"}}'
-        ),
+        *open_command_lines,
+        close_command_line,
     ]
     tick_lines = [
         f"# Tick logic for scene: {scene_id}",
-        f"execute if block {plate_pos.to_cmd()} {active_plate_block} run {open_cmd}",
-        f"execute unless block {plate_pos.to_cmd()} {active_plate_block} run {close_cmd}",
+        *[f"execute if block {pos.to_cmd()} {active_plate_block} run {open_cmd}" for pos in plate_positions],
+        f"execute {close_condition} run {close_cmd}",
     ]
     clear_lines = list(common["clear_lines"])
-    clear_lines.append(fill_cmd(command_base, command_base.shift(dx=1), "minecraft:air"))
+    clear_lines.append(fill_cmd(command_base, command_base.shift(dx=len(plate_positions)), "minecraft:air"))
 
     return finalize_scene(
         common,
@@ -505,8 +641,22 @@ def build_elevator_scene(spec: Dict[str, Any], namespace: str) -> Dict[str, Any]
         clear_lines,
         {
             "divider_axis": divider_axis,
+            "door_lateral_offset": door_lateral_offset,
+            "plate_lateral_offset": plate_lateral_offset,
+            "plate_offset": plate_offset,
+            "pressure_plate_size": pressure_plate_size,
             "door_region": [door_min.x, door_min.y, door_min.z, door_max.x, door_max.y, door_max.z],
             "pressure_plate_pos": [plate_pos.x, plate_pos.y, plate_pos.z],
+            "pressure_plate_region": [plate_min.x, plate_min.y, plate_min.z, plate_max.x, plate_max.y, plate_max.z],
+            "pressure_plate_positions": [[pos.x, pos.y, pos.z] for pos in plate_positions],
+            "pressure_plate_block": plate_block,
+            "plate_pad_block": plate_pad_block,
+            "plate_pad_region": [pad_min.x, pad_min.y, pad_min.z, pad_max.x, pad_max.y, pad_max.z],
+            "floor_block": common["floor_block"],
+            "wall_block": common["wall_block"],
+            "divider_block": divider_block,
+            "elevator_block": elevator_block,
+            "visual_contrast": visual_contrast_summary(spec),
         },
     )
 

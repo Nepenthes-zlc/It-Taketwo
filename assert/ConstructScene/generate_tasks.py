@@ -17,6 +17,14 @@ SUPPORTED_TASK_TEMPLATES = {
     "lift_time_dependency",
 }
 
+# Extra cells of clearance kept between a spawn position and any wall, on top of
+# the 1-cell inset already applied. With margin 1 the base spawn cell sits >=2
+# cells from the wall block, so after the rollout's +/-0.6 position jitter the
+# agent still spawns >=~1.4 blocks clear of walls (no wall-hugging / clipping).
+# Overridable via --wall-margin.
+WALL_MARGIN = 1
+
+
 TASK_TEMPLATE_ALIASES = {
     "elevator": "elevator_hold_door",
     "elevator_hold_door": "elevator_hold_door",
@@ -54,9 +62,34 @@ def center_from_region(region: Sequence[int]) -> List[float]:
     ]
 
 
+def elevator_door_regions(door_region: Sequence[int], b_start: Sequence[float]) -> tuple[List[float], List[float]]:
+    """Two floor-level door targets, mirroring game_functions at runtime:
+    - cell region (multiagent target): the door cells themselves
+    - front region (single-agent target): door cells + one row on the player's side (2xN)
+    """
+    x0, y0, z0, x1, y1, z1 = [float(v) for v in door_region[:6]]
+    xlo, xhi, zlo, zhi = min(x0, x1), max(x0, x1), min(z0, z1), max(z0, z1)
+    cell = [xlo, y0, zlo, xhi, y0, zhi]
+    if int(z0) == int(z1):  # door along x; approach along z
+        door_z = zlo
+        if float(b_start[2]) <= door_z:
+            front = [xlo, y0, door_z - 1.0, xhi, y0, door_z]
+        else:
+            front = [xlo, y0, door_z, xhi, y0, door_z + 1.0]
+    elif int(x0) == int(x1):  # door along z; approach along x
+        door_x = xlo
+        if float(b_start[0]) <= door_x:
+            front = [door_x - 1.0, y0, zlo, door_x, y0, zhi]
+        else:
+            front = [door_x, y0, zlo, door_x + 1.0, y0, zhi]
+    else:
+        front = list(cell)
+    return cell, front
+
+
 def random_rotation(rng: random.Random) -> List[float]:
     yaw = round(rng.uniform(-180.0, 180.0), 1)
-    pitch = round(rng.uniform(-20.0, 20.0), 1)
+    pitch = round(rng.uniform(10.0, 35.0), 1)
     return [yaw, pitch]
 
 
@@ -92,16 +125,30 @@ def choose_xy_positions(
 def elevator_spawn_points(scene: Dict[str, Any], rng: random.Random) -> Tuple[List[float], List[float]]:
     ox, oy, oz = scene["origin"]
     width, _, _ = scene["room_size"]
-    plate_x, plate_y, plate_z = scene["pressure_plate_pos"]
+    plate_region = scene.get("pressure_plate_region")
+    if isinstance(plate_region, list) and len(plate_region) >= 6:
+        plate_x = int(round((float(plate_region[0]) + float(plate_region[3])) / 2.0))
+        plate_y = int(plate_region[1])
+        plate_z = int(round((float(plate_region[2]) + float(plate_region[5])) / 2.0))
+    else:
+        plate_x, plate_y, plate_z = scene["pressure_plate_pos"]
     door = scene["door_region"]
     door_center_z = round((door[2] + door[5]) / 2)
     first_room_z_max = max(oz + 1, min(plate_z - 1, door_center_z - 2))
+    # Keep spawns off the wall-adjacent ring: inset the west/east walls (x) and
+    # the north wall (z_min) by WALL_MARGIN extra cells. z_max is bounded by the
+    # plate/door, not a wall, so it is left untouched.
+    x_lo = ox + 1 + WALL_MARGIN
+    x_hi = ox + width - 2 - WALL_MARGIN
+    z_lo = min(oz + 1 + WALL_MARGIN, first_room_z_max)
+    if x_hi < x_lo:
+        x_lo, x_hi = ox + 1, ox + width - 2
     positions = choose_xy_positions(
         rng,
-        ox + 1,
-        ox + width - 2,
+        x_lo,
+        x_hi,
         plate_y,
-        oz + 1,
+        z_lo,
         first_room_z_max,
         count=2,
         min_dist=4,
@@ -181,8 +228,11 @@ def nearby_spawn_points(
 def build_elevator_task(scene: Dict[str, Any], rng: random.Random, task_id: int) -> Dict[str, Any]:
     a_start, b_start = elevator_spawn_points(scene, rng)
     plate = scene["pressure_plate_pos"]
+    plate_region = scene.get("pressure_plate_region") or [plate[0], plate[1], plate[2], plate[0], plate[1], plate[2]]
+    plate_positions = scene.get("pressure_plate_positions") or [plate]
     door_region = scene["door_region"]
     door_goal = center_from_region(door_region)
+    door_cell_region, door_front_region = elevator_door_regions(door_region, b_start)
 
     return {
         "id": task_id,
@@ -197,9 +247,12 @@ def build_elevator_task(scene: Dict[str, Any], rng: random.Random, task_id: int)
                 "start_pos": a_start,
                 "start_rotation": random_rotation(rng),
                 "goal": {
-                    "type": "hold_position",
+                    "type": "hold_region",
                     "target_pos": [float(plate[0]), float(plate[1]), float(plate[2])],
-                    "description": "Move onto the pressure plate and keep the elevator door open.",
+                    "target_region": plate_region,
+                    "target_positions": plate_positions,
+                    "pressure_plate_block": scene.get("pressure_plate_block", "minecraft:stone_pressure_plate"),
+                    "description": "Move onto any pressure plate in the 3x3 region and keep the elevator door open.",
                 },
             },
             "player_b": {
@@ -210,16 +263,21 @@ def build_elevator_task(scene: Dict[str, Any], rng: random.Random, task_id: int)
                     "type": "reach_region",
                     "target_region": door_region,
                     "target_pos": door_goal,
+                    "door_cell_region": door_cell_region,
+                    "door_front_region": door_front_region,
                     "description": "Enter the elevator doorway while Player A is still holding the pressure plate.",
                 },
             },
         },
         "success_conditions": [
             {
-                "type": "block_state",
+                "type": "block_state_any",
                 "target_pos": plate,
+                "target_region": plate_region,
+                "target_positions": plate_positions,
+                "pressure_plate_block": scene.get("pressure_plate_block", "minecraft:stone_pressure_plate"),
                 "expected_block_state": "pressure_plate_powered",
-                "description": "The pressure plate is being pressed by Player A.",
+                "description": "Any pressure plate in the 3x3 region is being pressed by Player A.",
             },
             {
                 "type": "player_in_region",
@@ -429,6 +487,7 @@ def filter_scenes(scenes: Sequence[Dict[str, Any]], template: Optional[str]) -> 
 
 
 def main() -> None:
+    global WALL_MARGIN
     parser = argparse.ArgumentParser(description="Generate randomized multi-agent tasks from scene_manifest.json.")
     parser.add_argument(
         "--manifest",
@@ -468,7 +527,15 @@ def main() -> None:
         default="generated/generated_tasks.json",
         help="Output JSON path.",
     )
+    parser.add_argument(
+        "--wall-margin",
+        type=int,
+        default=WALL_MARGIN,
+        help="Extra cells of clearance kept between spawn positions and walls (default: %(default)s).",
+    )
     args = parser.parse_args()
+
+    WALL_MARGIN = args.wall_margin
 
     base_dir = Path(__file__).resolve().parent
     manifest_path = (base_dir / args.manifest).resolve() if not Path(args.manifest).is_absolute() else Path(args.manifest)

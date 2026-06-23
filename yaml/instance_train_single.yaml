@@ -1,7 +1,7 @@
 instance:
   name: instance-train-01
   root: ../env/instance-train-01
-  device: cpu
+  device: egl0
   ready_timeout: 180
   puppet_host: 127.0.0.1
   puppet_port: 0

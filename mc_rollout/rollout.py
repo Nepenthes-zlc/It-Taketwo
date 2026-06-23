@@ -214,16 +214,17 @@ def setup_rollout_world(runner: InstanceRunner, commands: list[str], task: dict[
             runner.tickgate.cmd("advance_wait 5 1", timeout=30.0)
 
 
-def spawn_agents(runner: InstanceRunner, commands: list[str]) -> None:
-    game_cmd(runner, "player AgentA spawn", 40, commands=commands)
-    game_cmd(runner, "player AgentB spawn", 40, commands=commands)
-    game_cmd(runner, "gamemode creative AgentA", 5, commands=commands)
-    game_cmd(runner, "gamemode creative AgentB", 5, commands=commands)
-    game_cmd(runner, "effect give AgentA minecraft:glowing 999 0 true", 5, commands=commands)
-    game_cmd(runner, "effect give AgentB minecraft:glowing 999 0 true", 5, commands=commands)
+def spawn_agents(runner: InstanceRunner, commands: list[str], active_agents: tuple[str, ...] | list[str] | None = None) -> None:
+    active = tuple(active_agents or ("AgentA", "AgentB"))
+    for agent in ("AgentA", "AgentB"):
+        game_cmd(runner, f"kill @e[type=player,name={agent}]", 5, commands=commands)
+    for agent in active:
+        game_cmd(runner, f"player {agent} spawn", 40, commands=commands)
+        game_cmd(runner, f"gamemode creative {agent}", 5, commands=commands)
+        game_cmd(runner, f"effect give {agent} minecraft:glowing 999 0 true", 5, commands=commands)
 
 
-def reset_agents(runner: InstanceRunner, commands: list[str], task: dict[str, Any], args: argparse.Namespace) -> dict[str, Any]:
+def reset_agents(runner: InstanceRunner, commands: list[str], task: dict[str, Any], args: argparse.Namespace, active_agents: tuple[str, ...] | list[str] | None = None) -> dict[str, Any]:
     player_a = task["players"]["player_a"]
     player_b = task["players"]["player_b"]
     a_start = [float(v) for v in player_a["start_pos"]]
@@ -252,14 +253,20 @@ def reset_agents(runner: InstanceRunner, commands: list[str], task: dict[str, An
             args.start_pitch_min,
             args.start_pitch_max,
         )
-    reset_state = {
-        "randomize_starts": args.randomize_starts,
-        "random_seed": args.random_seed,
+    active = tuple(active_agents or ("AgentA", "AgentB"))
+    all_reset_state = {
         "AgentA": {"pos": a_start, "yaw": a_yaw, "pitch": a_pitch},
         "AgentB": {"pos": b_start, "yaw": b_yaw, "pitch": b_pitch},
     }
-    tp(runner, "AgentA", a_start, a_yaw, a_pitch, 20, commands=commands)
-    tp(runner, "AgentB", b_start, b_yaw, b_pitch, 20, commands=commands)
+    reset_state = {
+        "randomize_starts": args.randomize_starts,
+        "random_seed": args.random_seed,
+        "active_agents": list(active),
+    }
+    for agent in active:
+        reset_state[agent] = all_reset_state[agent]
+        pose = all_reset_state[agent]
+        tp(runner, agent, pose["pos"], pose["yaw"], pose["pitch"], 20, commands=commands)
     return reset_state
 
 

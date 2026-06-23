@@ -125,5 +125,12 @@ if ! command -v vglrun >/dev/null 2>&1; then
   exit 1
 fi
 
-echo "[TickGateRuntime] launching with vglrun -d $DEVICE"
-exec vglrun -d "$DEVICE" bash -c 'cd "$1" && exec java @"$2" @"$3"' _ "$RUN_DIR" "$VM_ARGS_TMP" "$PROGRAM_ARGS"
+echo "[TickGateRuntime] launching with xvfb-run + NVIDIA GLX offload (GPU render, device=$DEVICE)"
+# GPU rendering without VirtualGL's per-call IPC: Xvfb provides the X window/protocol,
+# while __GLX_VENDOR_LIBRARY_NAME=nvidia routes GLX straight to the A100 driver
+# (in-process, no round-trip). Optionally pin a specific GPU via __NV_PRIME_RENDER_OFFLOAD.
+exec xvfb-run -a bash -c '
+  export __GLX_VENDOR_LIBRARY_NAME=nvidia
+  export __NV_PRIME_RENDER_OFFLOAD=1
+  cd "$1" && exec java @"$2" @"$3"
+' _ "$RUN_DIR" "$VM_ARGS_TMP" "$PROGRAM_ARGS"

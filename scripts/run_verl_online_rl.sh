@@ -5,9 +5,18 @@ ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 PYTHON_BIN=${PYTHON_BIN:-/home/azvm/miniconda3/envs/verl/bin/python}
 VERL_HOME=${VERL_HOME:-/local_nvme/zhanglechao/verl}
 MODEL_PATH=${MODEL_PATH:-/local_nvme/zhanglechao/models/Qwen2.5-VL-3B-Instruct}
-DATA_DIR=${DATA_DIR:-${ROOT_DIR}/data/verl_minecraft}
+TASK_MODE=${TASK_MODE:-${IT_TAKETWO_TASK_MODE:-multiagent}}
+case "${TASK_MODE}" in
+  multiagent|multi_agent|multi) TASK_MODE=multiagent ;;
+  single_agent|singleagent|single|atomic) TASK_MODE=single_agent ;;
+  *) echo "unsupported TASK_MODE: ${TASK_MODE}" >&2; exit 2 ;;
+esac
+RUN_GROUP=${RUN_GROUP:-${TASK_MODE}}
+DATA_DIR=${DATA_DIR:-${ROOT_DIR}/data/verl_minecraft/${RUN_GROUP}}
 TRAIN_FILE=${TRAIN_FILE:-${DATA_DIR}/train.parquet}
 VAL_FILE=${VAL_FILE:-${DATA_DIR}/val.parquet}
+export TASK_MODE
+export SINGLE_AGENT_ATOMIC_AGENTS=${SINGLE_AGENT_ATOMIC_AGENTS:-AgentA}
 
 if [ "${MOCK_MC:-0}" = "1" ]; then
   export IT_TAKETWO_MOCK_MC=1
@@ -56,9 +65,9 @@ if [ "${USE_VLM_IMAGES_FLAG}" = "1" ]; then
   MAX_RESPONSE_LENGTH=${MAX_RESPONSE_LENGTH:-8192}
   ROLLOUT_GPU_MEMORY_UTILIZATION=${ROLLOUT_GPU_MEMORY_UTILIZATION:-0.35}
   VLM_MIN_PIXELS=${VLM_MIN_PIXELS:-3136}
-  VLM_MAX_PIXELS=${VLM_MAX_PIXELS:-12544}
-  export IT_TAKETWO_IMAGE_MAX_WIDTH=${IT_TAKETWO_IMAGE_MAX_WIDTH:-256}
-  export IT_TAKETWO_IMAGE_MAX_HEIGHT=${IT_TAKETWO_IMAGE_MAX_HEIGHT:-144}
+  VLM_MAX_PIXELS=${VLM_MAX_PIXELS:-409920}
+  export IT_TAKETWO_IMAGE_MAX_WIDTH=${IT_TAKETWO_IMAGE_MAX_WIDTH:-854}
+  export IT_TAKETWO_IMAGE_MAX_HEIGHT=${IT_TAKETWO_IMAGE_MAX_HEIGHT:-480}
 else
   MAX_PROMPT_LENGTH=${MAX_PROMPT_LENGTH:-2048}
   MAX_RESPONSE_LENGTH=${MAX_RESPONSE_LENGTH:-2048}
@@ -89,10 +98,13 @@ ACTOR_LR=${ACTOR_LR:-1e-6}
 TOTAL_EPOCHS=${TOTAL_EPOCHS:-1}
 SAVE_FREQ=${SAVE_FREQ:--1}
 TEST_FREQ=${TEST_FREQ:--1}
-PROJECT_NAME=${PROJECT_NAME:-it_taketwo_verl}
+PROJECT_NAME=${PROJECT_NAME:-it_taketwo_${RUN_GROUP}_verl}
 EXPERIMENT_NAME=${EXPERIMENT_NAME:-minecraft_online_rl_$(date +%Y%m%d_%H%M%S)}
 export IT_TAKETWO_SAVE_ROLLOUT_TRACE=${IT_TAKETWO_SAVE_ROLLOUT_TRACE:-1}
-export IT_TAKETWO_ROLLOUT_TRACE_DIR=${IT_TAKETWO_ROLLOUT_TRACE_DIR:-${ROOT_DIR}/runs/verl_rollouts/${EXPERIMENT_NAME}}
+export IT_TAKETWO_ROLLOUT_TRACE_DIR=${IT_TAKETWO_ROLLOUT_TRACE_DIR:-${ROOT_DIR}/runs/${RUN_GROUP}/verl_rollouts/${EXPERIMENT_NAME}}
+export IT_TAKETWO_TASK_MODE=${TASK_MODE}
+export IT_TAKETWO_SINGLE_AGENT_DEFAULT=${SINGLE_AGENT_DEFAULT:-${IT_TAKETWO_SINGLE_AGENT_DEFAULT:-AgentA}}
+export IT_TAKETWO_FIXED_TEAMMATE_ACTION=${FIXED_TEAMMATE_ACTION:-${IT_TAKETWO_FIXED_TEAMMATE_ACTION:-wait}}
 
 export IT_TAKETWO_TRAIN_INSTANCE_PREFIX=${TRAIN_INSTANCE_PREFIX}
 export IT_TAKETWO_TRAIN_INSTANCE_COUNT=${TRAIN_INSTANCE_COUNT}
@@ -120,7 +132,7 @@ if [ "${MOCK_MC:-0}" != "1" ]; then
       --puppet-timeout "${PREWARM_PUPPET_TIMEOUT}" \
       --retries "${PREWARM_RETRIES}" \
       --retry-delay "${PREWARM_RETRY_DELAY}" \
-      --log-dir "${ROOT_DIR}/runs/logs" \
+      --log-dir "${ROOT_DIR}/runs/${RUN_GROUP}/logs" \
       --pack-src "${ROOT_DIR}/assert/ConstructScene/generated/datapacks/multiagent_scene_pack"
   fi
 fi

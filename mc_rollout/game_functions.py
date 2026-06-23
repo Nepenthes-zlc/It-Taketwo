@@ -185,19 +185,116 @@ def second_room_entry_goal(task: dict[str, Any]) -> dict[str, Any]:
     return {"axis": axis, "door_coord": door_coord, "direction": direction, "target_center": [center_x, float(region[1]), center_z]}
 
 
+def agent_over_block(pose: dict[str, Any], block_pos: list[float] | list[int]) -> bool:
+    pos = pose.get("pos") if isinstance(pose, dict) else None
+    if not isinstance(pos, list) or len(pos) < 3:
+        return False
+    x, y, z = float(pos[0]), float(pos[1]), float(pos[2])
+    bx, by, bz = float(block_pos[0]), float(block_pos[1]), float(block_pos[2])
+    if abs(y - by) > 1.01:
+        return False
+    return (x + PLAYER_HALF_WIDTH) > bx and (x - PLAYER_HALF_WIDTH) < (bx + 1.0) and (z + PLAYER_HALF_WIDTH) > bz and (z - PLAYER_HALF_WIDTH) < (bz + 1.0)
+
+
+def agent_over_region(pose: dict[str, Any], region: list[Any]) -> bool:
+    pos = pose.get("pos") if isinstance(pose, dict) else None
+    if not isinstance(pos, list) or len(pos) < 3 or not isinstance(region, list) or len(region) < 6:
+        return False
+    x, y, z = float(pos[0]), float(pos[1]), float(pos[2])
+    x0, y0, z0, x1, y1, z1 = [float(v) for v in region[:6]]
+    if abs(y - y0) > 1.01 and abs(y - y1) > 1.01:
+        return False
+    return (
+        (x + PLAYER_HALF_WIDTH) > min(x0, x1)
+        and (x - PLAYER_HALF_WIDTH) < (max(x0, x1) + 1.0)
+        and (z + PLAYER_HALF_WIDTH) > min(z0, z1)
+        and (z - PLAYER_HALF_WIDTH) < (max(z0, z1) + 1.0)
+    )
+
+
+def agent_on_pressure_plate(task: dict[str, Any], pose: dict[str, Any]) -> bool:
+    goal = task["players"]["player_a"].get("goal", {})
+    region = goal.get("target_region") if isinstance(goal, dict) else None
+    if agent_over_region(pose, region):
+        return True
+    positions = goal.get("target_positions") if isinstance(goal, dict) else None
+    if isinstance(positions, list):
+        for plate in positions:
+            if isinstance(plate, list) and len(plate) >= 3 and agent_over_block(pose, plate):
+                return True
+    plate = goal.get("target_pos") if isinstance(goal, dict) else None
+    return agent_over_block(pose, plate) if isinstance(plate, list) and len(plate) >= 3 else False
+
+
+def elevator_door_cell_region(task: dict[str, Any]) -> list[float]:
+    """The door opening itself: the floor cells the door occupies (multiagent target).
+
+    Returns [x0, y, z0, x1, y, z1] (block-corner coords, ground layer), i.e. the
+    original door target_region collapsed to the floor.
+    """
+    region = task["players"]["player_b"]["goal"]["target_region"]
+    x0, y0, z0, x1, y1, z1 = [float(v) for v in region[:6]]
+    return [min(x0, x1), y0, min(z0, z1), max(x0, x1), y0, max(z0, z1)]
+
+
+def elevator_door_front_region(task: dict[str, Any]) -> list[float]:
+    """2xN approach pad (single-agent target): the door cells plus one extra row on
+    the player's side. N = door width. Depth is 2 along the door's normal axis.
+
+    Returns [x0, y, z0, x1, y, z1] (block-corner coords, ground layer).
+    """
+    region = task["players"]["player_b"]["goal"]["target_region"]
+    start_pos = task["players"]["player_b"]["start_pos"]
+    x0, y0, z0, x1, y1, z1 = [float(v) for v in region[:6]]
+    xlo, xhi = min(x0, x1), max(x0, x1)
+    zlo, zhi = min(z0, z1), max(z0, z1)
+    if int(z0) == int(z1):  # door runs along x; approach extends along z
+        door_z = zlo
+        if float(start_pos[2]) <= door_z:
+            return [xlo, y0, door_z - 1.0, xhi, y0, door_z]
+        return [xlo, y0, door_z, xhi, y0, door_z + 1.0]
+    if int(x0) == int(x1):  # door runs along z; approach extends along x
+        door_x = xlo
+        if float(start_pos[0]) <= door_x:
+            return [door_x - 1.0, y0, zlo, door_x, y0, zhi]
+        return [door_x, y0, zlo, door_x + 1.0, y0, zhi]
+    return [xlo, y0, zlo, xhi, y0, zhi]
+
+
+def agent_in_elevator_door_target(task: dict[str, Any], pose: dict[str, Any], task_mode: str) -> bool:
+    """Whether AgentB has reached its door target. multiagent -> door cells only;
+    single_agent -> 2xN approach pad (door cells + one row on the player side)."""
+    mode = str(task_mode or "").strip().lower().replace("-", "_")
+    if mode in {"single", "single_agent", "singleagent", "atomic"}:
+        region = elevator_door_front_region(task)
+    else:
+        region = elevator_door_cell_region(task)
+    return agent_over_region(pose, region)
+
+
 def agent_fully_inside_second_room(task: dict[str, Any], pose: dict[str, Any]) -> bool:
     pos = pose.get("pos") if isinstance(pose, dict) else None
     if not isinstance(pos, list) or len(pos) < 3:
         return False
+    region = task["players"]["player_b"]["goal"]["target_region"]
     goal = second_room_entry_goal(task)
     axis = goal["axis"]
     direction = float(goal["direction"])
     if axis not in {"x", "z"} or direction == 0.0:
         return False
     coord_index = 0 if axis == "x" else 2
+    lateral_index = 2 if axis == "x" else 0
     coord = float(pos[coord_index])
+    lateral = float(pos[lateral_index])
     door_coord = float(goal["door_coord"])
     interior_boundary = door_coord + 1.0 if direction > 0 else door_coord
+    if axis == "z":
+        lateral_min, lateral_max = float(region[0]), float(region[3]) + 1.0
+    else:
+        lateral_min, lateral_max = float(region[2]), float(region[5]) + 1.0
+    laterally_inside_door = lateral - PLAYER_HALF_WIDTH >= lateral_min and lateral + PLAYER_HALF_WIDTH <= lateral_max
+    if not laterally_inside_door:
+        return False
     if direction > 0:
         return coord - PLAYER_HALF_WIDTH >= interior_boundary
     return coord + PLAYER_HALF_WIDTH <= interior_boundary
@@ -215,6 +312,10 @@ def observer_camera_pose(task: dict[str, Any], poses: dict[str, Any]) -> tuple[l
         goal = player.get("goal", {})
         if "target_pos" in goal:
             points.append([float(v) for v in goal["target_pos"]])
+        if "target_region" in goal and isinstance(goal["target_region"], list) and len(goal["target_region"]) >= 6:
+            region = goal["target_region"]
+            points.append([float(region[0]), float(region[1]), float(region[2])])
+            points.append([float(region[3]), float(region[4]), float(region[5])])
     if not points:
         return [6.5, -56.2, 1.7], 0.0, 12.0
 
@@ -318,6 +419,26 @@ def capture_rollout_observer_view(runner: Any, commands: list[str], task: dict[s
 
 
 def capture_rollout_agent_pov(runner: Any, commands: list[str], agent: str, pose: dict[str, Any], args: Any) -> dict[str, Any]:
+    mode = str(getattr(args, "agent_pov_mode", "camera_entity")).lower().replace("-", "_")
+    if mode == "camera_entity":
+        if runner.puppet is not None:
+            runner.puppet.send(f"pov {agent}", wait=False)
+            runner.puppet.send("camera first_person", wait=False)
+        if runner.tickgate is not None:
+            ticks = int(getattr(args, "pov_camera_settle_ticks", 16)) + int(getattr(args, "pov_extra_settle_ticks", 0))
+            frames = int(getattr(args, "pov_settle_render_frames", 10))
+            runner.tickgate.cmd(f"advance_wait {ticks} {frames}", timeout=30.0)
+        image = capture_fresh_camera_image(runner, args)
+        image = normalize_split_capture(image)
+        image["camera_entity"] = agent
+        image["camera_pose"] = {
+            "pos": pose.get("pos") if isinstance(pose, dict) else None,
+            "yaw": pose.get("yaw") if isinstance(pose, dict) else None,
+            "pitch": pose.get("pitch") if isinstance(pose, dict) else None,
+            "type": "camera_entity",
+        }
+        return image
+
     camera_pos, yaw, pitch = agent_pov_camera_pose(pose, args.pov_eye_height, args.pov_forward_offset)
     if runner.puppet is not None:
         runner.puppet.send("pov self", wait=False)

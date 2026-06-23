@@ -1,0 +1,18 @@
+# Custom AgentLoop config for Qwen2.5-VL-7B, batch=8, rollout.n=4 training.
+- name: minecraft_agent
+  _target_: verl_adapter.minecraft_agent_loop.MinecraftAgentLoop
+  rollout_yaml: yaml/lowlevel_train_episode.yaml
+  max_steps: 20
+  max_action_tokens: 160
+  task_mode: multiagent
+  history_window_images: 3
+  history_max_tokens: 3072
+  mock_env: false
+  train_instance_prefix: instance-train
+  train_instance_count: 16
+  train_tickgate_base_port: 25690
+  persistent_minecraft: true
+  use_images: true
+  image_view: agent_pov
+  image_max_width: 256
+  image_max_height: 144

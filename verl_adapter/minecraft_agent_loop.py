@@ -3,6 +3,7 @@ from __future__ import annotations
 import fcntl
 import os
 import sys
+import time
 from io import BytesIO
 from pathlib import Path
 from typing import Any
@@ -24,7 +25,11 @@ from verl_adapter.mc_env import (
     MinecraftEnvConfig,
     MinecraftRolloutEnv,
     agent_key,
+    default_atomic_role,
     format_agent_observation,
+    normalize_action,
+    normalize_agent_name,
+    normalize_task_mode,
     parse_agent_action,
 )
 
@@ -44,8 +49,8 @@ class MinecraftAgentLoop(AgentLoopBase):
         self,
         *args: Any,
         rollout_yaml: str = "yaml/lowlevel_train_episode.yaml",
-        max_steps: int | None = 20,
-        max_action_tokens: int = 64,
+        max_steps: int | None = 32,
+        max_action_tokens: int = 160,
         mock_env: bool = False,
         train_instance_prefix: str = "instance-train",
         train_instance_count: int = 4,
@@ -57,6 +62,9 @@ class MinecraftAgentLoop(AgentLoopBase):
         image_max_height: int = 216,
         history_window_images: int = 3,
         history_max_tokens: int = 3072,
+        task_mode: str = "multiagent",
+        single_agent_default: str = "AgentA",
+        fixed_teammate_action: str = "wait",
         **kwargs: Any,
     ):
         super().__init__(*args, **kwargs)
@@ -83,6 +91,9 @@ class MinecraftAgentLoop(AgentLoopBase):
         )
         default_rollout_n = int(getattr(self.rollout_config, "n", 1) or 1)
         self.rollout_n = int(os.environ.get("IT_TAKETWO_ROLLOUT_N", default_rollout_n))
+        self.task_mode = normalize_task_mode(os.environ.get("IT_TAKETWO_TASK_MODE", task_mode))
+        self.single_agent_default = normalize_agent_name(os.environ.get("IT_TAKETWO_SINGLE_AGENT_DEFAULT", single_agent_default))
+        self.fixed_teammate_action = normalize_action(os.environ.get("IT_TAKETWO_FIXED_TEAMMATE_ACTION", fixed_teammate_action))
 
     @rollout_trace_op
     async def run(self, sampling_params: dict[str, Any], **kwargs: Any) -> AgentLoopOutput:
@@ -105,6 +116,10 @@ class MinecraftAgentLoop(AgentLoopBase):
         mm_processor_kwargs = self._get_mm_processor_kwargs(None)
 
         extra_info = kwargs.get("extra_info") if isinstance(kwargs.get("extra_info"), dict) else {}
+        task_mode = normalize_task_mode(str(extra_info.get("task_mode", self.task_mode)))
+        controlled_agent = normalize_agent_name(str(extra_info.get("controlled_agent", self.single_agent_default)))
+        atomic_role = str(extra_info.get("atomic_role") or default_atomic_role(controlled_agent))
+        decision_agents = list(AGENTS) if task_mode == "multiagent" else [controlled_agent]
         task_index = int(extra_info.get("task_index", kwargs.get("task_index", 0) or 0))
         random_seed = extra_info.get("random_seed")
         if random_seed is not None:
@@ -128,6 +143,9 @@ class MinecraftAgentLoop(AgentLoopBase):
                 use_images=self.use_images,
                 image_view=self.image_view,
                 persistent_instance=self.persistent_minecraft,
+                task_mode=task_mode,
+                controlled_agent=controlled_agent,
+                atomic_role=atomic_role,
             )
         )
         request_id = uuid4().hex
@@ -149,14 +167,16 @@ class MinecraftAgentLoop(AgentLoopBase):
                 llm_input_frames: dict[str, str] = {}
                 agent_turns: list[dict[str, Any]] = []
                 history_meta = {
-                    "mode": "per_agent",
+                    "mode": task_mode,
+                    "controlled_agent": controlled_agent if task_mode == "single_agent" else None,
+                    "atomic_role": atomic_role if task_mode == "single_agent" else None,
                     "window_images": self.history_window_images,
                     "max_tokens": self.history_max_tokens,
                     "agents": {},
                 }
                 decision_observation = observation
 
-                for agent_name in AGENTS:
+                for agent_name in decision_agents:
                     step_base_response_ids, _, step_base_image_data = self._materialize_history(
                         agent_histories[agent_name]
                     )
@@ -246,6 +266,9 @@ class MinecraftAgentLoop(AgentLoopBase):
                     "turns_after_trim": len(transcript_turns),
                 }
 
+                if task_mode == "single_agent":
+                    teammate = "AgentB" if controlled_agent == "AgentA" else "AgentA"
+                    actions.setdefault(agent_key(teammate), self.fixed_teammate_action)
                 actions.setdefault("agent_a", "wait")
                 actions.setdefault("agent_b", "wait")
                 step_payload: dict[str, Any] = {
@@ -274,6 +297,10 @@ class MinecraftAgentLoop(AgentLoopBase):
                 flush=True,
             )
             reward_score = 0.0
+            try:
+                env.mark_failed(exc)
+            except Exception:
+                pass
             try:
                 summary = env.summary()
             except Exception:
@@ -444,21 +471,28 @@ class MinecraftAgentLoop(AgentLoopBase):
         image_omitted: bool = False,
     ) -> dict[str, Any]:
         text = format_agent_observation(observation, agent_name)
+        task_mode = str(observation.get("task_mode", "multiagent"))
+        mode_hint = "This is a single-agent atomic training rollout. " if task_mode == "single_agent" else ""
         if has_image:
             text = (
-                f"You are {agent_name}. Use the attached first-person image from YOUR own eyes. "
+                f"You are {agent_name}. {mode_hint}Use the attached first-person image from YOUR own eyes. "
                 "Focus on your assigned target object. Prefer actions that bring that target toward the center "
                 "of your view, then move toward it when it is aligned. Choose exactly one low-level action for only yourself.\n"
                 + text
             )
         elif image_omitted:
-            text = f"You are {agent_name}. Your image was omitted because the token budget was too small.\n" + text
+            text = f"You are {agent_name}. {mode_hint}Your image was omitted because the token budget was too small.\n" + text
         else:
             text = (
-                f"You are {agent_name}. Focus on your assigned target object and choose exactly one low-level action "
+                f"You are {agent_name}. {mode_hint}Focus on your assigned target object and choose exactly one low-level action "
                 "for only yourself.\n" + text
             )
-        text += '\nReturn ONLY compact JSON: {"action":"one_allowed_action","reason":"short reason"}'
+        text += (
+            '\nReturn ONLY JSON: {"action":"one_allowed_action","reason":"2-3 short sentences"}. '
+            'The reason must mention whether the target is visible, where it is relative to the center of your view, '
+            'and why the selected action is better than waiting or moving differently. '
+            'Do not use generic reasons such as press the pressure plate.'
+        )
         if has_image:
             return {"role": "user", "content": [{"type": "image"}, {"type": "text", "text": text}]}
         return {"role": "user", "content": text}
@@ -469,20 +503,29 @@ class MinecraftAgentLoop(AgentLoopBase):
         count = max(1, self.train_instance_count)
         preferred_index = (int(preferred_index) - 1) % count + 1
         candidates = [preferred_index] + [idx for idx in range(1, count + 1) if idx != preferred_index]
-        for idx in candidates:
-            lock_path = lock_dir / f"{self.train_instance_prefix}-{idx:02d}.lock"
-            handle = lock_path.open("a+")
-            try:
-                fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-            except BlockingIOError:
-                handle.close()
-                continue
-            handle.seek(0)
-            handle.truncate()
-            handle.write(f"pid={os.getpid()} preferred={preferred_index} claimed={idx}\n")
-            handle.flush()
-            return idx, handle
-        raise RuntimeError(f"no free Minecraft train instance lock among {count} instances")
+        timeout_s = float(os.environ.get("IT_TAKETWO_INSTANCE_LOCK_TIMEOUT", "600"))
+        poll_s = float(os.environ.get("IT_TAKETWO_INSTANCE_LOCK_POLL", "0.5"))
+        deadline = time.monotonic() + max(0.0, timeout_s)
+
+        while True:
+            for idx in candidates:
+                lock_path = lock_dir / f"{self.train_instance_prefix}-{idx:02d}.lock"
+                handle = lock_path.open("a+")
+                try:
+                    fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                except BlockingIOError:
+                    handle.close()
+                    continue
+                handle.seek(0)
+                handle.truncate()
+                handle.write(f"pid={os.getpid()} preferred={preferred_index} claimed={idx}\n")
+                handle.flush()
+                return idx, handle
+
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise RuntimeError(f"no free Minecraft train instance lock among {count} instances after waiting {timeout_s:.1f}s")
+            time.sleep(min(max(0.05, poll_s), remaining))
 
     def _release_instance_lock(self, handle: Any) -> None:
         if handle is None:

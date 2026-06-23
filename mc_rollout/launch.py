@@ -263,9 +263,9 @@ class InstanceRunner:
             raise RuntimeError("TickGate is not connected")
         return self.tickgate.cmd_image(f"advance_image {ticks} {render_frames}", timeout=timeout)
 
-    def close(self) -> None:
+    def close(self, force: bool = False) -> None:
         if self.puppet:
-            if not self.config.keep_running:
+            if force or not self.config.keep_running:
                 try:
                     self.puppet.send("stop", wait=True)
                 except Exception:
@@ -275,8 +275,10 @@ class InstanceRunner:
         if self.tickgate:
             self.tickgate.close()
             self.tickgate = None
-        if self.proc and not self.config.keep_running:
+        if self.proc and (force or not self.config.keep_running):
             self._terminate_process()
+        elif force:
+            self._terminate_processes_for_root()
 
     def _start_launcher(self) -> None:
         launcher = self.config.root / "launch_tickgate.sh"
@@ -361,6 +363,59 @@ class InstanceRunner:
                 os.killpg(self.proc.pid, signal.SIGKILL)
                 self.proc.wait(timeout=10)
 
+    def _terminate_processes_for_root(self) -> None:
+        """Best-effort cleanup for a reused keep-running instance."""
+        client_args = self.config.root / "run" / "launch" / "clientRunProgramArgs.txt"
+        try:
+            result = subprocess.run(
+                ["pgrep", "-f", str(client_args)],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+        except Exception:
+            return
+        pids = []
+        for raw_pid in result.stdout.split():
+            try:
+                pid = int(raw_pid)
+            except ValueError:
+                continue
+            if pid != os.getpid():
+                pids.append(pid)
+        if not pids:
+            return
+
+        process_groups: set[int] = set()
+        for pid in pids:
+            try:
+                process_groups.add(os.getpgid(pid))
+            except ProcessLookupError:
+                continue
+            except Exception:
+                try:
+                    os.kill(pid, signal.SIGTERM)
+                except Exception:
+                    pass
+
+        for pgid in process_groups:
+            try:
+                os.killpg(pgid, signal.SIGTERM)
+            except Exception:
+                pass
+        time.sleep(2.0)
+        for pgid in process_groups:
+            try:
+                os.killpg(pgid, 0)
+            except ProcessLookupError:
+                continue
+            except Exception:
+                continue
+            try:
+                os.killpg(pgid, signal.SIGKILL)
+            except Exception:
+                pass
+
 
 def _default_config_for(entry: str) -> Path:
     if entry == "lowlevel_batch":
@@ -408,6 +463,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--pov-camera-settle-ticks", type=int, default=16)
     parser.add_argument("--pov-extra-settle-ticks", type=int, default=8)
     parser.add_argument("--pov-settle-render-frames", type=int, default=10)
+    parser.add_argument("--agent-pov-mode", choices=["camera_entity", "dev_teleport"], default="camera_entity")
 
     parser.add_argument("--policy", choices=["ai", "qwen", "fixed", "random"], default="qwen")
     parser.add_argument("--api-base-url", default="http://127.0.0.1:3888/v1/")
