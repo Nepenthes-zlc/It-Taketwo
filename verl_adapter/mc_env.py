@@ -67,6 +67,35 @@ WALL_BUMP_PENALTY_PER_HIT = 0.05
 WALL_BUMP_PENALTY_CAP = -0.3
 
 
+def _step_timing_root() -> Path | None:
+    """Directory for per-step timing JSONL. Independent of the trace switch so it
+    records even when rollout-trace saving is off. Disabled only if explicitly set
+    to 0/false/off."""
+    flag = os.environ.get("IT_TAKETWO_STEP_TIMING", "1").lower()
+    if flag in {"0", "false", "no", "off"}:
+        return None
+    root_value = (
+        os.environ.get("IT_TAKETWO_STEP_TIMING_DIR")
+        or os.environ.get("IT_TAKETWO_ROLLOUT_TRACE_DIR")
+        or "runs/verl_rollouts"
+    )
+    return _resolve_project_path(root_value) / "step_timing"
+
+
+def _discarded_root() -> Path | None:
+    """Directory for the discarded-rollout JSONL. Independent of the trace switch,
+    default-on; disabled only if IT_TAKETWO_DISCARD_LOG is 0/false/off."""
+    flag = os.environ.get("IT_TAKETWO_DISCARD_LOG", "1").lower()
+    if flag in {"0", "false", "no", "off"}:
+        return None
+    root_value = (
+        os.environ.get("IT_TAKETWO_DISCARD_LOG_DIR")
+        or os.environ.get("IT_TAKETWO_ROLLOUT_TRACE_DIR")
+        or "runs/verl_rollouts"
+    )
+    return _resolve_project_path(root_value)
+
+
 @dataclass(frozen=True)
 class MinecraftEnvConfig:
     rollout_yaml: Path
@@ -219,6 +248,18 @@ class MinecraftRolloutEnv:
         self.wall_bump_penalty_total = 0.0
         self.plate_hold_steps = 0
         self.phase_timing = {"act_ticks": 0.0, "observe": 0.0, "marker": 0.0, "n_steps": 0}
+        self._observe_timing: dict[str, float] = {"pose": 0.0, "markers": 0.0, "image": 0.0}
+        self._step_timing_path = self._make_step_timing_path()
+        self._step_timing_seq = 0
+        self._consecutive_pose_fail = 0
+        self._discarded = False
+        self._discard_step: int | None = None
+        self._discard_reason: str | None = None
+        self._pose_fail_limit = int(os.environ.get("IT_TAKETWO_POSE_FAIL_LIMIT", "3"))
+        self._discard_agent = "AgentB" if "AgentB" in self.active_agents else self.controlled_agent
+        self._consecutive_slow_shot = 0
+        self._shot_slow_secs = float(os.environ.get("IT_TAKETWO_SHOT_SLOW_SECS", "15"))
+        self._shot_slow_limit = int(os.environ.get("IT_TAKETWO_SHOT_SLOW_LIMIT", "3"))
         self.last_actions: dict[str, str] = {"AgentA": "wait", "AgentB": "wait"}
         self.last_action_alignment: dict[str, Any] = {}
         self.last_reward_breakdown: dict[str, Any] = {}
@@ -386,13 +427,22 @@ class MinecraftRolloutEnv:
             }
             self._annotate_reward(observation)
             observation["done"] = self._task_done(self.markers)
+            if self._discarded:
+                observation["done"] = True
+                observation["discarded"] = True
             self.last_observation = observation
             return observation
         if self.runner is None:
             raise RuntimeError("MinecraftRolloutEnv.observe called before start")
-        poses = {agent: query_agent_pose(self.runner, agent) for agent in self.active_agents}
+        self._observe_timing = {"pose": 0.0, "markers": 0.0, "image": 0.0}
+        _t_pose = time.perf_counter()
+        poses = self._query_poses()
+        self._observe_timing["pose"] = time.perf_counter() - _t_pose
+        self._update_discard_state(poses)
         stamp = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
+        _t_marker = time.perf_counter()
         self.markers, _ = query_success_markers(self.runner, self.commands, self.task, stamp, active_agents=self.active_agents)
+        self._observe_timing["markers"] = time.perf_counter() - _t_marker
         self._augment_atomic_markers(poses)
         observation = {
             "step": self.step_index,
@@ -408,16 +458,22 @@ class MinecraftRolloutEnv:
             "markers": dict(self.markers),
             "done": self._task_done(self.markers),
         }
+        _t_image = time.perf_counter()
         image = self._capture_observation_image(poses)
+        self._observe_timing["image"] = time.perf_counter() - _t_image
         if image is not None:
             observation["image"] = image
         self._annotate_reward(observation)
         observation["done"] = self._task_done(self.markers)
+        if self._discarded:
+            observation["done"] = True
+            observation["discarded"] = True
         self.last_observation = observation
         return observation
 
     def step(self, actions: dict[str, Any]) -> dict[str, Any]:
         before_observation = self.last_observation
+        tick_dt = 0.0
         raw_action_a = actions.get("agent_a") or actions.get("AgentA") or actions.get("action_a") or "wait"
         raw_action_b = actions.get("agent_b") or actions.get("AgentB") or actions.get("action_b") or "wait"
         action_a = normalize_action(raw_action_a)
@@ -447,12 +503,25 @@ class MinecraftRolloutEnv:
             if self.runner.tickgate is not None:
                 _t_act = time.perf_counter()
                 self.runner.tickgate.cmd(f"advance_wait {self.args.action_ticks} 1", timeout=90.0)
-                self.phase_timing["act_ticks"] += time.perf_counter() - _t_act
+                tick_dt = time.perf_counter() - _t_act
+                self.phase_timing["act_ticks"] += tick_dt
         self.step_index += 1
         _t_obs = time.perf_counter()
         obs = self.observe()
-        self.phase_timing["observe"] += time.perf_counter() - _t_obs
+        obs_dt = time.perf_counter() - _t_obs
+        self.phase_timing["observe"] += obs_dt
         self.phase_timing["n_steps"] += 1
+        self._update_shot_discard_state(float(self._observe_timing.get("image", 0.0)))
+        if self._discarded:
+            obs["done"] = True
+            obs["discarded"] = True
+        gen_dt = 0.0
+        if isinstance(action_meta, dict):
+            try:
+                gen_dt = float(action_meta.get("generate_s") or 0.0)
+            except (TypeError, ValueError):
+                gen_dt = 0.0
+        self._record_step_timing(tick_dt, obs_dt, gen_dt)
         image_info = obs.get("image") if isinstance(obs.get("image"), dict) else None
         reward_breakdown = obs.get("reward_breakdown") if isinstance(obs.get("reward_breakdown"), dict) else {}
         shaped_reward = float(obs.get("reward", 0.0) or 0.0)
@@ -487,11 +556,127 @@ class MinecraftRolloutEnv:
         self._append_trace_record(record)
         return obs
 
+    def _query_poses(self) -> dict[str, Any]:
+        return {agent: query_agent_pose(self.runner, agent) for agent in self.active_agents}
+
+    @staticmethod
+    def _pose_failed(pose: Any) -> bool:
+        return not (isinstance(pose, dict) and isinstance(pose.get("pos"), list) and len(pose["pos"]) >= 3)
+
+    def _update_discard_state(self, poses: dict[str, Any]) -> None:
+        if self._discarded:
+            return
+        if self._pose_failed(poses.get(self._discard_agent)):
+            self._consecutive_pose_fail += 1
+        else:
+            self._consecutive_pose_fail = 0
+        if self._consecutive_pose_fail >= self._pose_fail_limit:
+            self._mark_discarded("pose_timeout")
+
+    def _update_shot_discard_state(self, shot_secs: float) -> None:
+        """Discard a rollout whose per-step screenshot keeps timing out. A wedged
+        render thread makes advance_image hang for tens of seconds every step,
+        dragging the whole GRPO step (it waits for the slowest rollout)."""
+        if self._discarded:
+            return
+        if shot_secs >= self._shot_slow_secs:
+            self._consecutive_slow_shot += 1
+        else:
+            self._consecutive_slow_shot = 0
+        if self._consecutive_slow_shot >= self._shot_slow_limit:
+            self._mark_discarded("screenshot_slow")
+
+    def _mark_discarded(self, reason: str) -> None:
+        self._discarded = True
+        self._discard_step = self.step_index
+        self._discard_reason = reason
+        self._record_discarded()
+
+    def was_discarded(self) -> bool:
+        return self._discarded
+
+    def _record_discarded(self) -> None:
+        root = _discarded_root()
+        if root is None:
+            return
+        try:
+            root.mkdir(parents=True, exist_ok=True)
+            record = {
+                "ts": datetime.now(timezone.utc).isoformat(),
+                "reason": self._discard_reason,
+                "task_index": int(self.config.task_index),
+                "task_id": self.task.get("id"),
+                "scene_id": self.task.get("scene_id"),
+                "instance_index": int(self.config.instance_index or 0),
+                "atomic_role": self.atomic_role,
+                "task_mode": self.task_mode,
+                "step_count": int(self.step_index),
+                "consecutive_fail_count": int(self._consecutive_pose_fail),
+                "consecutive_slow_shot": int(self._consecutive_slow_shot),
+                "pose_fail_limit": int(self._pose_fail_limit),
+                "shot_slow_secs": float(self._shot_slow_secs),
+                "shot_slow_limit": int(self._shot_slow_limit),
+                "discard_agent": self._discard_agent,
+            }
+            with (root / "discarded_rollouts.jsonl").open("a", encoding="utf-8") as fh:
+                fh.write(json.dumps(record, ensure_ascii=False) + "\n")
+        except OSError:
+            pass
+
     def _append_trace_record(self, record: dict[str, Any]) -> None:
         if self.steps_path is None:
             return
         with self.steps_path.open("a", encoding="utf-8") as file:
             file.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+    def _make_step_timing_path(self) -> Path | None:
+        if self.config.mock:
+            return None
+        root = _step_timing_root()
+        if root is None:
+            return None
+        root.mkdir(parents=True, exist_ok=True)
+        instance = int(self.config.instance_index or 0)
+        # One file per instance so offline stats can group by instance directly.
+        return root / f"instance{instance:02d}.jsonl"
+
+    def _record_step_timing(self, tick_dt: float, obs_dt: float, gen_dt: float = 0.0) -> None:
+        if self._step_timing_path is None:
+            return
+        ot = self._observe_timing
+        accounted = gen_dt + tick_dt + obs_dt
+        record = {
+            "ts": datetime.now(timezone.utc).isoformat(),
+            "instance_index": int(self.config.instance_index or 0),
+            "task_index": int(self.config.task_index),
+            "task_id": self.task.get("id"),
+            "atomic_role": self.atomic_role,
+            "step": self.step_index,
+            "seq": self._step_timing_seq,
+            "generate_s": round(gen_dt, 4),
+            "tick_advance_s": round(tick_dt, 4),
+            "observe_s": round(obs_dt, 4),
+            "pose_s": round(ot.get("pose", 0.0), 4),
+            "markers_s": round(ot.get("markers", 0.0), 4),
+            "screenshot_s": round(ot.get("image", 0.0), 4),
+            # observe minus its three sub-phases: parsing/marker-augment overhead
+            "observe_other_s": round(max(0.0, obs_dt - ot.get("pose", 0.0) - ot.get("markers", 0.0) - ot.get("image", 0.0)), 4),
+            "total_s": round(accounted, 4),
+        }
+        self._step_timing_seq += 1
+        self.phase_timing["generate"] = self.phase_timing.get("generate", 0.0) + gen_dt
+        self.phase_timing["pose"] = self.phase_timing.get("pose", 0.0) + ot.get("pose", 0.0)
+        self.phase_timing["markers"] = self.phase_timing.get("markers", 0.0) + ot.get("markers", 0.0)
+        self.phase_timing["screenshot"] = self.phase_timing.get("screenshot", 0.0) + ot.get("image", 0.0)
+        self.phase_timing["step_max_s"] = max(self.phase_timing.get("step_max_s", 0.0), accounted)
+        self.phase_timing["tick_max_s"] = max(self.phase_timing.get("tick_max_s", 0.0), tick_dt)
+        self.phase_timing["generate_max_s"] = max(self.phase_timing.get("generate_max_s", 0.0), gen_dt)
+        self.phase_timing["screenshot_max_s"] = max(self.phase_timing.get("screenshot_max_s", 0.0), ot.get("image", 0.0))
+        try:
+            with self._step_timing_path.open("a", encoding="utf-8") as file:
+                file.write(json.dumps(record, ensure_ascii=False) + "\n")
+        except OSError:
+            pass
 
     def _annotate_reward(self, observation: dict[str, Any]) -> None:
         self._update_atomic_state(observation)
@@ -577,19 +762,19 @@ class MinecraftRolloutEnv:
             elif is_elevator_door_role(self.atomic_role):
                 door_reward = 1.0 if markers.get("agent_b_within_elevator_door_1") else 0.0
                 binary_reward = door_reward
-                # Dense shaping: distance progress toward the door (capped 0.5), so
-                # the agent gets credit for approaching before it reaches the door.
+                # Pure terminal reward: ONLY entering the door pays off (1.0), no
+                # distance-progress shaping. Distance progress is still computed for
+                # traces but excluded from the shaped reward.
                 agent_b_door_progress = progress_ratio(
                     self.initial_goal_distances.get("agent_b_to_elevator_door"),
                     distances.get("agent_b_to_elevator_door"),
                 )
-                progress_reward = round(min(0.5, 0.5 * float(agent_b_door_progress)), 4)
-                marker_reward = max(door_reward, progress_reward)
+                progress_reward = 0.0
+                marker_reward = door_reward
                 plate_reward = 0.0
                 pass_reward = door_reward
                 look_reward = 0.0
                 marker_weights = {
-                    "agent_b_door_distance_progress_max": 0.5,
                     "agent_b_within_elevator_door_1": 1.0,
                 }
             else:
@@ -677,6 +862,9 @@ class MinecraftRolloutEnv:
             "markers": dict(self.markers),
             "active_agents": list(self.active_agents),
             "phase_timing": dict(self.phase_timing),
+            "discarded": self._discarded,
+            "discard_step": self._discard_step,
+            "consecutive_pose_fail": self._consecutive_pose_fail,
             "atomic_state": {
                 "plate_hold_steps": self.plate_hold_steps,
                 "plate_bonus_steps": 0,
@@ -973,40 +1161,40 @@ def format_agent_observation(observation: dict[str, Any], agent_name: str) -> st
     atomic_role = str(observation.get("atomic_role") or "")
     if task_mode == "single_agent":
         if agent_name == "AgentA":
-            role_goal = "Your task is to navigate to the 3x3 floor pressure-plate region and step onto any tile in it."
+            role_goal = "Your task is to find the pressure plate and step onto it, using only what you see."
             visual_focus = (
-                "The 3x3 pressure-plate region is on the floor. Keep the region near the center of your view while you navigate toward it. "
-                "Use look_up/look_down only for brief pitch corrections, not as a repeated search action. "
-                "Use turn_left/turn_right to center the pressure-plate region and move forward when it is aligned."
+                "The pressure plate is the colored region on the floor. Keep it near the center of your view while you "
+                "navigate toward it. Use look_up/look_down only for brief pitch corrections, not as a repeated search action. "
+                "Use turn_left/turn_right to center the pressure plate and move forward when it is aligned."
             )
         else:
-            role_goal = "Your task is to navigate close to the elevator door target and stop within 1 block of it."
+            role_goal = "Your task is to find the elevator door and walk into it, using only what you see."
             visual_focus = (
-                "Focus on the elevator door target. If it is not near the center of your view, use turn_left/turn_right "
-                "to bring it toward the center before moving forward. Stop fine-adjusting once you are within 1 block."
+                "Focus on the elevator door. If it is not near the center of your view, use turn_left/turn_right "
+                "to bring it toward the center before moving forward. Walk into the doorway once it is aligned."
             )
     elif agent_name == "AgentA":
-        role_goal = "You are AgentA. Your job is to reach the 3x3 floor pressure-plate region and step onto any tile in it."
+        role_goal = "You are AgentA. Your job is to find the pressure plate and step onto it, using only what you see."
         visual_focus = (
-            "The 3x3 pressure-plate region is on the floor. Keep the region near the center of your view while you navigate toward it. "
+            "The pressure plate is the colored region on the floor. Keep it near the center of your view while you navigate toward it. "
             "Use look_up/look_down only for brief pitch corrections, not as a repeated search action. "
-            "Use turn_left/turn_right to center the pressure-plate region and move forward when it is aligned."
+            "Use turn_left/turn_right to center the pressure plate and move forward when it is aligned."
         )
     else:
-        role_goal = "You are AgentB. Your job is to approach the elevator door target; you do not need to enter the room."
+        role_goal = "You are AgentB. Your job is to find the elevator door and walk into it, using only what you see."
         visual_focus = (
-            "Focus on the elevator door target. If it is not near the center of your view, use turn_left/turn_right "
-            "to bring it toward the center before moving forward. Stop fine-adjusting once you are within 1 block."
+            "Focus on the elevator door. If it is not near the center of your view, use turn_left/turn_right "
+            "to bring it toward the center before moving forward."
         )
     raw_markers = observation.get("markers") if isinstance(observation.get("markers"), dict) else {}
     if task_mode == "single_agent" and agent_name == "AgentA":
-        display_task = "Navigate to the 3x3 floor pressure-plate region and step onto any tile in it."
+        display_task = "Find the pressure plate and step onto it, using only what you see."
         display_agent = "self"
         display_markers = {"pressure_plate_powered": raw_markers.get("pressure_plate_powered")}
         display_active_agents = None
         display_atomic_role = None
     elif task_mode == "single_agent":
-        display_task = "Navigate close to the elevator door target and stop within 1 block."
+        display_task = "Find the elevator door and walk into it, using only what you see."
         display_agent = "self"
         display_markers = {"within_elevator_door_1": raw_markers.get("agent_b_within_elevator_door_1")}
         display_active_agents = None
@@ -1025,15 +1213,17 @@ def format_agent_observation(observation: dict[str, Any], agent_name: str) -> st
         "task_mode": task_mode,
         "atomic_role": display_atomic_role,
         "active_agents": display_active_agents,
-        "targets": observation.get("targets"),
+        "scene_colors": {
+            "walls_floor_ceiling": "white",
+            "pressure_plate": "red",
+            "elevator_door": "black",
+        },
         "your_role": role_goal,
         "visual_focus_instruction": visual_focus,
-        "your_pose": _compact_pose(poses.get(agent_name), include_agent=task_mode != "single_agent"),
-        "teammate_pose": _compact_pose(poses.get(teammate)) if teammate is not None else None,
         "markers": display_markers,
         "atomic_state": observation.get("atomic_state"),
         "done": observation.get("done"),
         "allowed_actions": ALLOWED_ACTIONS,
-        "required_output": {"action": "one_allowed_action", "reason": "detailed_reason_with_visual_evidence_target_position_teammate_state_and_action_rationale"},
+        "required_output": {"action": "one_allowed_action", "reason": "detailed_reason_with_visual_evidence_and_action_rationale"},
     }
     return "Minecraft first-person agent observation JSON:\n" + json.dumps(compact, ensure_ascii=False, separators=(",", ":"))

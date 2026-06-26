@@ -4,7 +4,7 @@
   _target_: verl_adapter.minecraft_agent_loop.MinecraftAgentLoop
   rollout_yaml: yaml/lowlevel_train_episode.yaml
   max_steps: 20
-  max_action_tokens: 64
+  max_action_tokens: 160
   history_window_images: 3
   history_max_tokens: 3072
   mock_env: false

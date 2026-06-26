@@ -40,6 +40,7 @@ args:
   pov_camera_settle_ticks: 16
   pov_extra_settle_ticks: 8
   pov_settle_render_frames: 10
+  agent_pov_mode: camera_entity
   fps: 2
   write_video: false
   fail_on_video_error: false

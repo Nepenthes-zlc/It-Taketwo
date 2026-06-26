@@ -1,0 +1,382 @@
+[
+  {
+    "id": "elevator_contrast10_room_01",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 1: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      13,
+      6,
+      15
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      5,
+      5
+    ],
+    "door_width": 4,
+    "door_height": 4,
+    "door_lateral_offset": 2,
+    "plate_offset": 3,
+    "plate_lateral_offset": 0,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_02",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 2: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      15,
+      7,
+      17
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      3,
+      3
+    ],
+    "door_width": 3,
+    "door_height": 4,
+    "door_lateral_offset": -2,
+    "plate_offset": 5,
+    "plate_lateral_offset": 2,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_03",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 3: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      17,
+      6,
+      19
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      4,
+      3
+    ],
+    "door_width": 3,
+    "door_height": 3,
+    "door_lateral_offset": 4,
+    "plate_offset": 2,
+    "plate_lateral_offset": 5,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_04",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 4: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      14,
+      8,
+      16
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      5,
+      5
+    ],
+    "door_width": 3,
+    "door_height": 3,
+    "door_lateral_offset": 0,
+    "plate_offset": 5,
+    "plate_lateral_offset": -1,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_05",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 5: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      18,
+      7,
+      18
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      5,
+      4
+    ],
+    "door_width": 4,
+    "door_height": 4,
+    "door_lateral_offset": -4,
+    "plate_offset": 2,
+    "plate_lateral_offset": 3,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_06",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 6: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      16,
+      6,
+      20
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      3,
+      4
+    ],
+    "door_width": 4,
+    "door_height": 4,
+    "door_lateral_offset": -3,
+    "plate_offset": 3,
+    "plate_lateral_offset": -1,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_07",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 7: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      19,
+      8,
+      17
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      5,
+      4
+    ],
+    "door_width": 2,
+    "door_height": 5,
+    "door_lateral_offset": 1,
+    "plate_offset": 3,
+    "plate_lateral_offset": -5,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_08",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 8: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      15,
+      6,
+      19
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      4,
+      4
+    ],
+    "door_width": 4,
+    "door_height": 3,
+    "door_lateral_offset": -1,
+    "plate_offset": 3,
+    "plate_lateral_offset": 2,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_09",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 9: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      17,
+      8,
+      15
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      3,
+      5
+    ],
+    "door_width": 3,
+    "door_height": 3,
+    "door_lateral_offset": -2,
+    "plate_offset": 4,
+    "plate_lateral_offset": -3,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  },
+  {
+    "id": "elevator_contrast10_room_10",
+    "task_template": "elevator_hold_door",
+    "notes": "High-contrast randomized room 10: distinct room palette, randomized bounded elevator door size/offset and pressure plate position.",
+    "origin": [
+      0,
+      -59,
+      0
+    ],
+    "room_size": [
+      18,
+      6,
+      16
+    ],
+    "divider_axis": "z",
+    "floor_block": "minecraft:white_concrete",
+    "wall_block": "minecraft:white_concrete",
+    "ceiling_block": "minecraft:white_concrete",
+    "divider_block": "minecraft:white_concrete",
+    "elevator_block": "minecraft:black_concrete",
+    "plate_pad_block": "minecraft:red_concrete",
+    "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+    "pressure_plate_active_state": "powered=true",
+    "ceiling_light_block": "minecraft:glowstone",
+    "ceiling_spotlight_block": "minecraft:glowstone",
+    "ceiling_light_mode": "inner_ring_spotlight",
+    "ceiling_light_size": [
+      3,
+      3
+    ],
+    "door_width": 4,
+    "door_height": 4,
+    "door_lateral_offset": 0,
+    "plate_offset": 5,
+    "plate_lateral_offset": -6,
+    "preserve_materials": true,
+    "auto_contrast_materials": false
+  }
+]

@@ -162,6 +162,7 @@ class MinecraftAgentLoop(AgentLoopBase):
                 if observation.get("done"):
                     break
 
+                gen_before = float(metrics["generate_sequences"])
                 actions: dict[str, str] = {}
                 agent_decisions: dict[str, Any] = {}
                 llm_input_frames: dict[str, str] = {}
@@ -278,6 +279,7 @@ class MinecraftAgentLoop(AgentLoopBase):
                         "agent_decisions": agent_decisions,
                         "llm_input_frames": llm_input_frames,
                         "history": history_meta,
+                        "generate_s": float(metrics["generate_sequences"]) - gen_before,
                     },
                 }
                 with simple_timer("tool_calls", metrics):
@@ -334,6 +336,10 @@ class MinecraftAgentLoop(AgentLoopBase):
 
         metrics["image_count"] = len(image_data or [])
         multi_modal_data = {"images": image_data} if image_data else None
+        try:
+            discarded = bool(env.was_discarded())
+        except Exception:
+            discarded = False
         return AgentLoopOutput(
             prompt_ids=prompt_ids,
             response_ids=response_ids,
@@ -347,6 +353,7 @@ class MinecraftAgentLoop(AgentLoopBase):
                 "turn_scores": turn_scores,
                 "tool_rewards": tool_rewards,
                 "minecraft_summary": summary,
+                "discarded": discarded,
             },
         )
 

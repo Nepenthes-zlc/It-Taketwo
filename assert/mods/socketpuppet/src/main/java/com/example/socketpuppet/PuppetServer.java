@@ -25,7 +25,7 @@ public class PuppetServer {
             "get_block", "query_block", "get_hand", "query_hand", "clear_inv", "clear_inventory",
             "f1", "f2", "screenshot", "aim", "grab", "get_sight", "get_reachable",
             "query_entity", "get_entity",
-            "agent", "gamemode", "camera", "pov", "camera_entity");
+            "agent", "gamemode", "camera", "pov", "camera_entity", "hud");
 
     private static String normalizeAgentName(String name) {
         if (name == null || name.isEmpty()) return "default";
@@ -236,6 +236,16 @@ public class PuppetServer {
                         applyTurnRelative(dy, dp, turnDuration);
                     } catch (Exception ignored) {}
                 }
+                break;
+            case "hud":
+                // hud on|off|toggle — show/hide the "[Puppet] ..." action-bar overlay (off by default)
+                if (parts.length >= 2) {
+                    String v = parts[1].toLowerCase();
+                    if (v.equals("on") || v.equals("1") || v.equals("true")) SocketPuppet.showStatusOverlay = true;
+                    else if (v.equals("off") || v.equals("0") || v.equals("false")) SocketPuppet.showStatusOverlay = false;
+                    else if (v.equals("toggle")) SocketPuppet.showStatusOverlay = !SocketPuppet.showStatusOverlay;
+                }
+                if (writer != null) writer.println("SUCCESS: hud overlay " + (SocketPuppet.showStatusOverlay ? "on" : "off"));
                 break;
             case "stop":
                 applyStop();

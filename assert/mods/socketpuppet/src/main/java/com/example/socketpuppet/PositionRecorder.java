@@ -13,8 +13,8 @@ import java.time.format.DateTimeFormatter;
 
 public class PositionRecorder {
     private static final Logger LOGGER = SocketPuppet.LOGGER;
-    private static boolean isRecording = false;
-    private static BufferedWriter writer;
+    private static volatile boolean isRecording = false;
+    private static volatile BufferedWriter writer;
     private static File baseDir;
     
     // 初始化基础目录
@@ -69,29 +69,33 @@ public class PositionRecorder {
     }
 
     public static void recordTick(Minecraft mc) {
-        if (!isRecording || mc.player == null || writer == null) return;
+        // Snapshot the writer reference: stopRecording() may null the field from
+        // another thread between this check and the writes below, which previously
+        // crashed the client with an NPE during episode resets.
+        BufferedWriter w = writer;
+        if (!isRecording || mc.player == null || w == null) return;
 
         try {
             double x = mc.player.getX();
             double y = mc.player.getY();
             double z = mc.player.getZ();
-            
+
             // 规范化 Yaw 到 -180 到 180 (Minecraft F3 默认显示)
             float yRot = mc.player.getYRot() % 360.0f;
             if (yRot > 180.0f) yRot -= 360.0f;
             if (yRot < -180.0f) yRot += 360.0f;
-            
+
             float xRot = mc.player.getXRot();
 
             String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss.SSS"));
 
             // 格式: timestamp, x, y, z, yaw, pitch
-            String line = String.format("%s,%.3f,%.3f,%.3f,%.3f,%.3f", 
+            String line = String.format("%s,%.3f,%.3f,%.3f,%.3f,%.3f",
                     time, x, y, z, yRot, xRot);
-            
-            writer.write(line);
-            writer.newLine();
-            writer.flush();
+
+            w.write(line);
+            w.newLine();
+            w.flush();
         } catch (IOException e) {
             LOGGER.error("Error writing position", e);
             stopRecording();

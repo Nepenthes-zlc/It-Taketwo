@@ -69,7 +69,17 @@ PYCONFIG
 eval "${CONFIG_EXPORTS}"
 
 : "${EXPERIMENT_NAME:?EXPERIMENT_NAME is required}"
-export IT_TAKETWO_ROLLOUT_TRACE_DIR=${IT_TAKETWO_ROLLOUT_TRACE_DIR:-${ROOT_DIR}/runs/verl_rollouts/${EXPERIMENT_NAME}}
+TASK_MODE=${TASK_MODE:-${IT_TAKETWO_TASK_MODE:-multiagent}}
+case "${TASK_MODE}" in
+  multiagent|multi_agent|multi) TASK_MODE=multiagent ;;
+  single_agent|singleagent|single|atomic) TASK_MODE=single_agent ;;
+  *) echo "unsupported TASK_MODE: ${TASK_MODE}" >&2; exit 2 ;;
+esac
+RUN_GROUP=${RUN_GROUP:-${TASK_MODE}}
+export TASK_MODE RUN_GROUP
+export IT_TAKETWO_TASK_MODE=${IT_TAKETWO_TASK_MODE:-${TASK_MODE}}
+export SINGLE_AGENT_ATOMIC_AGENTS=${SINGLE_AGENT_ATOMIC_AGENTS:-AgentA}
+export IT_TAKETWO_ROLLOUT_TRACE_DIR=${IT_TAKETWO_ROLLOUT_TRACE_DIR:-${ROOT_DIR}/runs/${RUN_GROUP}/verl_rollouts/${EXPERIMENT_NAME}}
 RUN_CONFIG_DIR="${IT_TAKETWO_ROLLOUT_TRACE_DIR}/run_config"
 mkdir -p "${RUN_CONFIG_DIR}"
 
@@ -159,6 +169,13 @@ for item in snapshot_files:
 
 keys = [
     "EXPERIMENT_NAME",
+    "TASK_MODE",
+    "RUN_GROUP",
+    "IT_TAKETWO_TASK_MODE",
+    "SINGLE_AGENT_ATOMIC_AGENTS",
+    "SINGLE_AGENT_DEFAULT",
+    "FIXED_TEAMMATE_ACTION",
+    "PROJECT_NAME",
     "MODEL_PATH",
     "DATA_DIR",
     "TRAIN_SIZE",

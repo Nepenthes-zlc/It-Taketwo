@@ -4,6 +4,7 @@ import base64
 import io
 import json
 import math
+import os
 import shutil
 import subprocess
 import time
@@ -116,7 +117,8 @@ def query_agent_pose(runner: Any, agent: str) -> dict[str, Any]:
     if runner.tickgate is not None:
         runner.tickgate.cmd("advance_wait 3 1", timeout=30.0)
     chunks: list[str] = []
-    deadline = time.monotonic() + 10.0
+    pose_timeout = float(os.environ.get("IT_TAKETWO_POSE_QUERY_TIMEOUT", "10.0"))
+    deadline = time.monotonic() + pose_timeout
     while time.monotonic() < deadline:
         try:
             data = runner.puppet.sock.recv(4096)

@@ -125,12 +125,9 @@ if ! command -v vglrun >/dev/null 2>&1; then
   exit 1
 fi
 
-echo "[TickGateRuntime] launching with xvfb-run + NVIDIA GLX offload (GPU render, device=$DEVICE)"
-# GPU rendering without VirtualGL's per-call IPC: Xvfb provides the X window/protocol,
-# while __GLX_VENDOR_LIBRARY_NAME=nvidia routes GLX straight to the A100 driver
-# (in-process, no round-trip). Optionally pin a specific GPU via __NV_PRIME_RENDER_OFFLOAD.
-exec xvfb-run -a bash -c '
-  export __GLX_VENDOR_LIBRARY_NAME=nvidia
-  export __NV_PRIME_RENDER_OFFLOAD=1
-  cd "$1" && exec java @"$2" @"$3"
-' _ "$RUN_DIR" "$VM_ARGS_TMP" "$PROGRAM_ARGS"
+echo "[TickGateRuntime] launching with xvfb-run + vglrun -d $DEVICE (GPU render, EGL device pinned)"
+# Xvfb provides the X display GLFW needs to create its window; vglrun -d egl<N> then
+# redirects the actual 3D rendering to the Nth EGL device (= Nth physical GPU). This
+# split is what spreads load across all cards: plain __NV_PRIME_RENDER_OFFLOAD ignores
+# the device index and pins every instance to GPU 0.
+exec xvfb-run -a bash -c 'cd "$1" && exec vglrun -d "$2" java @"$3" @"$4"' _ "$RUN_DIR" "$DEVICE" "$VM_ARGS_TMP" "$PROGRAM_ARGS"

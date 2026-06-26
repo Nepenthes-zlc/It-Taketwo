@@ -43,14 +43,16 @@ BLOCK_RGB = {
 }
 
 HIGH_CONTRAST_ELEVATOR_PALETTES = [
-    # Uniform light shell (floor + walls + divider + ceiling) with DARK targets
-    # (elevator door + pressure-plate region) so the goal pops in the agent POV.
+    # Uniform light shell (floor + walls + divider + ceiling) with TWO distinct,
+    # mutually-different target colors: a BLACK elevator door and a RED pressure
+    # plate. All three groups (shell / door / plate) are different colors so the
+    # door and plate are individually distinguishable in the agent POV.
     {
         "floor_block": "minecraft:white_concrete",
         "wall_block": "minecraft:white_concrete",
         "divider_block": "minecraft:white_concrete",
         "ceiling_block": "minecraft:white_concrete",
-        "plate_pad_block": "minecraft:black_concrete",
+        "plate_pad_block": "minecraft:red_concrete",
         "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
         "elevator_block": "minecraft:black_concrete",
     },

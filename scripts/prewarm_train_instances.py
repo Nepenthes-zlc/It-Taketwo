@@ -16,9 +16,49 @@ if str(PROJECT_ROOT) not in sys.path:
 if str(MC_ROLLOUT_DIR) not in sys.path:
     sys.path.insert(0, str(MC_ROLLOUT_DIR))
 
-from game_functions import datapack_dst, ensure_datapack  # noqa: E402
+from game_functions import datapack_dst, ensure_datapack, game_cmd  # noqa: E402
 from launch import DEFAULT_LOG_DIR, DEFAULT_PACK_SRC, InstanceRunner, load_instance_config, tcp_ready  # noqa: E402
 from verl_adapter.mc_env import training_instance_config  # noqa: E402
+
+
+# World-level gamerules applied once after prewarm; they persist for the whole run
+# (a per-rollout scene reload does not reset gamerules). Killing non-player entities
+# is a one-shot cleanup that stays clean because doMobSpawning is disabled.
+POST_PREWARM_COMMANDS = [
+    "gamerule doMobLoot false",
+    "gamerule doTileDrops false",
+    "gamerule doMobSpawning false",
+    "kill @e[type=!player]",  # keep AgentA/AgentB/Dev (all players); remove mobs, items, etc.
+]
+
+
+def apply_post_prewarm_setup(instance_config: Any, log_root: Path) -> bool:
+    """Connect to an already-ready instance and apply persistent gamerules plus a
+    one-shot non-player-entity cleanup. Best-effort: failures are logged, not fatal.
+
+    Gated off by default: the attach+command path can time out on instances that are
+    still busy right after prewarm, leaving them in a wedged state that stalls training.
+    Enable with IT_TAKETWO_POST_PREWARM=1 only once it's made robust."""
+    import os
+    if os.environ.get("IT_TAKETWO_POST_PREWARM", "0").lower() not in {"1", "true", "yes", "on"}:
+        return False
+    runner = InstanceRunner(instance_config, log_root)
+    try:
+        runner.start()  # keep_running=True + tcp_ready => attaches without relaunch
+        for cmd in POST_PREWARM_COMMANDS:
+            game_cmd(runner, cmd, 5)
+        return True
+    except BaseException as exc:  # noqa: BLE001
+        print(
+            f"post-prewarm setup failed instance={instance_config.name}: {type(exc).__name__}: {exc}",
+            flush=True,
+        )
+        return False
+    finally:
+        try:
+            runner.close()  # keep_running=True => leaves the Minecraft process alive
+        except BaseException:  # noqa: BLE001
+            pass
 
 
 def resolve_project_path(value: str | Path | None) -> Path | None:
@@ -82,6 +122,7 @@ def prewarm_one(args: argparse.Namespace, index: int) -> dict[str, Any]:
     for attempt in range(1, attempts + 1):
         if persistent_instance_ready(instance_config):
             log_path = latest_launch_log(log_root, instance_config.name)
+            apply_post_prewarm_setup(instance_config, log_root)
             return {
                 "index": index,
                 "name": instance_config.name,
@@ -100,6 +141,7 @@ def prewarm_one(args: argparse.Namespace, index: int) -> dict[str, Any]:
                     raise RuntimeError(f"Minecraft exited early with code {runner.proc.returncode}; log={runner.log_path}")
                 if persistent_instance_ready(instance_config):
                     log_path = runner.log_path or latest_launch_log(log_root, instance_config.name)
+                    apply_post_prewarm_setup(instance_config, log_root)
                     return {
                         "index": index,
                         "name": instance_config.name,

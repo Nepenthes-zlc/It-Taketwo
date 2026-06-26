@@ -41,6 +41,9 @@ public class SocketPuppet {
     /** 当前操作的代理/假人名称："default" 表示本地玩家；其它名字为命名假人（当前通过 /execute 控制，接入假人模组后可解析为实体，与玩家共用同一套 apply 逻辑） */
     public static volatile String currentAgentName = "default";
     public static volatile String currentAction = "Waiting...";
+    /** Show the "[Puppet] (...) ..." action-bar overlay in the client view. OFF by default
+     *  so it does not pollute captured POV images. Toggle at runtime with the "hud on|off" command. */
+    public static volatile boolean showStatusOverlay = false;
 
     // 移动控制
     public static volatile float targetForward = 0.0f;
@@ -822,7 +825,7 @@ public class SocketPuppet {
             PositionRecorder.recordTick(mc);
         }
 
-        if (!status.isEmpty()) {
+        if (showStatusOverlay && !status.isEmpty()) {
             mc.player.displayClientMessage(Component.literal(status), true);
         }
     }

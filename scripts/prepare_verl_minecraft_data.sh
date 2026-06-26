@@ -24,5 +24,7 @@ fi
   --val-size "${VAL_SIZE:-1}" \
   --seed "${SEED:-20260609}" \
   --train-instance-count "${TRAIN_INSTANCE_COUNT:-4}" \
+  --task-mode "${TASK_MODE:-multiagent}" \
+  --atomic-agents "${SINGLE_AGENT_ATOMIC_AGENTS:-AgentA}" \
   "${SHUFFLE_ARGS[@]}" \
   "$@"

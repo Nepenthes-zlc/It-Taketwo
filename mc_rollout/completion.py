@@ -1,10 +1,8 @@
 from __future__ import annotations
 
-import time
-from pathlib import Path
 from typing import Any
 
-from game_functions import agent_in_elevator_door_target, agent_on_pressure_plate, game_cmd, query_agent_pose
+from game_functions import agent_in_elevator_door_target, agent_on_pressure_plate, query_agent_pose
 
 PRESSURE_PLATE_BLOCKS = (
     "minecraft:stone_pressure_plate",
@@ -68,28 +66,28 @@ def query_success_markers(
     stamp: str,
     active_agents: tuple[str, ...] | list[str] | None = None,
 ) -> tuple[dict[str, bool], str]:
-    player_a = task["players"]["player_a"]
-    plate_positions = pressure_plate_positions(task)
-    region = task["players"]["player_b"]["goal"]["target_region"]
-    marker_plate = f"LOWLEVEL_TASK{task['id']}_PLATE_OK_{stamp}"
-    marker_done = f"LOWLEVEL_TASK{task['id']}_DONE_{stamp}"
-    for plate in plate_positions:
-        for block in pressure_plate_blocks(task):
-            game_cmd(
-                runner,
-                f"execute if block {int(plate[0])} {int(plate[1])} {int(plate[2])} {block}[powered=true] run say {marker_plate}",
-                5,
-                commands=commands,
-            )
-    game_cmd(runner, f"execute if block {region[0]} {region[1]} {region[2]} minecraft:air run say {marker_done}", 5, commands=commands)
+    """Success markers from agent geometry only.
+
+    Pure pose-based checks: no ``execute if block`` game commands, no tick
+    advances, no log scraping. Each active agent's own target is evaluated
+    (AgentA -> pressure plate, AgentB -> elevator door); the other is skipped
+    when a single agent is being trained.
+    """
     active = set(active_agents or ("AgentA", "AgentB"))
-    agent_a_pose = query_agent_pose(runner, "AgentA") if "AgentA" in active else {"agent": "AgentA", "error": "inactive"}
-    agent_b_pose = query_agent_pose(runner, "AgentB") if "AgentB" in active else {"agent": "AgentB", "error": "inactive"}
-    time.sleep(0.2)
-    log_text = Path(runner.log_path).read_text(encoding="utf-8", errors="ignore") if runner.log_path else ""
-    plate_powered = marker_plate in log_text or agent_on_pressure_plate(task, agent_a_pose)
+    task_mode = task.get("task_mode") or ("single_agent" if len(active) == 1 else "multiagent")
+
+    plate_powered = False
+    if "AgentA" in active:
+        agent_a_pose = query_agent_pose(runner, "AgentA")
+        plate_powered = agent_on_pressure_plate(task, agent_a_pose)
+
+    door_reached = False
+    if "AgentB" in active:
+        agent_b_pose = query_agent_pose(runner, "AgentB")
+        door_reached = agent_in_elevator_door_target(task, agent_b_pose, task_mode)
+
     return {
         "pressure_plate_powered": plate_powered,
-        "agent_b_fully_in_second_room": agent_in_elevator_door_target(task, agent_b_pose, task.get("task_mode") or "multiagent"),
-        "door_block_air": marker_done in log_text,
-    }, log_text
+        "agent_b_fully_in_second_room": door_reached,
+        "door_block_air": door_reached,
+    }, ""
