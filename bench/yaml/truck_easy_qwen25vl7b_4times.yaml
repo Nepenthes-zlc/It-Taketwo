@@ -1,0 +1,55 @@
+name: truck_easy_qwen25vl7b_4times
+session: truck_easy_qwen25vl7b_4times
+output_root: bench/runs
+python: /home/azvm/miniconda3/envs/verl/bin/python
+
+model:
+  name: qwen2.5-vl-7b
+  provider: openai_compatible
+  api_base_url: http://127.0.0.1:3888/v1
+  api_key: EMPTY
+
+server:
+  enabled: true
+  model_path: /local_nvme/guanyiming/models/Qwen/Qwen2.5-VL-7B-Instruct
+  cuda_visible_devices: "0,1,2,3"
+  host: 127.0.0.1
+  port: 3888
+  args:
+    - --dtype
+    - bfloat16
+    - --gpu-memory-utilization
+    - "0.60"
+    - --data-parallel-size
+    - "4"
+    - --max-model-len
+    - "8192"
+    - --max-num-seqs
+    - "32"
+    - --limit-mm-per-prompt
+    - '{"image":1}'
+    - --disable-log-requests
+
+env:
+  IT_TAKETWO_EGL_DEVICES: egl0,egl1,egl2,egl3
+
+runner:
+  tasks: bench/data/final_data/truck/generated_tasks.json
+  pack_src: bench/data/final_data/truck/datapacks/truck_scene_pack
+  bench_mode: duo-parallel
+  rollout_n: 4
+  chunks: 1
+  instance_count: 16
+  workers: 16
+  max_steps: 32
+  episode_timeout: 1200
+  capture_timeout: 30
+  shot_slow_secs: 25
+  prewarm_parallel: 16
+  prewarm_each_chunk: false
+  cleanup_after: true
+  save_trace: true
+
+phases:
+  - name: easy
+    task_indices: 0-33

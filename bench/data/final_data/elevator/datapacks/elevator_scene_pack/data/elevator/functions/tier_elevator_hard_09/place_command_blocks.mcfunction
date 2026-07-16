@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_elevator_hard_09
+setblock 842 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 852 -58 6 minecraft:mangrove_pressure_plate[powered=true] run fill 850 -58 12 850 -56 12 minecraft:air"}
+setblock 843 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 852 -58 7 minecraft:mangrove_pressure_plate[powered=true] run fill 850 -58 12 850 -56 12 minecraft:air"}
+setblock 844 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 853 -58 6 minecraft:mangrove_pressure_plate[powered=true] run fill 850 -58 12 850 -56 12 minecraft:air"}
+setblock 845 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 853 -58 7 minecraft:mangrove_pressure_plate[powered=true] run fill 850 -58 12 850 -56 12 minecraft:air"}
+setblock 846 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 852 -58 6 minecraft:mangrove_pressure_plate[powered=true] unless block 852 -58 7 minecraft:mangrove_pressure_plate[powered=true] unless block 853 -58 6 minecraft:mangrove_pressure_plate[powered=true] unless block 853 -58 7 minecraft:mangrove_pressure_plate[powered=true] run fill 850 -58 12 850 -56 12 minecraft:green_concrete"}

@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_path_hard_08
+setblock 1711 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1721 -57 8 minecraft:dark_oak_pressure_plate[powered=true] run fill 1720 -58 12 1721 -58 18 minecraft:orange_concrete"}
+setblock 1712 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1721 -57 9 minecraft:dark_oak_pressure_plate[powered=true] run fill 1720 -58 12 1721 -58 18 minecraft:orange_concrete"}
+setblock 1713 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1722 -57 8 minecraft:dark_oak_pressure_plate[powered=true] run fill 1720 -58 12 1721 -58 18 minecraft:orange_concrete"}
+setblock 1714 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1722 -57 9 minecraft:dark_oak_pressure_plate[powered=true] run fill 1720 -58 12 1721 -58 18 minecraft:orange_concrete"}
+setblock 1715 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 1721 -57 8 minecraft:dark_oak_pressure_plate[powered=true] unless block 1721 -57 9 minecraft:dark_oak_pressure_plate[powered=true] unless block 1722 -57 8 minecraft:dark_oak_pressure_plate[powered=true] unless block 1722 -57 9 minecraft:dark_oak_pressure_plate[powered=true] run fill 1720 -58 12 1721 -58 18 minecraft:air"}

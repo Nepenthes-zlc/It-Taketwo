@@ -27,3 +27,9 @@ __pycache__/
 **/run/saves/**/session.lock
 # Generated VERL parquet data
 /data/verl_minecraft/*.parquet
+# Benchmark runtime outputs and local artifacts
+/bench/runs/
+/bench/portable/dist/*.tar.zst
+/bench/data/backups/
+/bench/*.bak.*
+/bench/.watchdog_stage

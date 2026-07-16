@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_elevator_hard_10
+setblock 871 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 879 -58 4 minecraft:cherry_pressure_plate[powered=true] run fill 881 -58 11 881 -56 11 minecraft:air"}
+setblock 872 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 879 -58 5 minecraft:cherry_pressure_plate[powered=true] run fill 881 -58 11 881 -56 11 minecraft:air"}
+setblock 873 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 880 -58 4 minecraft:cherry_pressure_plate[powered=true] run fill 881 -58 11 881 -56 11 minecraft:air"}
+setblock 874 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 880 -58 5 minecraft:cherry_pressure_plate[powered=true] run fill 881 -58 11 881 -56 11 minecraft:air"}
+setblock 875 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 879 -58 4 minecraft:cherry_pressure_plate[powered=true] unless block 879 -58 5 minecraft:cherry_pressure_plate[powered=true] unless block 880 -58 4 minecraft:cherry_pressure_plate[powered=true] unless block 880 -58 5 minecraft:cherry_pressure_plate[powered=true] run fill 881 -58 11 881 -56 11 minecraft:pink_concrete"}

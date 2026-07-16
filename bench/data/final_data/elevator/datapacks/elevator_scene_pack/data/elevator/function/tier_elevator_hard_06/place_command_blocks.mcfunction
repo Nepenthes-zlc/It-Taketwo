@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_elevator_hard_06
+setblock 752 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 761 -58 4 minecraft:jungle_pressure_plate[powered=true] run fill 760 -58 11 760 -56 11 minecraft:air"}
+setblock 753 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 761 -58 5 minecraft:jungle_pressure_plate[powered=true] run fill 760 -58 11 760 -56 11 minecraft:air"}
+setblock 754 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 762 -58 4 minecraft:jungle_pressure_plate[powered=true] run fill 760 -58 11 760 -56 11 minecraft:air"}
+setblock 755 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 762 -58 5 minecraft:jungle_pressure_plate[powered=true] run fill 760 -58 11 760 -56 11 minecraft:air"}
+setblock 756 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 761 -58 4 minecraft:jungle_pressure_plate[powered=true] unless block 761 -58 5 minecraft:jungle_pressure_plate[powered=true] unless block 762 -58 4 minecraft:jungle_pressure_plate[powered=true] unless block 762 -58 5 minecraft:jungle_pressure_plate[powered=true] run fill 760 -58 11 760 -56 11 minecraft:blue_concrete"}

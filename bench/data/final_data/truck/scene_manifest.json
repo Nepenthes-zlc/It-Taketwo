@@ -1,0 +1,2889 @@
+{
+  "namespace": "truck",
+  "datapack_name": "truck_scene_pack",
+  "datapack_root": "final_data\\truck\\datapacks\\truck_scene_pack",
+  "source_spec": "scene_specs\\truck_30_scenes.json",
+  "scene_count": 30,
+  "scenes": [
+    {
+      "scene_id": "truck_easy_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        1800,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1801,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1809,
+        -51,
+        9,
+        1813,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1809,
+        -51,
+        9,
+        1813,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        1801,
+        -51,
+        1,
+        1822,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_01/setup",
+      "place_command_blocks_function": "truck:truck_easy_01/place_command_blocks",
+      "tick_function": "truck:truck_easy_01/tick",
+      "clear_function": "truck:truck_easy_01/clear",
+      "parking_region": [
+        1811,
+        -58,
+        10,
+        1814,
+        -58,
+        13
+      ],
+      "target_region": [
+        1811,
+        -57,
+        10,
+        1814,
+        -57,
+        13
+      ],
+      "target_center": [
+        1812.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:red_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 0.0
+    },
+    {
+      "scene_id": "truck_easy_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        1832,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1833,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1841,
+        -51,
+        9,
+        1845,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1841,
+        -51,
+        9,
+        1845,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        1833,
+        -51,
+        1,
+        1853,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_02/setup",
+      "place_command_blocks_function": "truck:truck_easy_02/place_command_blocks",
+      "tick_function": "truck:truck_easy_02/tick",
+      "clear_function": "truck:truck_easy_02/clear",
+      "parking_region": [
+        1842,
+        -58,
+        11,
+        1845,
+        -58,
+        14
+      ],
+      "target_region": [
+        1842,
+        -57,
+        11,
+        1845,
+        -57,
+        14
+      ],
+      "target_center": [
+        1843.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:orange_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 36.0
+    },
+    {
+      "scene_id": "truck_easy_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        1863,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1864,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1872,
+        -51,
+        9,
+        1876,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1872,
+        -51,
+        9,
+        1876,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        1864,
+        -51,
+        1,
+        1885,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_03/setup",
+      "place_command_blocks_function": "truck:truck_easy_03/place_command_blocks",
+      "tick_function": "truck:truck_easy_03/tick",
+      "clear_function": "truck:truck_easy_03/clear",
+      "parking_region": [
+        1874,
+        -58,
+        10,
+        1877,
+        -58,
+        13
+      ],
+      "target_region": [
+        1874,
+        -57,
+        10,
+        1877,
+        -57,
+        13
+      ],
+      "target_center": [
+        1875.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:yellow_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 72.0
+    },
+    {
+      "scene_id": "truck_easy_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        1895,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1896,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1904,
+        -51,
+        9,
+        1908,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1904,
+        -51,
+        9,
+        1908,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        1896,
+        -51,
+        1,
+        1916,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_04/setup",
+      "place_command_blocks_function": "truck:truck_easy_04/place_command_blocks",
+      "tick_function": "truck:truck_easy_04/tick",
+      "clear_function": "truck:truck_easy_04/clear",
+      "parking_region": [
+        1905,
+        -58,
+        11,
+        1908,
+        -58,
+        14
+      ],
+      "target_region": [
+        1905,
+        -57,
+        11,
+        1908,
+        -57,
+        14
+      ],
+      "target_center": [
+        1906.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:lime_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 108.0
+    },
+    {
+      "scene_id": "truck_easy_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        1926,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1927,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1935,
+        -51,
+        9,
+        1939,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1935,
+        -51,
+        9,
+        1939,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        1927,
+        -51,
+        1,
+        1948,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_05/setup",
+      "place_command_blocks_function": "truck:truck_easy_05/place_command_blocks",
+      "tick_function": "truck:truck_easy_05/tick",
+      "clear_function": "truck:truck_easy_05/clear",
+      "parking_region": [
+        1937,
+        -58,
+        10,
+        1940,
+        -58,
+        13
+      ],
+      "target_region": [
+        1937,
+        -57,
+        10,
+        1940,
+        -57,
+        13
+      ],
+      "target_center": [
+        1938.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:green_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 144.0
+    },
+    {
+      "scene_id": "truck_easy_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        1958,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1959,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1967,
+        -51,
+        9,
+        1971,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1967,
+        -51,
+        9,
+        1971,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        1959,
+        -51,
+        1,
+        1979,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_06/setup",
+      "place_command_blocks_function": "truck:truck_easy_06/place_command_blocks",
+      "tick_function": "truck:truck_easy_06/tick",
+      "clear_function": "truck:truck_easy_06/clear",
+      "parking_region": [
+        1968,
+        -58,
+        11,
+        1971,
+        -58,
+        14
+      ],
+      "target_region": [
+        1968,
+        -57,
+        11,
+        1971,
+        -57,
+        14
+      ],
+      "target_center": [
+        1969.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:cyan_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 180.0
+    },
+    {
+      "scene_id": "truck_easy_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        1989,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1990,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1998,
+        -51,
+        9,
+        2002,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1998,
+        -51,
+        9,
+        2002,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        1990,
+        -51,
+        1,
+        2011,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_07/setup",
+      "place_command_blocks_function": "truck:truck_easy_07/place_command_blocks",
+      "tick_function": "truck:truck_easy_07/tick",
+      "clear_function": "truck:truck_easy_07/clear",
+      "parking_region": [
+        2000,
+        -58,
+        10,
+        2003,
+        -58,
+        13
+      ],
+      "target_region": [
+        2000,
+        -57,
+        10,
+        2003,
+        -57,
+        13
+      ],
+      "target_center": [
+        2001.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:light_blue_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 216.0
+    },
+    {
+      "scene_id": "truck_easy_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2021,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2022,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2030,
+        -51,
+        9,
+        2034,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2030,
+        -51,
+        9,
+        2034,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2022,
+        -51,
+        1,
+        2042,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_08/setup",
+      "place_command_blocks_function": "truck:truck_easy_08/place_command_blocks",
+      "tick_function": "truck:truck_easy_08/tick",
+      "clear_function": "truck:truck_easy_08/clear",
+      "parking_region": [
+        2031,
+        -58,
+        11,
+        2034,
+        -58,
+        14
+      ],
+      "target_region": [
+        2031,
+        -57,
+        11,
+        2034,
+        -57,
+        14
+      ],
+      "target_center": [
+        2032.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:blue_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 252.0
+    },
+    {
+      "scene_id": "truck_easy_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2052,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2053,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2061,
+        -51,
+        9,
+        2065,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2061,
+        -51,
+        9,
+        2065,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2053,
+        -51,
+        1,
+        2074,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_09/setup",
+      "place_command_blocks_function": "truck:truck_easy_09/place_command_blocks",
+      "tick_function": "truck:truck_easy_09/tick",
+      "clear_function": "truck:truck_easy_09/clear",
+      "parking_region": [
+        2063,
+        -58,
+        10,
+        2066,
+        -58,
+        13
+      ],
+      "target_region": [
+        2063,
+        -57,
+        10,
+        2066,
+        -57,
+        13
+      ],
+      "target_center": [
+        2064.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:purple_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 288.0
+    },
+    {
+      "scene_id": "truck_easy_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2084,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2085,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2093,
+        -51,
+        9,
+        2097,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2093,
+        -51,
+        9,
+        2097,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2085,
+        -51,
+        1,
+        2105,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_easy_10/setup",
+      "place_command_blocks_function": "truck:truck_easy_10/place_command_blocks",
+      "tick_function": "truck:truck_easy_10/tick",
+      "clear_function": "truck:truck_easy_10/clear",
+      "parking_region": [
+        2094,
+        -58,
+        11,
+        2097,
+        -58,
+        14
+      ],
+      "target_region": [
+        2094,
+        -57,
+        11,
+        2097,
+        -57,
+        14
+      ],
+      "target_center": [
+        2095.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 4,
+      "parking_block": "minecraft:magenta_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "target_size": 4,
+        "a_distance": [
+          3.5,
+          4.5
+        ],
+        "spawn_distance": 4.0
+      },
+      "spawn_angle_degrees": 324.0
+    },
+    {
+      "scene_id": "truck_medium_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2115,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2116,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2124,
+        -51,
+        9,
+        2128,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2124,
+        -51,
+        9,
+        2128,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2116,
+        -51,
+        1,
+        2137,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_01/setup",
+      "place_command_blocks_function": "truck:truck_medium_01/place_command_blocks",
+      "tick_function": "truck:truck_medium_01/tick",
+      "clear_function": "truck:truck_medium_01/clear",
+      "parking_region": [
+        2126,
+        -58,
+        10,
+        2128,
+        -58,
+        12
+      ],
+      "target_region": [
+        2126,
+        -57,
+        10,
+        2128,
+        -57,
+        12
+      ],
+      "target_center": [
+        2127.0,
+        -57.0,
+        11.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:red_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 0.0
+    },
+    {
+      "scene_id": "truck_medium_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2147,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2148,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2156,
+        -51,
+        9,
+        2160,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2156,
+        -51,
+        9,
+        2160,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2148,
+        -51,
+        1,
+        2168,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_02/setup",
+      "place_command_blocks_function": "truck:truck_medium_02/place_command_blocks",
+      "tick_function": "truck:truck_medium_02/tick",
+      "clear_function": "truck:truck_medium_02/clear",
+      "parking_region": [
+        2157,
+        -58,
+        11,
+        2159,
+        -58,
+        13
+      ],
+      "target_region": [
+        2157,
+        -57,
+        11,
+        2159,
+        -57,
+        13
+      ],
+      "target_center": [
+        2158.0,
+        -57.0,
+        12.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:orange_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 36.0
+    },
+    {
+      "scene_id": "truck_medium_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2178,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2179,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2187,
+        -51,
+        9,
+        2191,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2187,
+        -51,
+        9,
+        2191,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2179,
+        -51,
+        1,
+        2200,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_03/setup",
+      "place_command_blocks_function": "truck:truck_medium_03/place_command_blocks",
+      "tick_function": "truck:truck_medium_03/tick",
+      "clear_function": "truck:truck_medium_03/clear",
+      "parking_region": [
+        2189,
+        -58,
+        10,
+        2191,
+        -58,
+        12
+      ],
+      "target_region": [
+        2189,
+        -57,
+        10,
+        2191,
+        -57,
+        12
+      ],
+      "target_center": [
+        2190.0,
+        -57.0,
+        11.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:yellow_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 72.0
+    },
+    {
+      "scene_id": "truck_medium_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2210,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2211,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2219,
+        -51,
+        9,
+        2223,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2219,
+        -51,
+        9,
+        2223,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2211,
+        -51,
+        1,
+        2231,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_04/setup",
+      "place_command_blocks_function": "truck:truck_medium_04/place_command_blocks",
+      "tick_function": "truck:truck_medium_04/tick",
+      "clear_function": "truck:truck_medium_04/clear",
+      "parking_region": [
+        2220,
+        -58,
+        11,
+        2222,
+        -58,
+        13
+      ],
+      "target_region": [
+        2220,
+        -57,
+        11,
+        2222,
+        -57,
+        13
+      ],
+      "target_center": [
+        2221.0,
+        -57.0,
+        12.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:lime_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 108.0
+    },
+    {
+      "scene_id": "truck_medium_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2241,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2242,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2250,
+        -51,
+        9,
+        2254,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2250,
+        -51,
+        9,
+        2254,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2242,
+        -51,
+        1,
+        2263,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_05/setup",
+      "place_command_blocks_function": "truck:truck_medium_05/place_command_blocks",
+      "tick_function": "truck:truck_medium_05/tick",
+      "clear_function": "truck:truck_medium_05/clear",
+      "parking_region": [
+        2252,
+        -58,
+        10,
+        2254,
+        -58,
+        12
+      ],
+      "target_region": [
+        2252,
+        -57,
+        10,
+        2254,
+        -57,
+        12
+      ],
+      "target_center": [
+        2253.0,
+        -57.0,
+        11.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:green_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 144.0
+    },
+    {
+      "scene_id": "truck_medium_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2273,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2274,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2282,
+        -51,
+        9,
+        2286,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2282,
+        -51,
+        9,
+        2286,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2274,
+        -51,
+        1,
+        2294,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_06/setup",
+      "place_command_blocks_function": "truck:truck_medium_06/place_command_blocks",
+      "tick_function": "truck:truck_medium_06/tick",
+      "clear_function": "truck:truck_medium_06/clear",
+      "parking_region": [
+        2283,
+        -58,
+        11,
+        2285,
+        -58,
+        13
+      ],
+      "target_region": [
+        2283,
+        -57,
+        11,
+        2285,
+        -57,
+        13
+      ],
+      "target_center": [
+        2284.0,
+        -57.0,
+        12.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:cyan_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 180.0
+    },
+    {
+      "scene_id": "truck_medium_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2304,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2305,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2313,
+        -51,
+        9,
+        2317,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2313,
+        -51,
+        9,
+        2317,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2305,
+        -51,
+        1,
+        2326,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_07/setup",
+      "place_command_blocks_function": "truck:truck_medium_07/place_command_blocks",
+      "tick_function": "truck:truck_medium_07/tick",
+      "clear_function": "truck:truck_medium_07/clear",
+      "parking_region": [
+        2315,
+        -58,
+        10,
+        2317,
+        -58,
+        12
+      ],
+      "target_region": [
+        2315,
+        -57,
+        10,
+        2317,
+        -57,
+        12
+      ],
+      "target_center": [
+        2316.0,
+        -57.0,
+        11.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:light_blue_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 216.0
+    },
+    {
+      "scene_id": "truck_medium_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2336,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2337,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2345,
+        -51,
+        9,
+        2349,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2345,
+        -51,
+        9,
+        2349,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2337,
+        -51,
+        1,
+        2357,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_08/setup",
+      "place_command_blocks_function": "truck:truck_medium_08/place_command_blocks",
+      "tick_function": "truck:truck_medium_08/tick",
+      "clear_function": "truck:truck_medium_08/clear",
+      "parking_region": [
+        2346,
+        -58,
+        11,
+        2348,
+        -58,
+        13
+      ],
+      "target_region": [
+        2346,
+        -57,
+        11,
+        2348,
+        -57,
+        13
+      ],
+      "target_center": [
+        2347.0,
+        -57.0,
+        12.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:blue_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 252.0
+    },
+    {
+      "scene_id": "truck_medium_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2367,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2368,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2376,
+        -51,
+        9,
+        2380,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2376,
+        -51,
+        9,
+        2380,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2368,
+        -51,
+        1,
+        2389,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_09/setup",
+      "place_command_blocks_function": "truck:truck_medium_09/place_command_blocks",
+      "tick_function": "truck:truck_medium_09/tick",
+      "clear_function": "truck:truck_medium_09/clear",
+      "parking_region": [
+        2378,
+        -58,
+        10,
+        2380,
+        -58,
+        12
+      ],
+      "target_region": [
+        2378,
+        -57,
+        10,
+        2380,
+        -57,
+        12
+      ],
+      "target_center": [
+        2379.0,
+        -57.0,
+        11.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:purple_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 288.0
+    },
+    {
+      "scene_id": "truck_medium_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2399,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2400,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2408,
+        -51,
+        9,
+        2412,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2408,
+        -51,
+        9,
+        2412,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2400,
+        -51,
+        1,
+        2420,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_medium_10/setup",
+      "place_command_blocks_function": "truck:truck_medium_10/place_command_blocks",
+      "tick_function": "truck:truck_medium_10/tick",
+      "clear_function": "truck:truck_medium_10/clear",
+      "parking_region": [
+        2409,
+        -58,
+        11,
+        2411,
+        -58,
+        13
+      ],
+      "target_region": [
+        2409,
+        -57,
+        11,
+        2411,
+        -57,
+        13
+      ],
+      "target_center": [
+        2410.0,
+        -57.0,
+        12.0
+      ],
+      "target_size": 3,
+      "parking_block": "minecraft:magenta_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "target_size": 3,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      },
+      "spawn_angle_degrees": 324.0
+    },
+    {
+      "scene_id": "truck_hard_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2430,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2431,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2439,
+        -51,
+        9,
+        2443,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2439,
+        -51,
+        9,
+        2443,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2431,
+        -51,
+        1,
+        2452,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_01/setup",
+      "place_command_blocks_function": "truck:truck_hard_01/place_command_blocks",
+      "tick_function": "truck:truck_hard_01/tick",
+      "clear_function": "truck:truck_hard_01/clear",
+      "parking_region": [
+        2442,
+        -58,
+        11,
+        2443,
+        -58,
+        12
+      ],
+      "target_region": [
+        2442,
+        -57,
+        11,
+        2443,
+        -57,
+        12
+      ],
+      "target_center": [
+        2442.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:red_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 0.0
+    },
+    {
+      "scene_id": "truck_hard_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2462,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2463,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2471,
+        -51,
+        9,
+        2475,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2471,
+        -51,
+        9,
+        2475,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2463,
+        -51,
+        1,
+        2483,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_02/setup",
+      "place_command_blocks_function": "truck:truck_hard_02/place_command_blocks",
+      "tick_function": "truck:truck_hard_02/tick",
+      "clear_function": "truck:truck_hard_02/clear",
+      "parking_region": [
+        2473,
+        -58,
+        12,
+        2474,
+        -58,
+        13
+      ],
+      "target_region": [
+        2473,
+        -57,
+        12,
+        2474,
+        -57,
+        13
+      ],
+      "target_center": [
+        2473.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:orange_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 36.0
+    },
+    {
+      "scene_id": "truck_hard_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2493,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2494,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2502,
+        -51,
+        9,
+        2506,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2502,
+        -51,
+        9,
+        2506,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2494,
+        -51,
+        1,
+        2515,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_03/setup",
+      "place_command_blocks_function": "truck:truck_hard_03/place_command_blocks",
+      "tick_function": "truck:truck_hard_03/tick",
+      "clear_function": "truck:truck_hard_03/clear",
+      "parking_region": [
+        2505,
+        -58,
+        11,
+        2506,
+        -58,
+        12
+      ],
+      "target_region": [
+        2505,
+        -57,
+        11,
+        2506,
+        -57,
+        12
+      ],
+      "target_center": [
+        2505.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:yellow_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 72.0
+    },
+    {
+      "scene_id": "truck_hard_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2525,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2526,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2534,
+        -51,
+        9,
+        2538,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2534,
+        -51,
+        9,
+        2538,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2526,
+        -51,
+        1,
+        2546,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_04/setup",
+      "place_command_blocks_function": "truck:truck_hard_04/place_command_blocks",
+      "tick_function": "truck:truck_hard_04/tick",
+      "clear_function": "truck:truck_hard_04/clear",
+      "parking_region": [
+        2536,
+        -58,
+        12,
+        2537,
+        -58,
+        13
+      ],
+      "target_region": [
+        2536,
+        -57,
+        12,
+        2537,
+        -57,
+        13
+      ],
+      "target_center": [
+        2536.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:lime_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 108.0
+    },
+    {
+      "scene_id": "truck_hard_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2556,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2557,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2565,
+        -51,
+        9,
+        2569,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2565,
+        -51,
+        9,
+        2569,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2557,
+        -51,
+        1,
+        2578,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_05/setup",
+      "place_command_blocks_function": "truck:truck_hard_05/place_command_blocks",
+      "tick_function": "truck:truck_hard_05/tick",
+      "clear_function": "truck:truck_hard_05/clear",
+      "parking_region": [
+        2568,
+        -58,
+        11,
+        2569,
+        -58,
+        12
+      ],
+      "target_region": [
+        2568,
+        -57,
+        11,
+        2569,
+        -57,
+        12
+      ],
+      "target_center": [
+        2568.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:green_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 144.0
+    },
+    {
+      "scene_id": "truck_hard_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2588,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2589,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2597,
+        -51,
+        9,
+        2601,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2597,
+        -51,
+        9,
+        2601,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2589,
+        -51,
+        1,
+        2609,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_06/setup",
+      "place_command_blocks_function": "truck:truck_hard_06/place_command_blocks",
+      "tick_function": "truck:truck_hard_06/tick",
+      "clear_function": "truck:truck_hard_06/clear",
+      "parking_region": [
+        2599,
+        -58,
+        12,
+        2600,
+        -58,
+        13
+      ],
+      "target_region": [
+        2599,
+        -57,
+        12,
+        2600,
+        -57,
+        13
+      ],
+      "target_center": [
+        2599.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:cyan_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 180.0
+    },
+    {
+      "scene_id": "truck_hard_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2619,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2620,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2628,
+        -51,
+        9,
+        2632,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2628,
+        -51,
+        9,
+        2632,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2620,
+        -51,
+        1,
+        2641,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_07/setup",
+      "place_command_blocks_function": "truck:truck_hard_07/place_command_blocks",
+      "tick_function": "truck:truck_hard_07/tick",
+      "clear_function": "truck:truck_hard_07/clear",
+      "parking_region": [
+        2631,
+        -58,
+        11,
+        2632,
+        -58,
+        12
+      ],
+      "target_region": [
+        2631,
+        -57,
+        11,
+        2632,
+        -57,
+        12
+      ],
+      "target_center": [
+        2631.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:light_blue_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 216.0
+    },
+    {
+      "scene_id": "truck_hard_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2651,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2652,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2660,
+        -51,
+        9,
+        2664,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2660,
+        -51,
+        9,
+        2664,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2652,
+        -51,
+        1,
+        2672,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_08/setup",
+      "place_command_blocks_function": "truck:truck_hard_08/place_command_blocks",
+      "tick_function": "truck:truck_hard_08/tick",
+      "clear_function": "truck:truck_hard_08/clear",
+      "parking_region": [
+        2662,
+        -58,
+        12,
+        2663,
+        -58,
+        13
+      ],
+      "target_region": [
+        2662,
+        -57,
+        12,
+        2663,
+        -57,
+        13
+      ],
+      "target_center": [
+        2662.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:blue_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 252.0
+    },
+    {
+      "scene_id": "truck_hard_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2682,
+        -58,
+        0
+      ],
+      "room_size": [
+        24,
+        8,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2683,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2691,
+        -51,
+        9,
+        2695,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2691,
+        -51,
+        9,
+        2695,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2683,
+        -51,
+        1,
+        2704,
+        -51,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_09/setup",
+      "place_command_blocks_function": "truck:truck_hard_09/place_command_blocks",
+      "tick_function": "truck:truck_hard_09/tick",
+      "clear_function": "truck:truck_hard_09/clear",
+      "parking_region": [
+        2694,
+        -58,
+        11,
+        2695,
+        -58,
+        12
+      ],
+      "target_region": [
+        2694,
+        -57,
+        11,
+        2695,
+        -57,
+        12
+      ],
+      "target_center": [
+        2694.5,
+        -57.0,
+        11.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:purple_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 288.0
+    },
+    {
+      "scene_id": "truck_hard_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "truck",
+      "task_template": "truck_driver",
+      "origin": [
+        2714,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        24
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2715,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        2723,
+        -51,
+        9,
+        2727,
+        -51,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2723,
+        -51,
+        9,
+        2727,
+        -51,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        2715,
+        -51,
+        1,
+        2735,
+        -51,
+        22
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "truck:truck_hard_10/setup",
+      "place_command_blocks_function": "truck:truck_hard_10/place_command_blocks",
+      "tick_function": "truck:truck_hard_10/tick",
+      "clear_function": "truck:truck_hard_10/clear",
+      "parking_region": [
+        2725,
+        -58,
+        12,
+        2726,
+        -58,
+        13
+      ],
+      "target_region": [
+        2725,
+        -57,
+        12,
+        2726,
+        -57,
+        13
+      ],
+      "target_center": [
+        2725.5,
+        -57.0,
+        12.5
+      ],
+      "target_size": 2,
+      "parking_block": "minecraft:magenta_concrete",
+      "agent_a_visibility_constraint": "parking_region_location_and_color_hidden",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "target_size": 2,
+        "a_distance": [
+          5.5,
+          6.5
+        ],
+        "spawn_distance": 6.0
+      },
+      "spawn_angle_degrees": 324.0
+    }
+  ]
+}

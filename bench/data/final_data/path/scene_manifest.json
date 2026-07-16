@@ -1,0 +1,6469 @@
+{
+  "namespace": "path",
+  "datapack_name": "path_scene_pack",
+  "datapack_root": "final_data\\path\\datapacks\\path_scene_pack",
+  "source_spec": "scene_specs\\time_lock_path_difficulty_30_scenes.json",
+  "scene_count": 30,
+  "scenes": [
+    {
+      "scene_id": "tier_path_easy_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        900,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        901,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        908,
+        -51,
+        13,
+        912,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        908,
+        -51,
+        13,
+        912,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        901,
+        -51,
+        1,
+        920,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_01/setup",
+      "place_command_blocks_function": "path:tier_path_easy_01/place_command_blocks",
+      "tick_function": "path:tier_path_easy_01/tick",
+      "clear_function": "path:tier_path_easy_01/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        900,
+        -61,
+        0,
+        921,
+        -58,
+        13
+      ],
+      "solid_end_b_region": [
+        900,
+        -61,
+        18,
+        921,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        901,
+        -61,
+        14,
+        920,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        909,
+        -58,
+        14,
+        912,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        911,
+        -57,
+        10
+      ],
+      "pressure_plate_region": [
+        910,
+        -57,
+        9,
+        913,
+        -57,
+        12
+      ],
+      "pressure_plate_positions": [
+        [
+          910,
+          -57,
+          9
+        ],
+        [
+          910,
+          -57,
+          10
+        ],
+        [
+          910,
+          -57,
+          11
+        ],
+        [
+          910,
+          -57,
+          12
+        ],
+        [
+          911,
+          -57,
+          9
+        ],
+        [
+          911,
+          -57,
+          10
+        ],
+        [
+          911,
+          -57,
+          11
+        ],
+        [
+          911,
+          -57,
+          12
+        ],
+        [
+          912,
+          -57,
+          9
+        ],
+        [
+          912,
+          -57,
+          10
+        ],
+        [
+          912,
+          -57,
+          11
+        ],
+        [
+          912,
+          -57,
+          12
+        ],
+        [
+          913,
+          -57,
+          9
+        ],
+        [
+          913,
+          -57,
+          10
+        ],
+        [
+          913,
+          -57,
+          11
+        ],
+        [
+          913,
+          -57,
+          12
+        ]
+      ],
+      "pressure_plate_block": "minecraft:stone_pressure_plate",
+      "reveal_path_block": "minecraft:lime_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        901,
+        -57,
+        18,
+        920,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        909,
+        -57,
+        19,
+        912,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        930,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        931,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        939,
+        -51,
+        13,
+        943,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        939,
+        -51,
+        13,
+        943,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        931,
+        -51,
+        1,
+        951,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_02/setup",
+      "place_command_blocks_function": "path:tier_path_easy_02/place_command_blocks",
+      "tick_function": "path:tier_path_easy_02/tick",
+      "clear_function": "path:tier_path_easy_02/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        930,
+        -61,
+        0,
+        952,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        930,
+        -61,
+        17,
+        952,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        931,
+        -61,
+        13,
+        951,
+        -58,
+        16
+      ],
+      "reveal_path_region": [
+        939,
+        -58,
+        13,
+        942,
+        -58,
+        16
+      ],
+      "pressure_plate_pos": [
+        941,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        940,
+        -57,
+        8,
+        943,
+        -57,
+        11
+      ],
+      "pressure_plate_positions": [
+        [
+          940,
+          -57,
+          8
+        ],
+        [
+          940,
+          -57,
+          9
+        ],
+        [
+          940,
+          -57,
+          10
+        ],
+        [
+          940,
+          -57,
+          11
+        ],
+        [
+          941,
+          -57,
+          8
+        ],
+        [
+          941,
+          -57,
+          9
+        ],
+        [
+          941,
+          -57,
+          10
+        ],
+        [
+          941,
+          -57,
+          11
+        ],
+        [
+          942,
+          -57,
+          8
+        ],
+        [
+          942,
+          -57,
+          9
+        ],
+        [
+          942,
+          -57,
+          10
+        ],
+        [
+          942,
+          -57,
+          11
+        ],
+        [
+          943,
+          -57,
+          8
+        ],
+        [
+          943,
+          -57,
+          9
+        ],
+        [
+          943,
+          -57,
+          10
+        ],
+        [
+          943,
+          -57,
+          11
+        ]
+      ],
+      "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+      "reveal_path_block": "minecraft:cyan_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        931,
+        -57,
+        17,
+        951,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        939,
+        -57,
+        18,
+        942,
+        -57,
+        18
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        961,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        962,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        969,
+        -51,
+        13,
+        973,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        969,
+        -51,
+        13,
+        973,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        962,
+        -51,
+        1,
+        980,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_03/setup",
+      "place_command_blocks_function": "path:tier_path_easy_03/place_command_blocks",
+      "tick_function": "path:tier_path_easy_03/tick",
+      "clear_function": "path:tier_path_easy_03/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        961,
+        -61,
+        0,
+        981,
+        -58,
+        13
+      ],
+      "solid_end_b_region": [
+        961,
+        -61,
+        18,
+        981,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        962,
+        -61,
+        14,
+        980,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        969,
+        -58,
+        14,
+        972,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        971,
+        -57,
+        10
+      ],
+      "pressure_plate_region": [
+        970,
+        -57,
+        9,
+        973,
+        -57,
+        12
+      ],
+      "pressure_plate_positions": [
+        [
+          970,
+          -57,
+          9
+        ],
+        [
+          970,
+          -57,
+          10
+        ],
+        [
+          970,
+          -57,
+          11
+        ],
+        [
+          970,
+          -57,
+          12
+        ],
+        [
+          971,
+          -57,
+          9
+        ],
+        [
+          971,
+          -57,
+          10
+        ],
+        [
+          971,
+          -57,
+          11
+        ],
+        [
+          971,
+          -57,
+          12
+        ],
+        [
+          972,
+          -57,
+          9
+        ],
+        [
+          972,
+          -57,
+          10
+        ],
+        [
+          972,
+          -57,
+          11
+        ],
+        [
+          972,
+          -57,
+          12
+        ],
+        [
+          973,
+          -57,
+          9
+        ],
+        [
+          973,
+          -57,
+          10
+        ],
+        [
+          973,
+          -57,
+          11
+        ],
+        [
+          973,
+          -57,
+          12
+        ]
+      ],
+      "pressure_plate_block": "minecraft:oak_pressure_plate",
+      "reveal_path_block": "minecraft:blue_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        962,
+        -57,
+        18,
+        980,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        969,
+        -57,
+        19,
+        972,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        990,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        991,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        998,
+        -51,
+        13,
+        1002,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        998,
+        -51,
+        13,
+        1002,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        991,
+        -51,
+        1,
+        1010,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_04/setup",
+      "place_command_blocks_function": "path:tier_path_easy_04/place_command_blocks",
+      "tick_function": "path:tier_path_easy_04/tick",
+      "clear_function": "path:tier_path_easy_04/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        990,
+        -61,
+        0,
+        1011,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        990,
+        -61,
+        17,
+        1011,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        991,
+        -61,
+        13,
+        1010,
+        -58,
+        16
+      ],
+      "reveal_path_region": [
+        999,
+        -58,
+        13,
+        1002,
+        -58,
+        16
+      ],
+      "pressure_plate_pos": [
+        1001,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1000,
+        -57,
+        8,
+        1003,
+        -57,
+        11
+      ],
+      "pressure_plate_positions": [
+        [
+          1000,
+          -57,
+          8
+        ],
+        [
+          1000,
+          -57,
+          9
+        ],
+        [
+          1000,
+          -57,
+          10
+        ],
+        [
+          1000,
+          -57,
+          11
+        ],
+        [
+          1001,
+          -57,
+          8
+        ],
+        [
+          1001,
+          -57,
+          9
+        ],
+        [
+          1001,
+          -57,
+          10
+        ],
+        [
+          1001,
+          -57,
+          11
+        ],
+        [
+          1002,
+          -57,
+          8
+        ],
+        [
+          1002,
+          -57,
+          9
+        ],
+        [
+          1002,
+          -57,
+          10
+        ],
+        [
+          1002,
+          -57,
+          11
+        ],
+        [
+          1003,
+          -57,
+          8
+        ],
+        [
+          1003,
+          -57,
+          9
+        ],
+        [
+          1003,
+          -57,
+          10
+        ],
+        [
+          1003,
+          -57,
+          11
+        ]
+      ],
+      "pressure_plate_block": "minecraft:spruce_pressure_plate",
+      "reveal_path_block": "minecraft:magenta_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        991,
+        -57,
+        17,
+        1010,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        999,
+        -57,
+        18,
+        1002,
+        -57,
+        18
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1020,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1021,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1029,
+        -51,
+        13,
+        1033,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1029,
+        -51,
+        13,
+        1033,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1021,
+        -51,
+        1,
+        1041,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_05/setup",
+      "place_command_blocks_function": "path:tier_path_easy_05/place_command_blocks",
+      "tick_function": "path:tier_path_easy_05/tick",
+      "clear_function": "path:tier_path_easy_05/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1020,
+        -61,
+        0,
+        1042,
+        -58,
+        13
+      ],
+      "solid_end_b_region": [
+        1020,
+        -61,
+        18,
+        1042,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1021,
+        -61,
+        14,
+        1041,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1029,
+        -58,
+        14,
+        1032,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1031,
+        -57,
+        10
+      ],
+      "pressure_plate_region": [
+        1030,
+        -57,
+        9,
+        1033,
+        -57,
+        12
+      ],
+      "pressure_plate_positions": [
+        [
+          1030,
+          -57,
+          9
+        ],
+        [
+          1030,
+          -57,
+          10
+        ],
+        [
+          1030,
+          -57,
+          11
+        ],
+        [
+          1030,
+          -57,
+          12
+        ],
+        [
+          1031,
+          -57,
+          9
+        ],
+        [
+          1031,
+          -57,
+          10
+        ],
+        [
+          1031,
+          -57,
+          11
+        ],
+        [
+          1031,
+          -57,
+          12
+        ],
+        [
+          1032,
+          -57,
+          9
+        ],
+        [
+          1032,
+          -57,
+          10
+        ],
+        [
+          1032,
+          -57,
+          11
+        ],
+        [
+          1032,
+          -57,
+          12
+        ],
+        [
+          1033,
+          -57,
+          9
+        ],
+        [
+          1033,
+          -57,
+          10
+        ],
+        [
+          1033,
+          -57,
+          11
+        ],
+        [
+          1033,
+          -57,
+          12
+        ]
+      ],
+      "pressure_plate_block": "minecraft:birch_pressure_plate",
+      "reveal_path_block": "minecraft:red_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1021,
+        -57,
+        18,
+        1041,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1029,
+        -57,
+        19,
+        1032,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1051,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1052,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1059,
+        -51,
+        13,
+        1063,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1059,
+        -51,
+        13,
+        1063,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1052,
+        -51,
+        1,
+        1070,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_06/setup",
+      "place_command_blocks_function": "path:tier_path_easy_06/place_command_blocks",
+      "tick_function": "path:tier_path_easy_06/tick",
+      "clear_function": "path:tier_path_easy_06/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1051,
+        -61,
+        0,
+        1071,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1051,
+        -61,
+        17,
+        1071,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1052,
+        -61,
+        13,
+        1070,
+        -58,
+        16
+      ],
+      "reveal_path_region": [
+        1059,
+        -58,
+        13,
+        1062,
+        -58,
+        16
+      ],
+      "pressure_plate_pos": [
+        1061,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1060,
+        -57,
+        8,
+        1063,
+        -57,
+        11
+      ],
+      "pressure_plate_positions": [
+        [
+          1060,
+          -57,
+          8
+        ],
+        [
+          1060,
+          -57,
+          9
+        ],
+        [
+          1060,
+          -57,
+          10
+        ],
+        [
+          1060,
+          -57,
+          11
+        ],
+        [
+          1061,
+          -57,
+          8
+        ],
+        [
+          1061,
+          -57,
+          9
+        ],
+        [
+          1061,
+          -57,
+          10
+        ],
+        [
+          1061,
+          -57,
+          11
+        ],
+        [
+          1062,
+          -57,
+          8
+        ],
+        [
+          1062,
+          -57,
+          9
+        ],
+        [
+          1062,
+          -57,
+          10
+        ],
+        [
+          1062,
+          -57,
+          11
+        ],
+        [
+          1063,
+          -57,
+          8
+        ],
+        [
+          1063,
+          -57,
+          9
+        ],
+        [
+          1063,
+          -57,
+          10
+        ],
+        [
+          1063,
+          -57,
+          11
+        ]
+      ],
+      "pressure_plate_block": "minecraft:jungle_pressure_plate",
+      "reveal_path_block": "minecraft:yellow_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1052,
+        -57,
+        17,
+        1070,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1059,
+        -57,
+        18,
+        1062,
+        -57,
+        18
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1080,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1081,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1088,
+        -51,
+        13,
+        1092,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1088,
+        -51,
+        13,
+        1092,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1081,
+        -51,
+        1,
+        1100,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_07/setup",
+      "place_command_blocks_function": "path:tier_path_easy_07/place_command_blocks",
+      "tick_function": "path:tier_path_easy_07/tick",
+      "clear_function": "path:tier_path_easy_07/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1080,
+        -61,
+        0,
+        1101,
+        -58,
+        13
+      ],
+      "solid_end_b_region": [
+        1080,
+        -61,
+        18,
+        1101,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1081,
+        -61,
+        14,
+        1100,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1089,
+        -58,
+        14,
+        1092,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1091,
+        -57,
+        10
+      ],
+      "pressure_plate_region": [
+        1090,
+        -57,
+        9,
+        1093,
+        -57,
+        12
+      ],
+      "pressure_plate_positions": [
+        [
+          1090,
+          -57,
+          9
+        ],
+        [
+          1090,
+          -57,
+          10
+        ],
+        [
+          1090,
+          -57,
+          11
+        ],
+        [
+          1090,
+          -57,
+          12
+        ],
+        [
+          1091,
+          -57,
+          9
+        ],
+        [
+          1091,
+          -57,
+          10
+        ],
+        [
+          1091,
+          -57,
+          11
+        ],
+        [
+          1091,
+          -57,
+          12
+        ],
+        [
+          1092,
+          -57,
+          9
+        ],
+        [
+          1092,
+          -57,
+          10
+        ],
+        [
+          1092,
+          -57,
+          11
+        ],
+        [
+          1092,
+          -57,
+          12
+        ],
+        [
+          1093,
+          -57,
+          9
+        ],
+        [
+          1093,
+          -57,
+          10
+        ],
+        [
+          1093,
+          -57,
+          11
+        ],
+        [
+          1093,
+          -57,
+          12
+        ]
+      ],
+      "pressure_plate_block": "minecraft:acacia_pressure_plate",
+      "reveal_path_block": "minecraft:green_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1081,
+        -57,
+        18,
+        1100,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1089,
+        -57,
+        19,
+        1092,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1110,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1111,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1119,
+        -51,
+        13,
+        1123,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1119,
+        -51,
+        13,
+        1123,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1111,
+        -51,
+        1,
+        1131,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_08/setup",
+      "place_command_blocks_function": "path:tier_path_easy_08/place_command_blocks",
+      "tick_function": "path:tier_path_easy_08/tick",
+      "clear_function": "path:tier_path_easy_08/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1110,
+        -61,
+        0,
+        1132,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1110,
+        -61,
+        17,
+        1132,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1111,
+        -61,
+        13,
+        1131,
+        -58,
+        16
+      ],
+      "reveal_path_region": [
+        1119,
+        -58,
+        13,
+        1122,
+        -58,
+        16
+      ],
+      "pressure_plate_pos": [
+        1121,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1120,
+        -57,
+        8,
+        1123,
+        -57,
+        11
+      ],
+      "pressure_plate_positions": [
+        [
+          1120,
+          -57,
+          8
+        ],
+        [
+          1120,
+          -57,
+          9
+        ],
+        [
+          1120,
+          -57,
+          10
+        ],
+        [
+          1120,
+          -57,
+          11
+        ],
+        [
+          1121,
+          -57,
+          8
+        ],
+        [
+          1121,
+          -57,
+          9
+        ],
+        [
+          1121,
+          -57,
+          10
+        ],
+        [
+          1121,
+          -57,
+          11
+        ],
+        [
+          1122,
+          -57,
+          8
+        ],
+        [
+          1122,
+          -57,
+          9
+        ],
+        [
+          1122,
+          -57,
+          10
+        ],
+        [
+          1122,
+          -57,
+          11
+        ],
+        [
+          1123,
+          -57,
+          8
+        ],
+        [
+          1123,
+          -57,
+          9
+        ],
+        [
+          1123,
+          -57,
+          10
+        ],
+        [
+          1123,
+          -57,
+          11
+        ]
+      ],
+      "pressure_plate_block": "minecraft:dark_oak_pressure_plate",
+      "reveal_path_block": "minecraft:orange_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1111,
+        -57,
+        17,
+        1131,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1119,
+        -57,
+        18,
+        1122,
+        -57,
+        18
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1141,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1142,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1149,
+        -51,
+        13,
+        1153,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1149,
+        -51,
+        13,
+        1153,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1142,
+        -51,
+        1,
+        1160,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_09/setup",
+      "place_command_blocks_function": "path:tier_path_easy_09/place_command_blocks",
+      "tick_function": "path:tier_path_easy_09/tick",
+      "clear_function": "path:tier_path_easy_09/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1141,
+        -61,
+        0,
+        1161,
+        -58,
+        13
+      ],
+      "solid_end_b_region": [
+        1141,
+        -61,
+        18,
+        1161,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1142,
+        -61,
+        14,
+        1160,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1149,
+        -58,
+        14,
+        1152,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1151,
+        -57,
+        10
+      ],
+      "pressure_plate_region": [
+        1150,
+        -57,
+        9,
+        1153,
+        -57,
+        12
+      ],
+      "pressure_plate_positions": [
+        [
+          1150,
+          -57,
+          9
+        ],
+        [
+          1150,
+          -57,
+          10
+        ],
+        [
+          1150,
+          -57,
+          11
+        ],
+        [
+          1150,
+          -57,
+          12
+        ],
+        [
+          1151,
+          -57,
+          9
+        ],
+        [
+          1151,
+          -57,
+          10
+        ],
+        [
+          1151,
+          -57,
+          11
+        ],
+        [
+          1151,
+          -57,
+          12
+        ],
+        [
+          1152,
+          -57,
+          9
+        ],
+        [
+          1152,
+          -57,
+          10
+        ],
+        [
+          1152,
+          -57,
+          11
+        ],
+        [
+          1152,
+          -57,
+          12
+        ],
+        [
+          1153,
+          -57,
+          9
+        ],
+        [
+          1153,
+          -57,
+          10
+        ],
+        [
+          1153,
+          -57,
+          11
+        ],
+        [
+          1153,
+          -57,
+          12
+        ]
+      ],
+      "pressure_plate_block": "minecraft:mangrove_pressure_plate",
+      "reveal_path_block": "minecraft:purple_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1142,
+        -57,
+        18,
+        1160,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1149,
+        -57,
+        19,
+        1152,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_easy_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1170,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1171,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1178,
+        -51,
+        13,
+        1182,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1178,
+        -51,
+        13,
+        1182,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1171,
+        -51,
+        1,
+        1190,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_easy_10/setup",
+      "place_command_blocks_function": "path:tier_path_easy_10/place_command_blocks",
+      "tick_function": "path:tier_path_easy_10/tick",
+      "clear_function": "path:tier_path_easy_10/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 4,
+      "reveal_path_width": 4,
+      "pressure_plate_size": 4,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1170,
+        -61,
+        0,
+        1191,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1170,
+        -61,
+        17,
+        1191,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1171,
+        -61,
+        13,
+        1190,
+        -58,
+        16
+      ],
+      "reveal_path_region": [
+        1179,
+        -58,
+        13,
+        1182,
+        -58,
+        16
+      ],
+      "pressure_plate_pos": [
+        1181,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1180,
+        -57,
+        8,
+        1183,
+        -57,
+        11
+      ],
+      "pressure_plate_positions": [
+        [
+          1180,
+          -57,
+          8
+        ],
+        [
+          1180,
+          -57,
+          9
+        ],
+        [
+          1180,
+          -57,
+          10
+        ],
+        [
+          1180,
+          -57,
+          11
+        ],
+        [
+          1181,
+          -57,
+          8
+        ],
+        [
+          1181,
+          -57,
+          9
+        ],
+        [
+          1181,
+          -57,
+          10
+        ],
+        [
+          1181,
+          -57,
+          11
+        ],
+        [
+          1182,
+          -57,
+          8
+        ],
+        [
+          1182,
+          -57,
+          9
+        ],
+        [
+          1182,
+          -57,
+          10
+        ],
+        [
+          1182,
+          -57,
+          11
+        ],
+        [
+          1183,
+          -57,
+          8
+        ],
+        [
+          1183,
+          -57,
+          9
+        ],
+        [
+          1183,
+          -57,
+          10
+        ],
+        [
+          1183,
+          -57,
+          11
+        ]
+      ],
+      "pressure_plate_block": "minecraft:cherry_pressure_plate",
+      "reveal_path_block": "minecraft:blue_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1171,
+        -57,
+        17,
+        1190,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1179,
+        -57,
+        18,
+        1182,
+        -57,
+        18
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "plate": 4,
+        "door_width": 3,
+        "plate_door_distance": [
+          4,
+          5
+        ],
+        "plate_door_distance_average": 4.5,
+        "path_width": 4,
+        "path_length": 4,
+        "a_distance": [
+          2.5,
+          3.5
+        ],
+        "a_angle": [
+          0.0,
+          30.0
+        ],
+        "b_distance": [
+          2.5,
+          3.5
+        ],
+        "b_angle": [
+          15.0,
+          20.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1200,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1201,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1208,
+        -51,
+        13,
+        1212,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1208,
+        -51,
+        13,
+        1212,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1201,
+        -51,
+        1,
+        1220,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_01/setup",
+      "place_command_blocks_function": "path:tier_path_medium_01/place_command_blocks",
+      "tick_function": "path:tier_path_medium_01/tick",
+      "clear_function": "path:tier_path_medium_01/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1200,
+        -61,
+        0,
+        1221,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1200,
+        -61,
+        18,
+        1221,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1201,
+        -61,
+        13,
+        1220,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1209,
+        -58,
+        13,
+        1211,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1211,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1210,
+        -57,
+        8,
+        1212,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1210,
+          -57,
+          8
+        ],
+        [
+          1210,
+          -57,
+          9
+        ],
+        [
+          1210,
+          -57,
+          10
+        ],
+        [
+          1211,
+          -57,
+          8
+        ],
+        [
+          1211,
+          -57,
+          9
+        ],
+        [
+          1211,
+          -57,
+          10
+        ],
+        [
+          1212,
+          -57,
+          8
+        ],
+        [
+          1212,
+          -57,
+          9
+        ],
+        [
+          1212,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:stone_pressure_plate",
+      "reveal_path_block": "minecraft:lime_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1201,
+        -57,
+        18,
+        1220,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1209,
+        -57,
+        19,
+        1211,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1230,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1231,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1239,
+        -51,
+        13,
+        1243,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1239,
+        -51,
+        13,
+        1243,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1231,
+        -51,
+        1,
+        1251,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_02/setup",
+      "place_command_blocks_function": "path:tier_path_medium_02/place_command_blocks",
+      "tick_function": "path:tier_path_medium_02/tick",
+      "clear_function": "path:tier_path_medium_02/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1230,
+        -61,
+        0,
+        1252,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1230,
+        -61,
+        18,
+        1252,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1231,
+        -61,
+        13,
+        1251,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1240,
+        -58,
+        13,
+        1242,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1241,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1240,
+        -57,
+        8,
+        1242,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1240,
+          -57,
+          8
+        ],
+        [
+          1240,
+          -57,
+          9
+        ],
+        [
+          1240,
+          -57,
+          10
+        ],
+        [
+          1241,
+          -57,
+          8
+        ],
+        [
+          1241,
+          -57,
+          9
+        ],
+        [
+          1241,
+          -57,
+          10
+        ],
+        [
+          1242,
+          -57,
+          8
+        ],
+        [
+          1242,
+          -57,
+          9
+        ],
+        [
+          1242,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+      "reveal_path_block": "minecraft:cyan_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1231,
+        -57,
+        18,
+        1251,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1240,
+        -57,
+        19,
+        1242,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1261,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1262,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1269,
+        -51,
+        13,
+        1273,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1269,
+        -51,
+        13,
+        1273,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1262,
+        -51,
+        1,
+        1280,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_03/setup",
+      "place_command_blocks_function": "path:tier_path_medium_03/place_command_blocks",
+      "tick_function": "path:tier_path_medium_03/tick",
+      "clear_function": "path:tier_path_medium_03/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1261,
+        -61,
+        0,
+        1281,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1261,
+        -61,
+        18,
+        1281,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1262,
+        -61,
+        13,
+        1280,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1270,
+        -58,
+        13,
+        1272,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1271,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1270,
+        -57,
+        8,
+        1272,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1270,
+          -57,
+          8
+        ],
+        [
+          1270,
+          -57,
+          9
+        ],
+        [
+          1270,
+          -57,
+          10
+        ],
+        [
+          1271,
+          -57,
+          8
+        ],
+        [
+          1271,
+          -57,
+          9
+        ],
+        [
+          1271,
+          -57,
+          10
+        ],
+        [
+          1272,
+          -57,
+          8
+        ],
+        [
+          1272,
+          -57,
+          9
+        ],
+        [
+          1272,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:oak_pressure_plate",
+      "reveal_path_block": "minecraft:blue_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1262,
+        -57,
+        18,
+        1280,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1270,
+        -57,
+        19,
+        1272,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1290,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1291,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1298,
+        -51,
+        13,
+        1302,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1298,
+        -51,
+        13,
+        1302,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1291,
+        -51,
+        1,
+        1310,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_04/setup",
+      "place_command_blocks_function": "path:tier_path_medium_04/place_command_blocks",
+      "tick_function": "path:tier_path_medium_04/tick",
+      "clear_function": "path:tier_path_medium_04/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1290,
+        -61,
+        0,
+        1311,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1290,
+        -61,
+        18,
+        1311,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1291,
+        -61,
+        13,
+        1310,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1299,
+        -58,
+        13,
+        1301,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1301,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1300,
+        -57,
+        8,
+        1302,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1300,
+          -57,
+          8
+        ],
+        [
+          1300,
+          -57,
+          9
+        ],
+        [
+          1300,
+          -57,
+          10
+        ],
+        [
+          1301,
+          -57,
+          8
+        ],
+        [
+          1301,
+          -57,
+          9
+        ],
+        [
+          1301,
+          -57,
+          10
+        ],
+        [
+          1302,
+          -57,
+          8
+        ],
+        [
+          1302,
+          -57,
+          9
+        ],
+        [
+          1302,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:spruce_pressure_plate",
+      "reveal_path_block": "minecraft:magenta_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1291,
+        -57,
+        18,
+        1310,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1299,
+        -57,
+        19,
+        1301,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1320,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1321,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1329,
+        -51,
+        13,
+        1333,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1329,
+        -51,
+        13,
+        1333,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1321,
+        -51,
+        1,
+        1341,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_05/setup",
+      "place_command_blocks_function": "path:tier_path_medium_05/place_command_blocks",
+      "tick_function": "path:tier_path_medium_05/tick",
+      "clear_function": "path:tier_path_medium_05/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1320,
+        -61,
+        0,
+        1342,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1320,
+        -61,
+        18,
+        1342,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1321,
+        -61,
+        13,
+        1341,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1330,
+        -58,
+        13,
+        1332,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1331,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1330,
+        -57,
+        8,
+        1332,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1330,
+          -57,
+          8
+        ],
+        [
+          1330,
+          -57,
+          9
+        ],
+        [
+          1330,
+          -57,
+          10
+        ],
+        [
+          1331,
+          -57,
+          8
+        ],
+        [
+          1331,
+          -57,
+          9
+        ],
+        [
+          1331,
+          -57,
+          10
+        ],
+        [
+          1332,
+          -57,
+          8
+        ],
+        [
+          1332,
+          -57,
+          9
+        ],
+        [
+          1332,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:birch_pressure_plate",
+      "reveal_path_block": "minecraft:red_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1321,
+        -57,
+        18,
+        1341,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1330,
+        -57,
+        19,
+        1332,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1351,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1352,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1359,
+        -51,
+        13,
+        1363,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1359,
+        -51,
+        13,
+        1363,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1352,
+        -51,
+        1,
+        1370,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_06/setup",
+      "place_command_blocks_function": "path:tier_path_medium_06/place_command_blocks",
+      "tick_function": "path:tier_path_medium_06/tick",
+      "clear_function": "path:tier_path_medium_06/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1351,
+        -61,
+        0,
+        1371,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1351,
+        -61,
+        18,
+        1371,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1352,
+        -61,
+        13,
+        1370,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1360,
+        -58,
+        13,
+        1362,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1361,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1360,
+        -57,
+        8,
+        1362,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1360,
+          -57,
+          8
+        ],
+        [
+          1360,
+          -57,
+          9
+        ],
+        [
+          1360,
+          -57,
+          10
+        ],
+        [
+          1361,
+          -57,
+          8
+        ],
+        [
+          1361,
+          -57,
+          9
+        ],
+        [
+          1361,
+          -57,
+          10
+        ],
+        [
+          1362,
+          -57,
+          8
+        ],
+        [
+          1362,
+          -57,
+          9
+        ],
+        [
+          1362,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:jungle_pressure_plate",
+      "reveal_path_block": "minecraft:yellow_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1352,
+        -57,
+        18,
+        1370,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1360,
+        -57,
+        19,
+        1362,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1380,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1381,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1388,
+        -51,
+        13,
+        1392,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1388,
+        -51,
+        13,
+        1392,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1381,
+        -51,
+        1,
+        1400,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_07/setup",
+      "place_command_blocks_function": "path:tier_path_medium_07/place_command_blocks",
+      "tick_function": "path:tier_path_medium_07/tick",
+      "clear_function": "path:tier_path_medium_07/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1380,
+        -61,
+        0,
+        1401,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1380,
+        -61,
+        18,
+        1401,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1381,
+        -61,
+        13,
+        1400,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1389,
+        -58,
+        13,
+        1391,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1391,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1390,
+        -57,
+        8,
+        1392,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1390,
+          -57,
+          8
+        ],
+        [
+          1390,
+          -57,
+          9
+        ],
+        [
+          1390,
+          -57,
+          10
+        ],
+        [
+          1391,
+          -57,
+          8
+        ],
+        [
+          1391,
+          -57,
+          9
+        ],
+        [
+          1391,
+          -57,
+          10
+        ],
+        [
+          1392,
+          -57,
+          8
+        ],
+        [
+          1392,
+          -57,
+          9
+        ],
+        [
+          1392,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:acacia_pressure_plate",
+      "reveal_path_block": "minecraft:green_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1381,
+        -57,
+        18,
+        1400,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1389,
+        -57,
+        19,
+        1391,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1410,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1411,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1419,
+        -51,
+        13,
+        1423,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1419,
+        -51,
+        13,
+        1423,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1411,
+        -51,
+        1,
+        1431,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_08/setup",
+      "place_command_blocks_function": "path:tier_path_medium_08/place_command_blocks",
+      "tick_function": "path:tier_path_medium_08/tick",
+      "clear_function": "path:tier_path_medium_08/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1410,
+        -61,
+        0,
+        1432,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1410,
+        -61,
+        18,
+        1432,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1411,
+        -61,
+        13,
+        1431,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1420,
+        -58,
+        13,
+        1422,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1421,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1420,
+        -57,
+        8,
+        1422,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1420,
+          -57,
+          8
+        ],
+        [
+          1420,
+          -57,
+          9
+        ],
+        [
+          1420,
+          -57,
+          10
+        ],
+        [
+          1421,
+          -57,
+          8
+        ],
+        [
+          1421,
+          -57,
+          9
+        ],
+        [
+          1421,
+          -57,
+          10
+        ],
+        [
+          1422,
+          -57,
+          8
+        ],
+        [
+          1422,
+          -57,
+          9
+        ],
+        [
+          1422,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:dark_oak_pressure_plate",
+      "reveal_path_block": "minecraft:orange_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1411,
+        -57,
+        18,
+        1431,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1420,
+        -57,
+        19,
+        1422,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1441,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1442,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1449,
+        -51,
+        13,
+        1453,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1449,
+        -51,
+        13,
+        1453,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1442,
+        -51,
+        1,
+        1460,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_09/setup",
+      "place_command_blocks_function": "path:tier_path_medium_09/place_command_blocks",
+      "tick_function": "path:tier_path_medium_09/tick",
+      "clear_function": "path:tier_path_medium_09/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1441,
+        -61,
+        0,
+        1461,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1441,
+        -61,
+        18,
+        1461,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1442,
+        -61,
+        13,
+        1460,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1450,
+        -58,
+        13,
+        1452,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1451,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1450,
+        -57,
+        8,
+        1452,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1450,
+          -57,
+          8
+        ],
+        [
+          1450,
+          -57,
+          9
+        ],
+        [
+          1450,
+          -57,
+          10
+        ],
+        [
+          1451,
+          -57,
+          8
+        ],
+        [
+          1451,
+          -57,
+          9
+        ],
+        [
+          1451,
+          -57,
+          10
+        ],
+        [
+          1452,
+          -57,
+          8
+        ],
+        [
+          1452,
+          -57,
+          9
+        ],
+        [
+          1452,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:mangrove_pressure_plate",
+      "reveal_path_block": "minecraft:purple_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1442,
+        -57,
+        18,
+        1460,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1450,
+        -57,
+        19,
+        1452,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_medium_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1470,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1471,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1478,
+        -51,
+        13,
+        1482,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1478,
+        -51,
+        13,
+        1482,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1471,
+        -51,
+        1,
+        1490,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_medium_10/setup",
+      "place_command_blocks_function": "path:tier_path_medium_10/place_command_blocks",
+      "tick_function": "path:tier_path_medium_10/tick",
+      "clear_function": "path:tier_path_medium_10/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 5,
+      "reveal_path_width": 3,
+      "pressure_plate_size": 3,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1470,
+        -61,
+        0,
+        1491,
+        -58,
+        12
+      ],
+      "solid_end_b_region": [
+        1470,
+        -61,
+        18,
+        1491,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1471,
+        -61,
+        13,
+        1490,
+        -58,
+        17
+      ],
+      "reveal_path_region": [
+        1479,
+        -58,
+        13,
+        1481,
+        -58,
+        17
+      ],
+      "pressure_plate_pos": [
+        1481,
+        -57,
+        9
+      ],
+      "pressure_plate_region": [
+        1480,
+        -57,
+        8,
+        1482,
+        -57,
+        10
+      ],
+      "pressure_plate_positions": [
+        [
+          1480,
+          -57,
+          8
+        ],
+        [
+          1480,
+          -57,
+          9
+        ],
+        [
+          1480,
+          -57,
+          10
+        ],
+        [
+          1481,
+          -57,
+          8
+        ],
+        [
+          1481,
+          -57,
+          9
+        ],
+        [
+          1481,
+          -57,
+          10
+        ],
+        [
+          1482,
+          -57,
+          8
+        ],
+        [
+          1482,
+          -57,
+          9
+        ],
+        [
+          1482,
+          -57,
+          10
+        ]
+      ],
+      "pressure_plate_block": "minecraft:cherry_pressure_plate",
+      "reveal_path_block": "minecraft:blue_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1471,
+        -57,
+        18,
+        1490,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1479,
+        -57,
+        19,
+        1481,
+        -57,
+        19
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "plate": 3,
+        "door_width": 2,
+        "plate_door_distance": [
+          5,
+          6
+        ],
+        "plate_door_distance_average": 5.5,
+        "path_width": 3,
+        "path_length": 5,
+        "a_distance": [
+          2.5,
+          4.5
+        ],
+        "a_angle": [
+          0.0,
+          40.0
+        ],
+        "b_distance": [
+          3.5,
+          5.5
+        ],
+        "b_angle": [
+          25.0,
+          35.0
+        ],
+        "path_b_edge_max": 2
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1500,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1501,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1508,
+        -51,
+        13,
+        1512,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1508,
+        -51,
+        13,
+        1512,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1501,
+        -51,
+        1,
+        1520,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_01/setup",
+      "place_command_blocks_function": "path:tier_path_hard_01/place_command_blocks",
+      "tick_function": "path:tier_path_hard_01/tick",
+      "clear_function": "path:tier_path_hard_01/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1500,
+        -61,
+        0,
+        1521,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1500,
+        -61,
+        19,
+        1521,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1501,
+        -61,
+        12,
+        1520,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1510,
+        -58,
+        12,
+        1511,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1511,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1511,
+        -57,
+        8,
+        1512,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1511,
+          -57,
+          8
+        ],
+        [
+          1511,
+          -57,
+          9
+        ],
+        [
+          1512,
+          -57,
+          8
+        ],
+        [
+          1512,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:stone_pressure_plate",
+      "reveal_path_block": "minecraft:lime_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1501,
+        -57,
+        19,
+        1520,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1510,
+        -57,
+        20,
+        1511,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1530,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1531,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1539,
+        -51,
+        13,
+        1543,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1539,
+        -51,
+        13,
+        1543,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1531,
+        -51,
+        1,
+        1551,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_02/setup",
+      "place_command_blocks_function": "path:tier_path_hard_02/place_command_blocks",
+      "tick_function": "path:tier_path_hard_02/tick",
+      "clear_function": "path:tier_path_hard_02/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1530,
+        -61,
+        0,
+        1552,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1530,
+        -61,
+        19,
+        1552,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1531,
+        -61,
+        12,
+        1551,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1540,
+        -58,
+        12,
+        1541,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1541,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1541,
+        -57,
+        8,
+        1542,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1541,
+          -57,
+          8
+        ],
+        [
+          1541,
+          -57,
+          9
+        ],
+        [
+          1542,
+          -57,
+          8
+        ],
+        [
+          1542,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:polished_blackstone_pressure_plate",
+      "reveal_path_block": "minecraft:cyan_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1531,
+        -57,
+        19,
+        1551,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1540,
+        -57,
+        20,
+        1541,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1561,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1562,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1569,
+        -51,
+        13,
+        1573,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1569,
+        -51,
+        13,
+        1573,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1562,
+        -51,
+        1,
+        1580,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_03/setup",
+      "place_command_blocks_function": "path:tier_path_hard_03/place_command_blocks",
+      "tick_function": "path:tier_path_hard_03/tick",
+      "clear_function": "path:tier_path_hard_03/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1561,
+        -61,
+        0,
+        1581,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1561,
+        -61,
+        19,
+        1581,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1562,
+        -61,
+        12,
+        1580,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1570,
+        -58,
+        12,
+        1571,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1571,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1571,
+        -57,
+        8,
+        1572,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1571,
+          -57,
+          8
+        ],
+        [
+          1571,
+          -57,
+          9
+        ],
+        [
+          1572,
+          -57,
+          8
+        ],
+        [
+          1572,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:oak_pressure_plate",
+      "reveal_path_block": "minecraft:blue_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1562,
+        -57,
+        19,
+        1580,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1570,
+        -57,
+        20,
+        1571,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1590,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1591,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1598,
+        -51,
+        13,
+        1602,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1598,
+        -51,
+        13,
+        1602,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1591,
+        -51,
+        1,
+        1610,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_04/setup",
+      "place_command_blocks_function": "path:tier_path_hard_04/place_command_blocks",
+      "tick_function": "path:tier_path_hard_04/tick",
+      "clear_function": "path:tier_path_hard_04/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1590,
+        -61,
+        0,
+        1611,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1590,
+        -61,
+        19,
+        1611,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1591,
+        -61,
+        12,
+        1610,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1600,
+        -58,
+        12,
+        1601,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1601,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1601,
+        -57,
+        8,
+        1602,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1601,
+          -57,
+          8
+        ],
+        [
+          1601,
+          -57,
+          9
+        ],
+        [
+          1602,
+          -57,
+          8
+        ],
+        [
+          1602,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:spruce_pressure_plate",
+      "reveal_path_block": "minecraft:magenta_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1591,
+        -57,
+        19,
+        1610,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1600,
+        -57,
+        20,
+        1601,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1620,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1621,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1629,
+        -51,
+        13,
+        1633,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1629,
+        -51,
+        13,
+        1633,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1621,
+        -51,
+        1,
+        1641,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_05/setup",
+      "place_command_blocks_function": "path:tier_path_hard_05/place_command_blocks",
+      "tick_function": "path:tier_path_hard_05/tick",
+      "clear_function": "path:tier_path_hard_05/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1620,
+        -61,
+        0,
+        1642,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1620,
+        -61,
+        19,
+        1642,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1621,
+        -61,
+        12,
+        1641,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1630,
+        -58,
+        12,
+        1631,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1631,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1631,
+        -57,
+        8,
+        1632,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1631,
+          -57,
+          8
+        ],
+        [
+          1631,
+          -57,
+          9
+        ],
+        [
+          1632,
+          -57,
+          8
+        ],
+        [
+          1632,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:birch_pressure_plate",
+      "reveal_path_block": "minecraft:red_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1621,
+        -57,
+        19,
+        1641,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1630,
+        -57,
+        20,
+        1631,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1651,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1652,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1659,
+        -51,
+        13,
+        1663,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1659,
+        -51,
+        13,
+        1663,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1652,
+        -51,
+        1,
+        1670,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_06/setup",
+      "place_command_blocks_function": "path:tier_path_hard_06/place_command_blocks",
+      "tick_function": "path:tier_path_hard_06/tick",
+      "clear_function": "path:tier_path_hard_06/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1651,
+        -61,
+        0,
+        1671,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1651,
+        -61,
+        19,
+        1671,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1652,
+        -61,
+        12,
+        1670,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1660,
+        -58,
+        12,
+        1661,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1661,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1661,
+        -57,
+        8,
+        1662,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1661,
+          -57,
+          8
+        ],
+        [
+          1661,
+          -57,
+          9
+        ],
+        [
+          1662,
+          -57,
+          8
+        ],
+        [
+          1662,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:jungle_pressure_plate",
+      "reveal_path_block": "minecraft:yellow_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1652,
+        -57,
+        19,
+        1670,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1660,
+        -57,
+        20,
+        1661,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1680,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1681,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1688,
+        -51,
+        13,
+        1692,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1688,
+        -51,
+        13,
+        1692,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1681,
+        -51,
+        1,
+        1700,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_07/setup",
+      "place_command_blocks_function": "path:tier_path_hard_07/place_command_blocks",
+      "tick_function": "path:tier_path_hard_07/tick",
+      "clear_function": "path:tier_path_hard_07/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1680,
+        -61,
+        0,
+        1701,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1680,
+        -61,
+        19,
+        1701,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1681,
+        -61,
+        12,
+        1700,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1690,
+        -58,
+        12,
+        1691,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1691,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1691,
+        -57,
+        8,
+        1692,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1691,
+          -57,
+          8
+        ],
+        [
+          1691,
+          -57,
+          9
+        ],
+        [
+          1692,
+          -57,
+          8
+        ],
+        [
+          1692,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:acacia_pressure_plate",
+      "reveal_path_block": "minecraft:green_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1681,
+        -57,
+        19,
+        1700,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1690,
+        -57,
+        20,
+        1691,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1710,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1711,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1719,
+        -51,
+        13,
+        1723,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1719,
+        -51,
+        13,
+        1723,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1711,
+        -51,
+        1,
+        1731,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_08/setup",
+      "place_command_blocks_function": "path:tier_path_hard_08/place_command_blocks",
+      "tick_function": "path:tier_path_hard_08/tick",
+      "clear_function": "path:tier_path_hard_08/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1710,
+        -61,
+        0,
+        1732,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1710,
+        -61,
+        19,
+        1732,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1711,
+        -61,
+        12,
+        1731,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1720,
+        -58,
+        12,
+        1721,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1721,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1721,
+        -57,
+        8,
+        1722,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1721,
+          -57,
+          8
+        ],
+        [
+          1721,
+          -57,
+          9
+        ],
+        [
+          1722,
+          -57,
+          8
+        ],
+        [
+          1722,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:dark_oak_pressure_plate",
+      "reveal_path_block": "minecraft:orange_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1711,
+        -57,
+        19,
+        1731,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1720,
+        -57,
+        20,
+        1721,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1741,
+        -58,
+        0
+      ],
+      "room_size": [
+        21,
+        8,
+        32
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1742,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1749,
+        -51,
+        13,
+        1753,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1749,
+        -51,
+        13,
+        1753,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1742,
+        -51,
+        1,
+        1760,
+        -51,
+        30
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_09/setup",
+      "place_command_blocks_function": "path:tier_path_hard_09/place_command_blocks",
+      "tick_function": "path:tier_path_hard_09/tick",
+      "clear_function": "path:tier_path_hard_09/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1741,
+        -61,
+        0,
+        1761,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1741,
+        -61,
+        19,
+        1761,
+        -58,
+        31
+      ],
+      "hollow_middle_region": [
+        1742,
+        -61,
+        12,
+        1760,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1750,
+        -58,
+        12,
+        1751,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1751,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1751,
+        -57,
+        8,
+        1752,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1751,
+          -57,
+          8
+        ],
+        [
+          1751,
+          -57,
+          9
+        ],
+        [
+          1752,
+          -57,
+          8
+        ],
+        [
+          1752,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:mangrove_pressure_plate",
+      "reveal_path_block": "minecraft:purple_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1742,
+        -57,
+        19,
+        1760,
+        -57,
+        30
+      ],
+      "goal_marker_region": [
+        1750,
+        -57,
+        20,
+        1751,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    },
+    {
+      "scene_id": "tier_path_hard_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "path",
+      "task_template": "pressure_path_reveal",
+      "origin": [
+        1770,
+        -58,
+        0
+      ],
+      "room_size": [
+        22,
+        8,
+        31
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        1771,
+        -52,
+        1
+      ],
+      "ceiling_light_region": [
+        1778,
+        -51,
+        13,
+        1782,
+        -51,
+        17
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        1778,
+        -51,
+        13,
+        1782,
+        -51,
+        17
+      ],
+      "ceiling_spotlight_ring_region": [
+        1771,
+        -51,
+        1,
+        1790,
+        -51,
+        29
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "path:tier_path_hard_10/setup",
+      "place_command_blocks_function": "path:tier_path_hard_10/place_command_blocks",
+      "tick_function": "path:tier_path_hard_10/tick",
+      "clear_function": "path:tier_path_hard_10/clear",
+      "path_axis": "z",
+      "foundation_thickness": 4,
+      "solid_end_length": 10,
+      "reveal_path_length": 7,
+      "reveal_path_width": 2,
+      "pressure_plate_size": 2,
+      "plate_offset_from_gap": 4,
+      "solid_end_a_region": [
+        1770,
+        -61,
+        0,
+        1791,
+        -58,
+        11
+      ],
+      "solid_end_b_region": [
+        1770,
+        -61,
+        19,
+        1791,
+        -58,
+        30
+      ],
+      "hollow_middle_region": [
+        1771,
+        -61,
+        12,
+        1790,
+        -58,
+        18
+      ],
+      "reveal_path_region": [
+        1780,
+        -58,
+        12,
+        1781,
+        -58,
+        18
+      ],
+      "pressure_plate_pos": [
+        1781,
+        -57,
+        8
+      ],
+      "pressure_plate_region": [
+        1781,
+        -57,
+        8,
+        1782,
+        -57,
+        9
+      ],
+      "pressure_plate_positions": [
+        [
+          1781,
+          -57,
+          8
+        ],
+        [
+          1781,
+          -57,
+          9
+        ],
+        [
+          1782,
+          -57,
+          8
+        ],
+        [
+          1782,
+          -57,
+          9
+        ]
+      ],
+      "pressure_plate_block": "minecraft:cherry_pressure_plate",
+      "reveal_path_block": "minecraft:blue_concrete",
+      "inactive_path_block": "minecraft:air",
+      "bottom_layer_block": "minecraft:black_concrete",
+      "goal_region": [
+        1771,
+        -57,
+        19,
+        1790,
+        -57,
+        29
+      ],
+      "goal_marker_region": [
+        1780,
+        -57,
+        20,
+        1781,
+        -57,
+        20
+      ],
+      "floor_block": "minecraft:white_concrete",
+      "wall_block": "minecraft:white_concrete",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "plate": 2,
+        "door_width": 1,
+        "plate_door_distance": [
+          6,
+          7
+        ],
+        "plate_door_distance_average": 6.5,
+        "path_width": 2,
+        "path_length": 7,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "a_angle": [
+          0.0,
+          45.0
+        ],
+        "b_distance": [
+          5.5,
+          7.5
+        ],
+        "b_angle": [
+          45.0,
+          55.0
+        ],
+        "path_b_edge_max": 3
+      }
+    }
+  ]
+}

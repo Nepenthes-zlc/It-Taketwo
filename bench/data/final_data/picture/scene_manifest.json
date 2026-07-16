@@ -1,0 +1,5259 @@
+{
+  "namespace": "picture",
+  "datapack_name": "picture_scene_pack",
+  "datapack_root": "final_data\\picture\\datapacks\\picture_scene_pack",
+  "source_spec": "scene_specs\\picture_30_scenes.json",
+  "scene_count": 30,
+  "scenes": [
+    {
+      "scene_id": "picture_easy_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        2800,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2801,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        2806,
+        -48,
+        7,
+        2810,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2806,
+        -48,
+        7,
+        2810,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        2801,
+        -48,
+        1,
+        2815,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_01/setup",
+      "place_command_blocks_function": "picture:picture_easy_01/place_command_blocks",
+      "tick_function": "picture:picture_easy_01/tick",
+      "clear_function": "picture:picture_easy_01/clear",
+      "interior_height": 9,
+      "platform_region": [
+        2801,
+        -52,
+        1,
+        2815,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        2800,
+        -57,
+        0,
+        2816,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        2801,
+        -53,
+        1,
+        2815,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          2804,
+          -57,
+          1,
+          2808,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        2804,
+        -57,
+        1,
+        2808,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:red_concrete",
+      "target_region": [
+        2804,
+        -51,
+        1,
+        2808,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        2808.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        2808.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        2808,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        2807,
+        -51,
+        11,
+        2809,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        2825,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2826,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        2831,
+        -48,
+        7,
+        2835,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2831,
+        -48,
+        7,
+        2835,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        2826,
+        -48,
+        1,
+        2840,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_02/setup",
+      "place_command_blocks_function": "picture:picture_easy_02/place_command_blocks",
+      "tick_function": "picture:picture_easy_02/tick",
+      "clear_function": "picture:picture_easy_02/clear",
+      "interior_height": 9,
+      "platform_region": [
+        2826,
+        -52,
+        1,
+        2840,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        2825,
+        -57,
+        0,
+        2841,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        2826,
+        -53,
+        1,
+        2840,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          2832,
+          -57,
+          1,
+          2836,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        2832,
+        -57,
+        1,
+        2836,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:orange_concrete",
+      "target_region": [
+        2832,
+        -51,
+        1,
+        2836,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        2833.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        2833.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        2833,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        2832,
+        -51,
+        11,
+        2834,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        2850,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2851,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        2856,
+        -48,
+        7,
+        2860,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2856,
+        -48,
+        7,
+        2860,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        2851,
+        -48,
+        1,
+        2865,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_03/setup",
+      "place_command_blocks_function": "picture:picture_easy_03/place_command_blocks",
+      "tick_function": "picture:picture_easy_03/tick",
+      "clear_function": "picture:picture_easy_03/clear",
+      "interior_height": 9,
+      "platform_region": [
+        2851,
+        -52,
+        1,
+        2865,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        2850,
+        -57,
+        0,
+        2866,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        2851,
+        -53,
+        1,
+        2865,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          2855,
+          -57,
+          1,
+          2859,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        2855,
+        -57,
+        1,
+        2859,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:yellow_concrete",
+      "target_region": [
+        2855,
+        -51,
+        1,
+        2859,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        2858.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        2858.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        2858,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        2857,
+        -51,
+        11,
+        2859,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        2875,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2876,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        2881,
+        -48,
+        7,
+        2885,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2881,
+        -48,
+        7,
+        2885,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        2876,
+        -48,
+        1,
+        2890,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_04/setup",
+      "place_command_blocks_function": "picture:picture_easy_04/place_command_blocks",
+      "tick_function": "picture:picture_easy_04/tick",
+      "clear_function": "picture:picture_easy_04/clear",
+      "interior_height": 9,
+      "platform_region": [
+        2876,
+        -52,
+        1,
+        2890,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        2875,
+        -57,
+        0,
+        2891,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        2876,
+        -53,
+        1,
+        2890,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          2881,
+          -57,
+          1,
+          2885,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        2881,
+        -57,
+        1,
+        2885,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:lime_concrete",
+      "target_region": [
+        2881,
+        -51,
+        1,
+        2885,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        2883.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        2883.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        2883,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        2882,
+        -51,
+        11,
+        2884,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        2900,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2901,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        2906,
+        -48,
+        7,
+        2910,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2906,
+        -48,
+        7,
+        2910,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        2901,
+        -48,
+        1,
+        2915,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_05/setup",
+      "place_command_blocks_function": "picture:picture_easy_05/place_command_blocks",
+      "tick_function": "picture:picture_easy_05/tick",
+      "clear_function": "picture:picture_easy_05/clear",
+      "interior_height": 9,
+      "platform_region": [
+        2901,
+        -52,
+        1,
+        2915,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        2900,
+        -57,
+        0,
+        2916,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        2901,
+        -53,
+        1,
+        2915,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          2904,
+          -57,
+          1,
+          2908,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        2904,
+        -57,
+        1,
+        2908,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:green_concrete",
+      "target_region": [
+        2904,
+        -51,
+        1,
+        2908,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        2908.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        2908.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        2908,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        2907,
+        -51,
+        11,
+        2909,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        2925,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2926,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        2931,
+        -48,
+        7,
+        2935,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2931,
+        -48,
+        7,
+        2935,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        2926,
+        -48,
+        1,
+        2940,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_06/setup",
+      "place_command_blocks_function": "picture:picture_easy_06/place_command_blocks",
+      "tick_function": "picture:picture_easy_06/tick",
+      "clear_function": "picture:picture_easy_06/clear",
+      "interior_height": 9,
+      "platform_region": [
+        2926,
+        -52,
+        1,
+        2940,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        2925,
+        -57,
+        0,
+        2941,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        2926,
+        -53,
+        1,
+        2940,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          2933,
+          -57,
+          1,
+          2937,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        2933,
+        -57,
+        1,
+        2937,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:cyan_concrete",
+      "target_region": [
+        2933,
+        -51,
+        1,
+        2937,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        2933.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        2933.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        2933,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        2932,
+        -51,
+        11,
+        2934,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        2950,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2951,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        2956,
+        -48,
+        7,
+        2960,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2956,
+        -48,
+        7,
+        2960,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        2951,
+        -48,
+        1,
+        2965,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_07/setup",
+      "place_command_blocks_function": "picture:picture_easy_07/place_command_blocks",
+      "tick_function": "picture:picture_easy_07/tick",
+      "clear_function": "picture:picture_easy_07/clear",
+      "interior_height": 9,
+      "platform_region": [
+        2951,
+        -52,
+        1,
+        2965,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        2950,
+        -57,
+        0,
+        2966,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        2951,
+        -53,
+        1,
+        2965,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          2955,
+          -57,
+          1,
+          2959,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        2955,
+        -57,
+        1,
+        2959,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:light_blue_concrete",
+      "target_region": [
+        2955,
+        -51,
+        1,
+        2959,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        2958.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        2958.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        2958,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        2957,
+        -51,
+        11,
+        2959,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        2975,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        2976,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        2981,
+        -48,
+        7,
+        2985,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        2981,
+        -48,
+        7,
+        2985,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        2976,
+        -48,
+        1,
+        2990,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_08/setup",
+      "place_command_blocks_function": "picture:picture_easy_08/place_command_blocks",
+      "tick_function": "picture:picture_easy_08/tick",
+      "clear_function": "picture:picture_easy_08/clear",
+      "interior_height": 9,
+      "platform_region": [
+        2976,
+        -52,
+        1,
+        2990,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        2975,
+        -57,
+        0,
+        2991,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        2976,
+        -53,
+        1,
+        2990,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          2985,
+          -57,
+          1,
+          2989,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        2985,
+        -57,
+        1,
+        2989,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:blue_concrete",
+      "target_region": [
+        2985,
+        -51,
+        1,
+        2989,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        2983.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        2983.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        2983,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        2982,
+        -51,
+        11,
+        2984,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3000,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3001,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3006,
+        -48,
+        7,
+        3010,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3006,
+        -48,
+        7,
+        3010,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3001,
+        -48,
+        1,
+        3015,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_09/setup",
+      "place_command_blocks_function": "picture:picture_easy_09/place_command_blocks",
+      "tick_function": "picture:picture_easy_09/tick",
+      "clear_function": "picture:picture_easy_09/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3001,
+        -52,
+        1,
+        3015,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3000,
+        -57,
+        0,
+        3016,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3001,
+        -53,
+        1,
+        3015,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3003,
+          -57,
+          1,
+          3007,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3003,
+        -57,
+        1,
+        3007,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:purple_concrete",
+      "target_region": [
+        3003,
+        -51,
+        1,
+        3007,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3008.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3008.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3008,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3007,
+        -51,
+        11,
+        3009,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_easy_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3025,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3026,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3031,
+        -48,
+        7,
+        3035,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3031,
+        -48,
+        7,
+        3035,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3026,
+        -48,
+        1,
+        3040,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_easy_10/setup",
+      "place_command_blocks_function": "picture:picture_easy_10/place_command_blocks",
+      "tick_function": "picture:picture_easy_10/tick",
+      "clear_function": "picture:picture_easy_10/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3026,
+        -52,
+        1,
+        3040,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3025,
+        -57,
+        0,
+        3041,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3026,
+        -53,
+        1,
+        3040,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3034,
+          -57,
+          1,
+          3038,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3034,
+        -57,
+        1,
+        3038,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:magenta_concrete",
+      "target_region": [
+        3034,
+        -51,
+        1,
+        3038,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3033.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3033.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3033,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3032,
+        -51,
+        11,
+        3034,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "region_size": 5,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3050,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3051,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3056,
+        -48,
+        7,
+        3060,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3056,
+        -48,
+        7,
+        3060,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3051,
+        -48,
+        1,
+        3065,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_01/setup",
+      "place_command_blocks_function": "picture:picture_medium_01/place_command_blocks",
+      "tick_function": "picture:picture_medium_01/tick",
+      "clear_function": "picture:picture_medium_01/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3051,
+        -52,
+        1,
+        3065,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3050,
+        -57,
+        0,
+        3066,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3051,
+        -53,
+        1,
+        3065,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3054,
+          -57,
+          2,
+          3057,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3054,
+        -57,
+        2,
+        3057,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:red_concrete",
+      "target_region": [
+        3054,
+        -51,
+        2,
+        3057,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3058.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3058.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3058,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3057,
+        -51,
+        11,
+        3059,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3075,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3076,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3081,
+        -48,
+        7,
+        3085,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3081,
+        -48,
+        7,
+        3085,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3076,
+        -48,
+        1,
+        3090,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_02/setup",
+      "place_command_blocks_function": "picture:picture_medium_02/place_command_blocks",
+      "tick_function": "picture:picture_medium_02/tick",
+      "clear_function": "picture:picture_medium_02/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3076,
+        -52,
+        1,
+        3090,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3075,
+        -57,
+        0,
+        3091,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3076,
+        -53,
+        1,
+        3090,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3086,
+          -57,
+          1,
+          3089,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3086,
+        -57,
+        1,
+        3089,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:orange_concrete",
+      "target_region": [
+        3086,
+        -51,
+        1,
+        3089,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3083.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3083.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3083,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3082,
+        -51,
+        11,
+        3084,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3100,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3101,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3106,
+        -48,
+        7,
+        3110,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3106,
+        -48,
+        7,
+        3110,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3101,
+        -48,
+        1,
+        3115,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_03/setup",
+      "place_command_blocks_function": "picture:picture_medium_03/place_command_blocks",
+      "tick_function": "picture:picture_medium_03/tick",
+      "clear_function": "picture:picture_medium_03/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3101,
+        -52,
+        1,
+        3115,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3100,
+        -57,
+        0,
+        3116,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3101,
+        -53,
+        1,
+        3115,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3104,
+          -57,
+          2,
+          3107,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3104,
+        -57,
+        2,
+        3107,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:yellow_concrete",
+      "target_region": [
+        3104,
+        -51,
+        2,
+        3107,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3108.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3108.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3108,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3107,
+        -51,
+        11,
+        3109,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3125,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3126,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3131,
+        -48,
+        7,
+        3135,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3131,
+        -48,
+        7,
+        3135,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3126,
+        -48,
+        1,
+        3140,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_04/setup",
+      "place_command_blocks_function": "picture:picture_medium_04/place_command_blocks",
+      "tick_function": "picture:picture_medium_04/tick",
+      "clear_function": "picture:picture_medium_04/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3126,
+        -52,
+        1,
+        3140,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3125,
+        -57,
+        0,
+        3141,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3126,
+        -53,
+        1,
+        3140,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3135,
+          -57,
+          1,
+          3138,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3135,
+        -57,
+        1,
+        3138,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:lime_concrete",
+      "target_region": [
+        3135,
+        -51,
+        1,
+        3138,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3133.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3133.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3133,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3132,
+        -51,
+        11,
+        3134,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3150,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3151,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3156,
+        -48,
+        7,
+        3160,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3156,
+        -48,
+        7,
+        3160,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3151,
+        -48,
+        1,
+        3165,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_05/setup",
+      "place_command_blocks_function": "picture:picture_medium_05/place_command_blocks",
+      "tick_function": "picture:picture_medium_05/tick",
+      "clear_function": "picture:picture_medium_05/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3151,
+        -52,
+        1,
+        3165,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3150,
+        -57,
+        0,
+        3166,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3151,
+        -53,
+        1,
+        3165,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3152,
+          -57,
+          2,
+          3155,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3152,
+        -57,
+        2,
+        3155,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:green_concrete",
+      "target_region": [
+        3152,
+        -51,
+        2,
+        3155,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3158.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3158.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3158,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3157,
+        -51,
+        11,
+        3159,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3175,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3176,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3181,
+        -48,
+        7,
+        3185,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3181,
+        -48,
+        7,
+        3185,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3176,
+        -48,
+        1,
+        3190,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_06/setup",
+      "place_command_blocks_function": "picture:picture_medium_06/place_command_blocks",
+      "tick_function": "picture:picture_medium_06/tick",
+      "clear_function": "picture:picture_medium_06/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3176,
+        -52,
+        1,
+        3190,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3175,
+        -57,
+        0,
+        3191,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3176,
+        -53,
+        1,
+        3190,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3187,
+          -57,
+          1,
+          3190,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3187,
+        -57,
+        1,
+        3190,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:cyan_concrete",
+      "target_region": [
+        3187,
+        -51,
+        1,
+        3190,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3183.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3183.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3183,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3182,
+        -51,
+        11,
+        3184,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3200,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3201,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3206,
+        -48,
+        7,
+        3210,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3206,
+        -48,
+        7,
+        3210,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3201,
+        -48,
+        1,
+        3215,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_07/setup",
+      "place_command_blocks_function": "picture:picture_medium_07/place_command_blocks",
+      "tick_function": "picture:picture_medium_07/tick",
+      "clear_function": "picture:picture_medium_07/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3201,
+        -52,
+        1,
+        3215,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3200,
+        -57,
+        0,
+        3216,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3201,
+        -53,
+        1,
+        3215,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3205,
+          -57,
+          2,
+          3208,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3205,
+        -57,
+        2,
+        3208,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:light_blue_concrete",
+      "target_region": [
+        3205,
+        -51,
+        2,
+        3208,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3208.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3208.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3208,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3207,
+        -51,
+        11,
+        3209,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3225,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3226,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3231,
+        -48,
+        7,
+        3235,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3231,
+        -48,
+        7,
+        3235,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3226,
+        -48,
+        1,
+        3240,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_08/setup",
+      "place_command_blocks_function": "picture:picture_medium_08/place_command_blocks",
+      "tick_function": "picture:picture_medium_08/tick",
+      "clear_function": "picture:picture_medium_08/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3226,
+        -52,
+        1,
+        3240,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3225,
+        -57,
+        0,
+        3241,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3226,
+        -53,
+        1,
+        3240,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3233,
+          -57,
+          1,
+          3236,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3233,
+        -57,
+        1,
+        3236,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:blue_concrete",
+      "target_region": [
+        3233,
+        -51,
+        1,
+        3236,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3233.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3233.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3233,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3232,
+        -51,
+        11,
+        3234,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3250,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3251,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3256,
+        -48,
+        7,
+        3260,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3256,
+        -48,
+        7,
+        3260,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3251,
+        -48,
+        1,
+        3265,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_09/setup",
+      "place_command_blocks_function": "picture:picture_medium_09/place_command_blocks",
+      "tick_function": "picture:picture_medium_09/tick",
+      "clear_function": "picture:picture_medium_09/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3251,
+        -52,
+        1,
+        3265,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3250,
+        -57,
+        0,
+        3266,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3251,
+        -53,
+        1,
+        3265,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3256,
+          -57,
+          2,
+          3259,
+          -57,
+          5
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3256,
+        -57,
+        2,
+        3259,
+        -57,
+        5
+      ],
+      "colored_region_block": "minecraft:purple_concrete",
+      "target_region": [
+        3256,
+        -51,
+        2,
+        3259,
+        -51,
+        5
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3258.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3258.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3258,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3257,
+        -51,
+        11,
+        3259,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_medium_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3275,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3276,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3281,
+        -48,
+        7,
+        3285,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3281,
+        -48,
+        7,
+        3285,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3276,
+        -48,
+        1,
+        3290,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_medium_10/setup",
+      "place_command_blocks_function": "picture:picture_medium_10/place_command_blocks",
+      "tick_function": "picture:picture_medium_10/tick",
+      "clear_function": "picture:picture_medium_10/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3276,
+        -52,
+        1,
+        3290,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3275,
+        -57,
+        0,
+        3291,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3276,
+        -53,
+        1,
+        3290,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3284,
+          -57,
+          1,
+          3287,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3284,
+        -57,
+        1,
+        3287,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:magenta_concrete",
+      "target_region": [
+        3284,
+        -51,
+        1,
+        3287,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3283.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3283.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3283,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3282,
+        -51,
+        11,
+        3284,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "region_size": 4,
+        "a_distance": [
+          3.5,
+          5.5
+        ],
+        "spawn_distance": 5.0
+      }
+    },
+    {
+      "scene_id": "picture_hard_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3300,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3301,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3306,
+        -48,
+        7,
+        3310,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3306,
+        -48,
+        7,
+        3310,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3301,
+        -48,
+        1,
+        3315,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_01/setup",
+      "place_command_blocks_function": "picture:picture_hard_01/place_command_blocks",
+      "tick_function": "picture:picture_hard_01/tick",
+      "clear_function": "picture:picture_hard_01/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3301,
+        -52,
+        1,
+        3315,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3300,
+        -57,
+        0,
+        3316,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3301,
+        -53,
+        1,
+        3315,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3301,
+          -57,
+          2,
+          3303,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3301,
+        -57,
+        2,
+        3303,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:red_concrete",
+      "target_region": [
+        3301,
+        -51,
+        2,
+        3303,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3308.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3308.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3308,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3307,
+        -51,
+        11,
+        3309,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3325,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3326,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3331,
+        -48,
+        7,
+        3335,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3331,
+        -48,
+        7,
+        3335,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3326,
+        -48,
+        1,
+        3340,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_02/setup",
+      "place_command_blocks_function": "picture:picture_hard_02/place_command_blocks",
+      "tick_function": "picture:picture_hard_02/tick",
+      "clear_function": "picture:picture_hard_02/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3326,
+        -52,
+        1,
+        3340,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3325,
+        -57,
+        0,
+        3341,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3326,
+        -53,
+        1,
+        3340,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3335,
+          -57,
+          1,
+          3337,
+          -57,
+          3
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3335,
+        -57,
+        1,
+        3337,
+        -57,
+        3
+      ],
+      "colored_region_block": "minecraft:orange_concrete",
+      "target_region": [
+        3335,
+        -51,
+        1,
+        3337,
+        -51,
+        3
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3333.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3333.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3333,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3332,
+        -51,
+        11,
+        3334,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3350,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3351,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3356,
+        -48,
+        7,
+        3360,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3356,
+        -48,
+        7,
+        3360,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3351,
+        -48,
+        1,
+        3365,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_03/setup",
+      "place_command_blocks_function": "picture:picture_hard_03/place_command_blocks",
+      "tick_function": "picture:picture_hard_03/tick",
+      "clear_function": "picture:picture_hard_03/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3351,
+        -52,
+        1,
+        3365,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3350,
+        -57,
+        0,
+        3366,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3351,
+        -53,
+        1,
+        3365,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3352,
+          -57,
+          2,
+          3354,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3352,
+        -57,
+        2,
+        3354,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:yellow_concrete",
+      "target_region": [
+        3352,
+        -51,
+        2,
+        3354,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3358.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3358.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3358,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3357,
+        -51,
+        11,
+        3359,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3375,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3376,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3381,
+        -48,
+        7,
+        3385,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3381,
+        -48,
+        7,
+        3385,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3376,
+        -48,
+        1,
+        3390,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_04/setup",
+      "place_command_blocks_function": "picture:picture_hard_04/place_command_blocks",
+      "tick_function": "picture:picture_hard_04/tick",
+      "clear_function": "picture:picture_hard_04/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3376,
+        -52,
+        1,
+        3390,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3375,
+        -57,
+        0,
+        3391,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3376,
+        -53,
+        1,
+        3390,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3386,
+          -57,
+          1,
+          3388,
+          -57,
+          3
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3386,
+        -57,
+        1,
+        3388,
+        -57,
+        3
+      ],
+      "colored_region_block": "minecraft:lime_concrete",
+      "target_region": [
+        3386,
+        -51,
+        1,
+        3388,
+        -51,
+        3
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3383.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3383.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3383,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3382,
+        -51,
+        11,
+        3384,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3400,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3401,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3406,
+        -48,
+        7,
+        3410,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3406,
+        -48,
+        7,
+        3410,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3401,
+        -48,
+        1,
+        3415,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_05/setup",
+      "place_command_blocks_function": "picture:picture_hard_05/place_command_blocks",
+      "tick_function": "picture:picture_hard_05/tick",
+      "clear_function": "picture:picture_hard_05/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3401,
+        -52,
+        1,
+        3415,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3400,
+        -57,
+        0,
+        3416,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3401,
+        -53,
+        1,
+        3415,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3406,
+          -57,
+          2,
+          3408,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3406,
+        -57,
+        2,
+        3408,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:green_concrete",
+      "target_region": [
+        3406,
+        -51,
+        2,
+        3408,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3408.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3408.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3408,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3407,
+        -51,
+        11,
+        3409,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3425,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3426,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3431,
+        -48,
+        7,
+        3435,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3431,
+        -48,
+        7,
+        3435,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3426,
+        -48,
+        1,
+        3440,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_06/setup",
+      "place_command_blocks_function": "picture:picture_hard_06/place_command_blocks",
+      "tick_function": "picture:picture_hard_06/tick",
+      "clear_function": "picture:picture_hard_06/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3426,
+        -52,
+        1,
+        3440,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3425,
+        -57,
+        0,
+        3441,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3426,
+        -53,
+        1,
+        3440,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3437,
+          -57,
+          1,
+          3439,
+          -57,
+          3
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3437,
+        -57,
+        1,
+        3439,
+        -57,
+        3
+      ],
+      "colored_region_block": "minecraft:cyan_concrete",
+      "target_region": [
+        3437,
+        -51,
+        1,
+        3439,
+        -51,
+        3
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3433.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3433.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3433,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3432,
+        -51,
+        11,
+        3434,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3450,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3451,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3456,
+        -48,
+        7,
+        3460,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3456,
+        -48,
+        7,
+        3460,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3451,
+        -48,
+        1,
+        3465,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_07/setup",
+      "place_command_blocks_function": "picture:picture_hard_07/place_command_blocks",
+      "tick_function": "picture:picture_hard_07/tick",
+      "clear_function": "picture:picture_hard_07/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3451,
+        -52,
+        1,
+        3465,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3450,
+        -57,
+        0,
+        3466,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3451,
+        -53,
+        1,
+        3465,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3454,
+          -57,
+          2,
+          3456,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3454,
+        -57,
+        2,
+        3456,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:light_blue_concrete",
+      "target_region": [
+        3454,
+        -51,
+        2,
+        3456,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3458.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3458.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3458,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3457,
+        -51,
+        11,
+        3459,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3475,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3476,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3481,
+        -48,
+        7,
+        3485,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3481,
+        -48,
+        7,
+        3485,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3476,
+        -48,
+        1,
+        3490,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_08/setup",
+      "place_command_blocks_function": "picture:picture_hard_08/place_command_blocks",
+      "tick_function": "picture:picture_hard_08/tick",
+      "clear_function": "picture:picture_hard_08/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3476,
+        -52,
+        1,
+        3490,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3475,
+        -57,
+        0,
+        3491,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3476,
+        -53,
+        1,
+        3490,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3487,
+          -57,
+          1,
+          3489,
+          -57,
+          3
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3487,
+        -57,
+        1,
+        3489,
+        -57,
+        3
+      ],
+      "colored_region_block": "minecraft:blue_concrete",
+      "target_region": [
+        3487,
+        -51,
+        1,
+        3489,
+        -51,
+        3
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3483.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3483.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3483,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3482,
+        -51,
+        11,
+        3484,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3500,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3501,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3506,
+        -48,
+        7,
+        3510,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3506,
+        -48,
+        7,
+        3510,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3501,
+        -48,
+        1,
+        3515,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_09/setup",
+      "place_command_blocks_function": "picture:picture_hard_09/place_command_blocks",
+      "tick_function": "picture:picture_hard_09/tick",
+      "clear_function": "picture:picture_hard_09/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3501,
+        -52,
+        1,
+        3515,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3500,
+        -57,
+        0,
+        3516,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3501,
+        -53,
+        1,
+        3515,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3502,
+          -57,
+          2,
+          3504,
+          -57,
+          4
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3502,
+        -57,
+        2,
+        3504,
+        -57,
+        4
+      ],
+      "colored_region_block": "minecraft:purple_concrete",
+      "target_region": [
+        3502,
+        -51,
+        2,
+        3504,
+        -51,
+        4
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3508.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": 1,
+      "agent_b_start_pos": [
+        3508.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3508,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3507,
+        -51,
+        11,
+        3509,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    },
+    {
+      "scene_id": "picture_hard_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "picture",
+      "task_template": "high_platform_gold_guidance",
+      "origin": [
+        3525,
+        -58,
+        0
+      ],
+      "room_size": [
+        17,
+        11,
+        19
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3526,
+        -49,
+        1
+      ],
+      "ceiling_light_region": [
+        3531,
+        -48,
+        7,
+        3535,
+        -48,
+        11
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3531,
+        -48,
+        7,
+        3535,
+        -48,
+        11
+      ],
+      "ceiling_spotlight_ring_region": [
+        3526,
+        -48,
+        1,
+        3540,
+        -48,
+        17
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "picture:picture_hard_10/setup",
+      "place_command_blocks_function": "picture:picture_hard_10/place_command_blocks",
+      "tick_function": "picture:picture_hard_10/tick",
+      "clear_function": "picture:picture_hard_10/clear",
+      "interior_height": 9,
+      "platform_region": [
+        3526,
+        -52,
+        1,
+        3540,
+        -52,
+        5
+      ],
+      "adjacent_wall_region": [
+        3525,
+        -57,
+        0,
+        3541,
+        -49,
+        0
+      ],
+      "platform_wall_gap": 0,
+      "platform_width": 5,
+      "platform_underlight_region": [
+        3526,
+        -53,
+        1,
+        3540,
+        -53,
+        5
+      ],
+      "platform_underlight_block": "minecraft:glowstone",
+      "platform_walk_y": -51,
+      "elevated_path_region": null,
+      "side_path_enabled": false,
+      "side_path_side": "left",
+      "side_path_length": 5,
+      "side_path_width": 2,
+      "gold_region_candidates": [
+        [
+          3534,
+          -57,
+          1,
+          3536,
+          -57,
+          3
+        ]
+      ],
+      "gold_candidate_index": 0,
+      "gold_region": [
+        3534,
+        -57,
+        1,
+        3536,
+        -57,
+        3
+      ],
+      "colored_region_block": "minecraft:magenta_concrete",
+      "target_region": [
+        3534,
+        -51,
+        1,
+        3536,
+        -51,
+        3
+      ],
+      "gold_side_path_horizontal_distance": null,
+      "agent_a_start_pos": [
+        3533.5,
+        -51,
+        5.5
+      ],
+      "agent_a_start_rotation": [
+        180.0,
+        0.0
+      ],
+      "agent_a_start_region": "elevated_platform",
+      "agent_a_direction": -1,
+      "agent_b_start_pos": [
+        3533.212,
+        -50.0,
+        11.765
+      ],
+      "agent_b_start_rotation": [
+        179.0,
+        26.0
+      ],
+      "agent_b_start_region": "fixed_central_observation_position",
+      "agent_b_observer_support_pos": [
+        3533,
+        -51,
+        12
+      ],
+      "agent_b_observer_support_block": "minecraft:smooth_stone",
+      "agent_b_observer_platform_region": [
+        3532,
+        -51,
+        11,
+        3534,
+        -51,
+        13
+      ],
+      "agent_b_observer_platform_size": [
+        3,
+        3
+      ],
+      "agent_b_visibility": "full_scene_information",
+      "failure_y_below": -51,
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "region_size": 3,
+        "a_distance": [
+          5.5,
+          7.5
+        ],
+        "spawn_distance": 6.5
+      }
+    }
+  ]
+}

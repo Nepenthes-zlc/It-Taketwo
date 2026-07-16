@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_path_hard_09
+setblock 1742 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1751 -57 8 minecraft:mangrove_pressure_plate[powered=true] run fill 1750 -58 12 1751 -58 18 minecraft:purple_concrete"}
+setblock 1743 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1751 -57 9 minecraft:mangrove_pressure_plate[powered=true] run fill 1750 -58 12 1751 -58 18 minecraft:purple_concrete"}
+setblock 1744 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1752 -57 8 minecraft:mangrove_pressure_plate[powered=true] run fill 1750 -58 12 1751 -58 18 minecraft:purple_concrete"}
+setblock 1745 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1752 -57 9 minecraft:mangrove_pressure_plate[powered=true] run fill 1750 -58 12 1751 -58 18 minecraft:purple_concrete"}
+setblock 1746 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 1751 -57 8 minecraft:mangrove_pressure_plate[powered=true] unless block 1751 -57 9 minecraft:mangrove_pressure_plate[powered=true] unless block 1752 -57 8 minecraft:mangrove_pressure_plate[powered=true] unless block 1752 -57 9 minecraft:mangrove_pressure_plate[powered=true] run fill 1750 -58 12 1751 -58 18 minecraft:air"}

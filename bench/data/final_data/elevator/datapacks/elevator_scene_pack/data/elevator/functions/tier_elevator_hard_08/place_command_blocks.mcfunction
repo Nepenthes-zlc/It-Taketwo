@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_elevator_hard_08
+setblock 811 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 820 -58 4 minecraft:dark_oak_pressure_plate[powered=true] run fill 822 -58 11 822 -56 11 minecraft:air"}
+setblock 812 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 820 -58 5 minecraft:dark_oak_pressure_plate[powered=true] run fill 822 -58 11 822 -56 11 minecraft:air"}
+setblock 813 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 821 -58 4 minecraft:dark_oak_pressure_plate[powered=true] run fill 822 -58 11 822 -56 11 minecraft:air"}
+setblock 814 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 821 -58 5 minecraft:dark_oak_pressure_plate[powered=true] run fill 822 -58 11 822 -56 11 minecraft:air"}
+setblock 815 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 820 -58 4 minecraft:dark_oak_pressure_plate[powered=true] unless block 820 -58 5 minecraft:dark_oak_pressure_plate[powered=true] unless block 821 -58 4 minecraft:dark_oak_pressure_plate[powered=true] unless block 821 -58 5 minecraft:dark_oak_pressure_plate[powered=true] run fill 822 -58 11 822 -56 11 minecraft:purple_concrete"}

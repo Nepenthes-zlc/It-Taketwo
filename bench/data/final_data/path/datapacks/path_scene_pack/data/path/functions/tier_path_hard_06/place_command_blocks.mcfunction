@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_path_hard_06
+setblock 1652 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1661 -57 8 minecraft:jungle_pressure_plate[powered=true] run fill 1660 -58 12 1661 -58 18 minecraft:yellow_concrete"}
+setblock 1653 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1661 -57 9 minecraft:jungle_pressure_plate[powered=true] run fill 1660 -58 12 1661 -58 18 minecraft:yellow_concrete"}
+setblock 1654 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1662 -57 8 minecraft:jungle_pressure_plate[powered=true] run fill 1660 -58 12 1661 -58 18 minecraft:yellow_concrete"}
+setblock 1655 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1662 -57 9 minecraft:jungle_pressure_plate[powered=true] run fill 1660 -58 12 1661 -58 18 minecraft:yellow_concrete"}
+setblock 1656 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 1661 -57 8 minecraft:jungle_pressure_plate[powered=true] unless block 1661 -57 9 minecraft:jungle_pressure_plate[powered=true] unless block 1662 -57 8 minecraft:jungle_pressure_plate[powered=true] unless block 1662 -57 9 minecraft:jungle_pressure_plate[powered=true] run fill 1660 -58 12 1661 -58 18 minecraft:air"}

@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_path_hard_04
+setblock 1591 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1601 -57 8 minecraft:spruce_pressure_plate[powered=true] run fill 1600 -58 12 1601 -58 18 minecraft:magenta_concrete"}
+setblock 1592 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1601 -57 9 minecraft:spruce_pressure_plate[powered=true] run fill 1600 -58 12 1601 -58 18 minecraft:magenta_concrete"}
+setblock 1593 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1602 -57 8 minecraft:spruce_pressure_plate[powered=true] run fill 1600 -58 12 1601 -58 18 minecraft:magenta_concrete"}
+setblock 1594 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1602 -57 9 minecraft:spruce_pressure_plate[powered=true] run fill 1600 -58 12 1601 -58 18 minecraft:magenta_concrete"}
+setblock 1595 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 1601 -57 8 minecraft:spruce_pressure_plate[powered=true] unless block 1601 -57 9 minecraft:spruce_pressure_plate[powered=true] unless block 1602 -57 8 minecraft:spruce_pressure_plate[powered=true] unless block 1602 -57 9 minecraft:spruce_pressure_plate[powered=true] run fill 1600 -58 12 1601 -58 18 minecraft:air"}

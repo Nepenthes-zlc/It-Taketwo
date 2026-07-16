@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_elevator_hard_05
+setblock 721 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 729 -58 6 minecraft:birch_pressure_plate[powered=true] run fill 732 -58 12 732 -56 12 minecraft:air"}
+setblock 722 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 729 -58 7 minecraft:birch_pressure_plate[powered=true] run fill 732 -58 12 732 -56 12 minecraft:air"}
+setblock 723 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 730 -58 6 minecraft:birch_pressure_plate[powered=true] run fill 732 -58 12 732 -56 12 minecraft:air"}
+setblock 724 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 730 -58 7 minecraft:birch_pressure_plate[powered=true] run fill 732 -58 12 732 -56 12 minecraft:air"}
+setblock 725 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 729 -58 6 minecraft:birch_pressure_plate[powered=true] unless block 729 -58 7 minecraft:birch_pressure_plate[powered=true] unless block 730 -58 6 minecraft:birch_pressure_plate[powered=true] unless block 730 -58 7 minecraft:birch_pressure_plate[powered=true] run fill 732 -58 12 732 -56 12 minecraft:cyan_concrete"}

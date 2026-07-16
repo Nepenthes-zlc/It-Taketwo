@@ -1,0 +1,46 @@
+name: final_path_gpt55_maestro_1time_parallel4
+session: final_path_gpt55_maestro_1time_parallel4
+output_root: bench/runs/path
+python: /home/azvm/miniconda3/envs/verl/bin/python
+api_ready_check: false
+
+model:
+  name: gpt-5.5
+  provider: gpt55
+  api_base_url: http://127.0.0.1:23333/api/openai/v1
+  api_key: dummy
+
+server:
+  enabled: false
+
+env:
+  IT_TAKETWO_EGL_DEVICES: egl0,egl1,egl2,egl3
+
+runner:
+  tasks: bench/data/final_data/path/generated_tasks.json
+  pack_src: bench/data/final_data/path/datapacks/path_scene_pack
+  bench_mode: duo-parallel
+  rollout_n: 1
+  chunks: 1
+  instance_count: 4
+  workers: 4
+  max_steps: 32
+  episode_timeout: 1800
+  capture_timeout: 90
+  shot_slow_secs: 60
+  prewarm_parallel: 4
+  prewarm_each_chunk: false
+  agent_temperature: 0
+  agent_max_tokens: 160
+  agent_api_max_retries: 6
+  agent_api_retry_delay: 1
+  cleanup_after: true
+  save_trace: true
+
+phases:
+  - name: easy
+    task_indices: 0-33
+  - name: medium
+    task_indices: 34-66
+  - name: hard
+    task_indices: 67-99

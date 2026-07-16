@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_elevator_hard_01
+setblock 601 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 611 -58 6 minecraft:stone_pressure_plate[powered=true] run fill 611 -58 12 611 -56 12 minecraft:air"}
+setblock 602 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 611 -58 7 minecraft:stone_pressure_plate[powered=true] run fill 611 -58 12 611 -56 12 minecraft:air"}
+setblock 603 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 612 -58 6 minecraft:stone_pressure_plate[powered=true] run fill 611 -58 12 611 -56 12 minecraft:air"}
+setblock 604 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 612 -58 7 minecraft:stone_pressure_plate[powered=true] run fill 611 -58 12 611 -56 12 minecraft:air"}
+setblock 605 -53 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 611 -58 6 minecraft:stone_pressure_plate[powered=true] unless block 611 -58 7 minecraft:stone_pressure_plate[powered=true] unless block 612 -58 6 minecraft:stone_pressure_plate[powered=true] unless block 612 -58 7 minecraft:stone_pressure_plate[powered=true] run fill 611 -58 12 611 -56 12 minecraft:red_concrete"}

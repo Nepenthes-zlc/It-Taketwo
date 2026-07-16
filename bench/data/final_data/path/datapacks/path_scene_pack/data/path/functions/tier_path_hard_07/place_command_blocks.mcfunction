@@ -1,0 +1,6 @@
+# Place command blocks for scene: tier_path_hard_07
+setblock 1681 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1691 -57 8 minecraft:acacia_pressure_plate[powered=true] run fill 1690 -58 12 1691 -58 18 minecraft:green_concrete"}
+setblock 1682 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1691 -57 9 minecraft:acacia_pressure_plate[powered=true] run fill 1690 -58 12 1691 -58 18 minecraft:green_concrete"}
+setblock 1683 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1692 -57 8 minecraft:acacia_pressure_plate[powered=true] run fill 1690 -58 12 1691 -58 18 minecraft:green_concrete"}
+setblock 1684 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute if block 1692 -57 9 minecraft:acacia_pressure_plate[powered=true] run fill 1690 -58 12 1691 -58 18 minecraft:green_concrete"}
+setblock 1685 -52 1 minecraft:repeating_command_block[facing=east]{auto:1b,Command:"execute unless block 1691 -57 8 minecraft:acacia_pressure_plate[powered=true] unless block 1691 -57 9 minecraft:acacia_pressure_plate[powered=true] unless block 1692 -57 8 minecraft:acacia_pressure_plate[powered=true] unless block 1692 -57 9 minecraft:acacia_pressure_plate[powered=true] run fill 1690 -58 12 1691 -58 18 minecraft:air"}

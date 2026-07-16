@@ -1,0 +1,25 @@
+name: replace_me_external
+session: replace_me_external
+output_root: bench/runs
+python: /home/azvm/miniconda3/envs/verl/bin/python
+
+model:
+  name: model-name
+  provider: openai_compatible
+  api_base_url: http://127.0.0.1:8000/v1
+  api_key: EMPTY
+
+server:
+  enabled: false
+
+runner:
+  tasks: bench/data/0714_2_class/elevator_tasks/generated_tasks.json
+  pack_src: bench/data/0714_2_class/datapacks/time_lock_difficulty_scene_pack
+  bench_mode: duo-parallel
+  task_indices: 0-99
+  rollout_n: 4
+  chunks: 1
+  instance_count: 4
+  workers: 4
+  max_steps: 32
+  cleanup_after: true
