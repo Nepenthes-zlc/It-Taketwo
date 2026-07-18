@@ -1,0 +1,6275 @@
+{
+  "namespace": "maze",
+  "datapack_name": "maze_scene_pack",
+  "datapack_root": "final_data\\maze\\datapacks\\maze_scene_pack",
+  "source_spec": "scene_specs\\maze_30_scenes.json",
+  "scene_count": 30,
+  "scenes": [
+    {
+      "scene_id": "maze_easy_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        3800,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3801,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        3809,
+        -39,
+        9,
+        3813,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3809,
+        -39,
+        9,
+        3813,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        3801,
+        -39,
+        1,
+        3821,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_01/setup",
+      "place_command_blocks_function": "maze:maze_easy_01/place_command_blocks",
+      "tick_function": "maze:maze_easy_01/tick",
+      "clear_function": "maze:maze_easy_01/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        3804,
+        -57,
+        4,
+        3818,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9101,
+      "maze_route_points_local": [
+        [
+          2,
+          2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          3806.5,
+          -57.0,
+          6.5
+        ],
+        [
+          3812.5,
+          -57.0,
+          6.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        3806,
+        -57,
+        6,
+        3807,
+        -57,
+        7
+      ],
+      "maze_goal_region": [
+        3812,
+        -57,
+        6,
+        3813,
+        -57,
+        7
+      ],
+      "goal_region": [
+        3812,
+        -57,
+        6,
+        3813,
+        -57,
+        7
+      ],
+      "goal_floor_region": [
+        3812,
+        -58,
+        6,
+        3813,
+        -58,
+        7
+      ],
+      "target_region": [
+        3812,
+        -57,
+        6,
+        3813,
+        -57,
+        7
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        3806.5,
+        -57,
+        6.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        3811.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        3831,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3832,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        3840,
+        -39,
+        9,
+        3844,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3840,
+        -39,
+        9,
+        3844,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        3832,
+        -39,
+        1,
+        3852,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_02/setup",
+      "place_command_blocks_function": "maze:maze_easy_02/place_command_blocks",
+      "tick_function": "maze:maze_easy_02/tick",
+      "clear_function": "maze:maze_easy_02/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        3835,
+        -57,
+        4,
+        3849,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9102,
+      "maze_route_points_local": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          3838.5,
+          -57.0,
+          7.5
+        ],
+        [
+          3838.5,
+          -57.0,
+          13.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        3838,
+        -57,
+        7,
+        3839,
+        -57,
+        8
+      ],
+      "maze_goal_region": [
+        3838,
+        -57,
+        13,
+        3839,
+        -57,
+        14
+      ],
+      "goal_region": [
+        3838,
+        -57,
+        13,
+        3839,
+        -57,
+        14
+      ],
+      "goal_floor_region": [
+        3838,
+        -58,
+        13,
+        3839,
+        -58,
+        14
+      ],
+      "target_region": [
+        3838,
+        -57,
+        13,
+        3839,
+        -57,
+        14
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        3838.5,
+        -57,
+        7.5
+      ],
+      "agent_a_start_rotation": [
+        -0.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        3842.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        3862,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3863,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        3871,
+        -39,
+        9,
+        3875,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3871,
+        -39,
+        9,
+        3875,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        3863,
+        -39,
+        1,
+        3883,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_03/setup",
+      "place_command_blocks_function": "maze:maze_easy_03/place_command_blocks",
+      "tick_function": "maze:maze_easy_03/tick",
+      "clear_function": "maze:maze_easy_03/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        3866,
+        -57,
+        4,
+        3880,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9103,
+      "maze_route_points_local": [
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          2
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          3871.5,
+          -57.0,
+          6.5
+        ],
+        [
+          3877.5,
+          -57.0,
+          6.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        3871,
+        -57,
+        6,
+        3872,
+        -57,
+        7
+      ],
+      "maze_goal_region": [
+        3877,
+        -57,
+        6,
+        3878,
+        -57,
+        7
+      ],
+      "goal_region": [
+        3877,
+        -57,
+        6,
+        3878,
+        -57,
+        7
+      ],
+      "goal_floor_region": [
+        3877,
+        -58,
+        6,
+        3878,
+        -58,
+        7
+      ],
+      "target_region": [
+        3877,
+        -57,
+        6,
+        3878,
+        -57,
+        7
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        3871.5,
+        -57,
+        6.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        3873.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        3893,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3894,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        3902,
+        -39,
+        9,
+        3906,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3902,
+        -39,
+        9,
+        3906,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        3894,
+        -39,
+        1,
+        3914,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_04/setup",
+      "place_command_blocks_function": "maze:maze_easy_04/place_command_blocks",
+      "tick_function": "maze:maze_easy_04/tick",
+      "clear_function": "maze:maze_easy_04/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        3897,
+        -57,
+        4,
+        3911,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9104,
+      "maze_route_points_local": [
+        [
+          2,
+          5
+        ],
+        [
+          8,
+          5
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          3899.5,
+          -57.0,
+          9.5
+        ],
+        [
+          3905.5,
+          -57.0,
+          9.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        3899,
+        -57,
+        9,
+        3900,
+        -57,
+        10
+      ],
+      "maze_goal_region": [
+        3905,
+        -57,
+        9,
+        3906,
+        -57,
+        10
+      ],
+      "goal_region": [
+        3905,
+        -57,
+        9,
+        3906,
+        -57,
+        10
+      ],
+      "goal_floor_region": [
+        3905,
+        -58,
+        9,
+        3906,
+        -58,
+        10
+      ],
+      "target_region": [
+        3905,
+        -57,
+        9,
+        3906,
+        -57,
+        10
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        3899.5,
+        -57,
+        9.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        3904.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        3924,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3925,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        3933,
+        -39,
+        9,
+        3937,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3933,
+        -39,
+        9,
+        3937,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        3925,
+        -39,
+        1,
+        3945,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_05/setup",
+      "place_command_blocks_function": "maze:maze_easy_05/place_command_blocks",
+      "tick_function": "maze:maze_easy_05/tick",
+      "clear_function": "maze:maze_easy_05/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        3928,
+        -57,
+        4,
+        3942,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9105,
+      "maze_route_points_local": [
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          3937.5,
+          -57.0,
+          7.5
+        ],
+        [
+          3937.5,
+          -57.0,
+          13.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        3937,
+        -57,
+        7,
+        3938,
+        -57,
+        8
+      ],
+      "maze_goal_region": [
+        3937,
+        -57,
+        13,
+        3938,
+        -57,
+        14
+      ],
+      "goal_region": [
+        3937,
+        -57,
+        13,
+        3938,
+        -57,
+        14
+      ],
+      "goal_floor_region": [
+        3937,
+        -58,
+        13,
+        3938,
+        -58,
+        14
+      ],
+      "target_region": [
+        3937,
+        -57,
+        13,
+        3938,
+        -57,
+        14
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        3937.5,
+        -57,
+        7.5
+      ],
+      "agent_a_start_rotation": [
+        -0.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        3935.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        3955,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3956,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        3964,
+        -39,
+        9,
+        3968,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3964,
+        -39,
+        9,
+        3968,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        3956,
+        -39,
+        1,
+        3976,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_06/setup",
+      "place_command_blocks_function": "maze:maze_easy_06/place_command_blocks",
+      "tick_function": "maze:maze_easy_06/tick",
+      "clear_function": "maze:maze_easy_06/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        3959,
+        -57,
+        4,
+        3973,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9106,
+      "maze_route_points_local": [
+        [
+          4,
+          10
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          3963.5,
+          -57.0,
+          14.5
+        ],
+        [
+          3969.5,
+          -57.0,
+          14.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        3963,
+        -57,
+        14,
+        3964,
+        -57,
+        15
+      ],
+      "maze_goal_region": [
+        3969,
+        -57,
+        14,
+        3970,
+        -57,
+        15
+      ],
+      "goal_region": [
+        3969,
+        -57,
+        14,
+        3970,
+        -57,
+        15
+      ],
+      "goal_floor_region": [
+        3969,
+        -58,
+        14,
+        3970,
+        -58,
+        15
+      ],
+      "target_region": [
+        3969,
+        -57,
+        14,
+        3970,
+        -57,
+        15
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        3963.5,
+        -57,
+        14.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        3966.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        3986,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        3987,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        3995,
+        -39,
+        9,
+        3999,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        3995,
+        -39,
+        9,
+        3999,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        3987,
+        -39,
+        1,
+        4007,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_07/setup",
+      "place_command_blocks_function": "maze:maze_easy_07/place_command_blocks",
+      "tick_function": "maze:maze_easy_07/tick",
+      "clear_function": "maze:maze_easy_07/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        3990,
+        -57,
+        4,
+        4004,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9107,
+      "maze_route_points_local": [
+        [
+          11,
+          4
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4001.5,
+          -57.0,
+          8.5
+        ],
+        [
+          3995.5,
+          -57.0,
+          8.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        4001,
+        -57,
+        8,
+        4002,
+        -57,
+        9
+      ],
+      "maze_goal_region": [
+        3995,
+        -57,
+        8,
+        3996,
+        -57,
+        9
+      ],
+      "goal_region": [
+        3995,
+        -57,
+        8,
+        3996,
+        -57,
+        9
+      ],
+      "goal_floor_region": [
+        3995,
+        -58,
+        8,
+        3996,
+        -58,
+        9
+      ],
+      "target_region": [
+        3995,
+        -57,
+        8,
+        3996,
+        -57,
+        9
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4001.5,
+        -57,
+        8.5
+      ],
+      "agent_a_start_rotation": [
+        90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        3997.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4017,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4018,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4026,
+        -39,
+        9,
+        4030,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4026,
+        -39,
+        9,
+        4030,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4018,
+        -39,
+        1,
+        4038,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_08/setup",
+      "place_command_blocks_function": "maze:maze_easy_08/place_command_blocks",
+      "tick_function": "maze:maze_easy_08/tick",
+      "clear_function": "maze:maze_easy_08/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4021,
+        -57,
+        4,
+        4035,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9108,
+      "maze_route_points_local": [
+        [
+          2,
+          11
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4023.5,
+          -57.0,
+          15.5
+        ],
+        [
+          4029.5,
+          -57.0,
+          15.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        4023,
+        -57,
+        15,
+        4024,
+        -57,
+        16
+      ],
+      "maze_goal_region": [
+        4029,
+        -57,
+        15,
+        4030,
+        -57,
+        16
+      ],
+      "goal_region": [
+        4029,
+        -57,
+        15,
+        4030,
+        -57,
+        16
+      ],
+      "goal_floor_region": [
+        4029,
+        -58,
+        15,
+        4030,
+        -58,
+        16
+      ],
+      "target_region": [
+        4029,
+        -57,
+        15,
+        4030,
+        -57,
+        16
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4023.5,
+        -57,
+        15.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4028.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4048,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4049,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4057,
+        -39,
+        9,
+        4061,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4057,
+        -39,
+        9,
+        4061,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4049,
+        -39,
+        1,
+        4069,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_09/setup",
+      "place_command_blocks_function": "maze:maze_easy_09/place_command_blocks",
+      "tick_function": "maze:maze_easy_09/tick",
+      "clear_function": "maze:maze_easy_09/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4052,
+        -57,
+        4,
+        4066,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9109,
+      "maze_route_points_local": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4059.5,
+          -57.0,
+          6.5
+        ],
+        [
+          4059.5,
+          -57.0,
+          12.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        4059,
+        -57,
+        6,
+        4060,
+        -57,
+        7
+      ],
+      "maze_goal_region": [
+        4059,
+        -57,
+        12,
+        4060,
+        -57,
+        13
+      ],
+      "goal_region": [
+        4059,
+        -57,
+        12,
+        4060,
+        -57,
+        13
+      ],
+      "goal_floor_region": [
+        4059,
+        -58,
+        12,
+        4060,
+        -58,
+        13
+      ],
+      "target_region": [
+        4059,
+        -57,
+        12,
+        4060,
+        -57,
+        13
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4059.5,
+        -57,
+        6.5
+      ],
+      "agent_a_start_rotation": [
+        -0.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4059.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_easy_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4079,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4080,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4088,
+        -39,
+        9,
+        4092,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4088,
+        -39,
+        9,
+        4092,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4080,
+        -39,
+        1,
+        4100,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_easy_10/setup",
+      "place_command_blocks_function": "maze:maze_easy_10/place_command_blocks",
+      "tick_function": "maze:maze_easy_10/tick",
+      "clear_function": "maze:maze_easy_10/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4083,
+        -57,
+        4,
+        4097,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9110,
+      "maze_route_points_local": [
+        [
+          12,
+          9
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4095.5,
+          -57.0,
+          13.5
+        ],
+        [
+          4089.5,
+          -57.0,
+          13.5
+        ]
+      ],
+      "maze_branch_rects_local": [],
+      "maze_walkable_area": 16,
+      "target_walkable_area": 16,
+      "route_turn_count": 0,
+      "route_straight_line_distance": 6.0,
+      "maze_start_region": [
+        4095,
+        -57,
+        13,
+        4096,
+        -57,
+        14
+      ],
+      "maze_goal_region": [
+        4089,
+        -57,
+        13,
+        4090,
+        -57,
+        14
+      ],
+      "goal_region": [
+        4089,
+        -57,
+        13,
+        4090,
+        -57,
+        14
+      ],
+      "goal_floor_region": [
+        4089,
+        -58,
+        13,
+        4090,
+        -58,
+        14
+      ],
+      "target_region": [
+        4089,
+        -57,
+        13,
+        4090,
+        -57,
+        14
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4095.5,
+        -57,
+        13.5
+      ],
+      "agent_a_start_rotation": [
+        90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4090.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "easy",
+      "difficulty_zh": "简单",
+      "difficulty_constraints": {
+        "zh": "简单",
+        "count": 34,
+        "turn_count": 0,
+        "distance": [
+          4.5,
+          6.5
+        ],
+        "walkable_area": 16
+      }
+    },
+    {
+      "scene_id": "maze_medium_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4110,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4111,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4119,
+        -39,
+        9,
+        4123,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4119,
+        -39,
+        9,
+        4123,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4111,
+        -39,
+        1,
+        4131,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_01/setup",
+      "place_command_blocks_function": "maze:maze_medium_01/place_command_blocks",
+      "tick_function": "maze:maze_medium_01/tick",
+      "clear_function": "maze:maze_medium_01/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4114,
+        -57,
+        4,
+        4128,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9101,
+      "maze_route_points_local": [
+        [
+          2,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          6
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4116.5,
+          -57.0,
+          6.5
+        ],
+        [
+          4120.5,
+          -57.0,
+          6.5
+        ],
+        [
+          4120.5,
+          -57.0,
+          10.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          4,
+          2,
+          4
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4116,
+        -57,
+        6,
+        4117,
+        -57,
+        7
+      ],
+      "maze_goal_region": [
+        4120,
+        -57,
+        10,
+        4121,
+        -57,
+        11
+      ],
+      "goal_region": [
+        4120,
+        -57,
+        10,
+        4121,
+        -57,
+        11
+      ],
+      "goal_floor_region": [
+        4120,
+        -58,
+        10,
+        4121,
+        -58,
+        11
+      ],
+      "target_region": [
+        4120,
+        -57,
+        10,
+        4121,
+        -57,
+        11
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4116.5,
+        -57,
+        6.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4121.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4141,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4142,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4150,
+        -39,
+        9,
+        4154,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4150,
+        -39,
+        9,
+        4154,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4142,
+        -39,
+        1,
+        4162,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_02/setup",
+      "place_command_blocks_function": "maze:maze_medium_02/place_command_blocks",
+      "tick_function": "maze:maze_medium_02/tick",
+      "clear_function": "maze:maze_medium_02/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4145,
+        -57,
+        4,
+        4159,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9102,
+      "maze_route_points_local": [
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          7,
+          6
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4148.5,
+          -57.0,
+          14.5
+        ],
+        [
+          4148.5,
+          -57.0,
+          10.5
+        ],
+        [
+          4152.5,
+          -57.0,
+          10.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          1,
+          6,
+          2,
+          6
+        ],
+        [
+          1,
+          4,
+          1,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          3
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4148,
+        -57,
+        14,
+        4149,
+        -57,
+        15
+      ],
+      "maze_goal_region": [
+        4152,
+        -57,
+        10,
+        4153,
+        -57,
+        11
+      ],
+      "goal_region": [
+        4152,
+        -57,
+        10,
+        4153,
+        -57,
+        11
+      ],
+      "goal_floor_region": [
+        4152,
+        -58,
+        10,
+        4153,
+        -58,
+        11
+      ],
+      "target_region": [
+        4152,
+        -57,
+        10,
+        4153,
+        -57,
+        11
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4148.5,
+        -57,
+        14.5
+      ],
+      "agent_a_start_rotation": [
+        -180.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4152.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4172,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4173,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4181,
+        -39,
+        9,
+        4185,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4181,
+        -39,
+        9,
+        4185,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4173,
+        -39,
+        1,
+        4193,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_03/setup",
+      "place_command_blocks_function": "maze:maze_medium_03/place_command_blocks",
+      "tick_function": "maze:maze_medium_03/tick",
+      "clear_function": "maze:maze_medium_03/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4176,
+        -57,
+        4,
+        4190,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9103,
+      "maze_route_points_local": [
+        [
+          10,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4186.5,
+          -57.0,
+          7.5
+        ],
+        [
+          4182.5,
+          -57.0,
+          7.5
+        ],
+        [
+          4182.5,
+          -57.0,
+          11.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          4,
+          3,
+          5,
+          3
+        ],
+        [
+          2,
+          3,
+          3,
+          3
+        ],
+        [
+          1,
+          2,
+          2,
+          2
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4186,
+        -57,
+        7,
+        4187,
+        -57,
+        8
+      ],
+      "maze_goal_region": [
+        4182,
+        -57,
+        11,
+        4183,
+        -57,
+        12
+      ],
+      "goal_region": [
+        4182,
+        -57,
+        11,
+        4183,
+        -57,
+        12
+      ],
+      "goal_floor_region": [
+        4182,
+        -58,
+        11,
+        4183,
+        -58,
+        12
+      ],
+      "target_region": [
+        4182,
+        -57,
+        11,
+        4183,
+        -57,
+        12
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4186.5,
+        -57,
+        7.5
+      ],
+      "agent_a_start_rotation": [
+        90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4183.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4203,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4204,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4212,
+        -39,
+        9,
+        4216,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4212,
+        -39,
+        9,
+        4216,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4204,
+        -39,
+        1,
+        4224,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_04/setup",
+      "place_command_blocks_function": "maze:maze_medium_04/place_command_blocks",
+      "tick_function": "maze:maze_medium_04/tick",
+      "clear_function": "maze:maze_medium_04/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4207,
+        -57,
+        4,
+        4221,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9104,
+      "maze_route_points_local": [
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4211.5,
+          -57.0,
+          8.5
+        ],
+        [
+          4215.5,
+          -57.0,
+          8.5
+        ],
+        [
+          4215.5,
+          -57.0,
+          12.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          2,
+          4,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          1,
+          2
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4211,
+        -57,
+        8,
+        4212,
+        -57,
+        9
+      ],
+      "maze_goal_region": [
+        4215,
+        -57,
+        12,
+        4216,
+        -57,
+        13
+      ],
+      "goal_region": [
+        4215,
+        -57,
+        12,
+        4216,
+        -57,
+        13
+      ],
+      "goal_floor_region": [
+        4215,
+        -58,
+        12,
+        4216,
+        -58,
+        13
+      ],
+      "target_region": [
+        4215,
+        -57,
+        12,
+        4216,
+        -57,
+        13
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4211.5,
+        -57,
+        8.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4214.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4234,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4235,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4243,
+        -39,
+        9,
+        4247,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4243,
+        -39,
+        9,
+        4247,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4235,
+        -39,
+        1,
+        4255,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_05/setup",
+      "place_command_blocks_function": "maze:maze_medium_05/place_command_blocks",
+      "tick_function": "maze:maze_medium_05/tick",
+      "clear_function": "maze:maze_medium_05/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4238,
+        -57,
+        4,
+        4252,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9105,
+      "maze_route_points_local": [
+        [
+          9,
+          9
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4247.5,
+          -57.0,
+          13.5
+        ],
+        [
+          4247.5,
+          -57.0,
+          9.5
+        ],
+        [
+          4243.5,
+          -57.0,
+          9.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          3,
+          5,
+          4,
+          5
+        ],
+        [
+          1,
+          5,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          1,
+          4
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4247,
+        -57,
+        13,
+        4248,
+        -57,
+        14
+      ],
+      "maze_goal_region": [
+        4243,
+        -57,
+        9,
+        4244,
+        -57,
+        10
+      ],
+      "goal_region": [
+        4243,
+        -57,
+        9,
+        4244,
+        -57,
+        10
+      ],
+      "goal_floor_region": [
+        4243,
+        -58,
+        9,
+        4244,
+        -58,
+        10
+      ],
+      "target_region": [
+        4243,
+        -57,
+        9,
+        4244,
+        -57,
+        10
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4247.5,
+        -57,
+        13.5
+      ],
+      "agent_a_start_rotation": [
+        -180.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4245.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4265,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4266,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4274,
+        -39,
+        9,
+        4278,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4274,
+        -39,
+        9,
+        4278,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4266,
+        -39,
+        1,
+        4286,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_06/setup",
+      "place_command_blocks_function": "maze:maze_medium_06/place_command_blocks",
+      "tick_function": "maze:maze_medium_06/tick",
+      "clear_function": "maze:maze_medium_06/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4269,
+        -57,
+        4,
+        4283,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9106,
+      "maze_route_points_local": [
+        [
+          2,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4271.5,
+          -57.0,
+          12.5
+        ],
+        [
+          4275.5,
+          -57.0,
+          12.5
+        ],
+        [
+          4275.5,
+          -57.0,
+          8.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          1,
+          7,
+          2,
+          7
+        ],
+        [
+          1,
+          5,
+          1,
+          6
+        ],
+        [
+          1,
+          3,
+          1,
+          4
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4271,
+        -57,
+        12,
+        4272,
+        -57,
+        13
+      ],
+      "maze_goal_region": [
+        4275,
+        -57,
+        8,
+        4276,
+        -57,
+        9
+      ],
+      "goal_region": [
+        4275,
+        -57,
+        8,
+        4276,
+        -57,
+        9
+      ],
+      "goal_floor_region": [
+        4275,
+        -58,
+        8,
+        4276,
+        -58,
+        9
+      ],
+      "target_region": [
+        4275,
+        -57,
+        8,
+        4276,
+        -57,
+        9
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4271.5,
+        -57,
+        12.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4276.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4296,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4297,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4305,
+        -39,
+        9,
+        4309,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4305,
+        -39,
+        9,
+        4309,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4297,
+        -39,
+        1,
+        4317,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_07/setup",
+      "place_command_blocks_function": "maze:maze_medium_07/place_command_blocks",
+      "tick_function": "maze:maze_medium_07/tick",
+      "clear_function": "maze:maze_medium_07/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4300,
+        -57,
+        4,
+        4314,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9107,
+      "maze_route_points_local": [
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          11,
+          6
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4307.5,
+          -57.0,
+          6.5
+        ],
+        [
+          4307.5,
+          -57.0,
+          10.5
+        ],
+        [
+          4311.5,
+          -57.0,
+          10.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          5,
+          2,
+          6,
+          2
+        ],
+        [
+          3,
+          2,
+          4,
+          2
+        ],
+        [
+          1,
+          2,
+          2,
+          2
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4307,
+        -57,
+        6,
+        4308,
+        -57,
+        7
+      ],
+      "maze_goal_region": [
+        4311,
+        -57,
+        10,
+        4312,
+        -57,
+        11
+      ],
+      "goal_region": [
+        4311,
+        -57,
+        10,
+        4312,
+        -57,
+        11
+      ],
+      "goal_floor_region": [
+        4311,
+        -58,
+        10,
+        4312,
+        -58,
+        11
+      ],
+      "target_region": [
+        4311,
+        -57,
+        10,
+        4312,
+        -57,
+        11
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4307.5,
+        -57,
+        6.5
+      ],
+      "agent_a_start_rotation": [
+        -0.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4307.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4327,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4328,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4336,
+        -39,
+        9,
+        4340,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4336,
+        -39,
+        9,
+        4340,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4328,
+        -39,
+        1,
+        4348,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_08/setup",
+      "place_command_blocks_function": "maze:maze_medium_08/place_command_blocks",
+      "tick_function": "maze:maze_medium_08/tick",
+      "clear_function": "maze:maze_medium_08/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4331,
+        -57,
+        4,
+        4345,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9108,
+      "maze_route_points_local": [
+        [
+          12,
+          10
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          6
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4343.5,
+          -57.0,
+          14.5
+        ],
+        [
+          4339.5,
+          -57.0,
+          14.5
+        ],
+        [
+          4339.5,
+          -57.0,
+          10.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          6,
+          6,
+          7,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          6
+        ],
+        [
+          2,
+          6,
+          3,
+          6
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4343,
+        -57,
+        14,
+        4344,
+        -57,
+        15
+      ],
+      "maze_goal_region": [
+        4339,
+        -57,
+        10,
+        4340,
+        -57,
+        11
+      ],
+      "goal_region": [
+        4339,
+        -57,
+        10,
+        4340,
+        -57,
+        11
+      ],
+      "goal_floor_region": [
+        4339,
+        -58,
+        10,
+        4340,
+        -58,
+        11
+      ],
+      "target_region": [
+        4339,
+        -57,
+        10,
+        4340,
+        -57,
+        11
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4343.5,
+        -57,
+        14.5
+      ],
+      "agent_a_start_rotation": [
+        90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4338.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4358,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4359,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4367,
+        -39,
+        9,
+        4371,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4367,
+        -39,
+        9,
+        4371,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4359,
+        -39,
+        1,
+        4379,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_09/setup",
+      "place_command_blocks_function": "maze:maze_medium_09/place_command_blocks",
+      "tick_function": "maze:maze_medium_09/tick",
+      "clear_function": "maze:maze_medium_09/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4362,
+        -57,
+        4,
+        4376,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9109,
+      "maze_route_points_local": [
+        [
+          5,
+          11
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          9,
+          7
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4367.5,
+          -57.0,
+          15.5
+        ],
+        [
+          4367.5,
+          -57.0,
+          11.5
+        ],
+        [
+          4371.5,
+          -57.0,
+          11.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          3,
+          7,
+          4,
+          7
+        ],
+        [
+          1,
+          7,
+          2,
+          7
+        ],
+        [
+          1,
+          5,
+          1,
+          6
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4367,
+        -57,
+        15,
+        4368,
+        -57,
+        16
+      ],
+      "maze_goal_region": [
+        4371,
+        -57,
+        11,
+        4372,
+        -57,
+        12
+      ],
+      "goal_region": [
+        4371,
+        -57,
+        11,
+        4372,
+        -57,
+        12
+      ],
+      "goal_floor_region": [
+        4371,
+        -58,
+        11,
+        4372,
+        -58,
+        12
+      ],
+      "target_region": [
+        4371,
+        -57,
+        11,
+        4372,
+        -57,
+        12
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4367.5,
+        -57,
+        15.5
+      ],
+      "agent_a_start_rotation": [
+        -180.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4369.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_medium_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4389,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4390,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4398,
+        -39,
+        9,
+        4402,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4398,
+        -39,
+        9,
+        4402,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4390,
+        -39,
+        1,
+        4410,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_medium_10/setup",
+      "place_command_blocks_function": "maze:maze_medium_10/place_command_blocks",
+      "tick_function": "maze:maze_medium_10/tick",
+      "clear_function": "maze:maze_medium_10/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4393,
+        -57,
+        4,
+        4407,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9110,
+      "maze_route_points_local": [
+        [
+          11,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4404.5,
+          -57.0,
+          9.5
+        ],
+        [
+          4400.5,
+          -57.0,
+          9.5
+        ],
+        [
+          4400.5,
+          -57.0,
+          13.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          5,
+          5,
+          6,
+          5
+        ],
+        [
+          3,
+          5,
+          4,
+          5
+        ],
+        [
+          1,
+          5,
+          2,
+          5
+        ]
+      ],
+      "maze_walkable_area": 26,
+      "target_walkable_area": 26,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 5.657,
+      "maze_start_region": [
+        4404,
+        -57,
+        9,
+        4405,
+        -57,
+        10
+      ],
+      "maze_goal_region": [
+        4400,
+        -57,
+        13,
+        4401,
+        -57,
+        14
+      ],
+      "goal_region": [
+        4400,
+        -57,
+        13,
+        4401,
+        -57,
+        14
+      ],
+      "goal_floor_region": [
+        4400,
+        -58,
+        13,
+        4401,
+        -58,
+        14
+      ],
+      "target_region": [
+        4400,
+        -57,
+        13,
+        4401,
+        -57,
+        14
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4404.5,
+        -57,
+        9.5
+      ],
+      "agent_a_start_rotation": [
+        90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4400.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "medium",
+      "difficulty_zh": "中等",
+      "difficulty_constraints": {
+        "zh": "中等",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          3.5,
+          6.5
+        ],
+        "walkable_area": 26
+      }
+    },
+    {
+      "scene_id": "maze_hard_01",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4420,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4421,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4429,
+        -39,
+        9,
+        4433,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4429,
+        -39,
+        9,
+        4433,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4421,
+        -39,
+        1,
+        4441,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_01/setup",
+      "place_command_blocks_function": "maze:maze_hard_01/place_command_blocks",
+      "tick_function": "maze:maze_hard_01/tick",
+      "clear_function": "maze:maze_hard_01/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4424,
+        -57,
+        4,
+        4438,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9101,
+      "maze_route_points_local": [
+        [
+          2,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          6
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4426.5,
+          -57.0,
+          6.5
+        ],
+        [
+          4432.5,
+          -57.0,
+          6.5
+        ],
+        [
+          4432.5,
+          -57.0,
+          10.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          4,
+          2,
+          4
+        ],
+        [
+          1,
+          5,
+          2,
+          5
+        ],
+        [
+          1,
+          6,
+          2,
+          6
+        ],
+        [
+          1,
+          7,
+          2,
+          7
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.211,
+      "maze_start_region": [
+        4426,
+        -57,
+        6,
+        4427,
+        -57,
+        7
+      ],
+      "maze_goal_region": [
+        4432,
+        -57,
+        10,
+        4433,
+        -57,
+        11
+      ],
+      "goal_region": [
+        4432,
+        -57,
+        10,
+        4433,
+        -57,
+        11
+      ],
+      "goal_floor_region": [
+        4432,
+        -58,
+        10,
+        4433,
+        -58,
+        11
+      ],
+      "target_region": [
+        4432,
+        -57,
+        10,
+        4433,
+        -57,
+        11
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4426.5,
+        -57,
+        6.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4431.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_02",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4451,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4452,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4460,
+        -39,
+        9,
+        4464,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4460,
+        -39,
+        9,
+        4464,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4452,
+        -39,
+        1,
+        4472,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_02/setup",
+      "place_command_blocks_function": "maze:maze_hard_02/place_command_blocks",
+      "tick_function": "maze:maze_hard_02/tick",
+      "clear_function": "maze:maze_hard_02/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4455,
+        -57,
+        4,
+        4469,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9102,
+      "maze_route_points_local": [
+        [
+          3,
+          11
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4458.5,
+          -57.0,
+          15.5
+        ],
+        [
+          4458.5,
+          -57.0,
+          9.5
+        ],
+        [
+          4462.5,
+          -57.0,
+          9.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          1,
+          5,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          1,
+          4
+        ],
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          6,
+          2,
+          6
+        ],
+        [
+          1,
+          7,
+          1,
+          8
+        ],
+        [
+          1,
+          9,
+          2,
+          9
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.211,
+      "maze_start_region": [
+        4458,
+        -57,
+        15,
+        4459,
+        -57,
+        16
+      ],
+      "maze_goal_region": [
+        4462,
+        -57,
+        9,
+        4463,
+        -57,
+        10
+      ],
+      "goal_region": [
+        4462,
+        -57,
+        9,
+        4463,
+        -57,
+        10
+      ],
+      "goal_floor_region": [
+        4462,
+        -58,
+        9,
+        4463,
+        -58,
+        10
+      ],
+      "target_region": [
+        4462,
+        -57,
+        9,
+        4463,
+        -57,
+        10
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4458.5,
+        -57,
+        15.5
+      ],
+      "agent_a_start_rotation": [
+        -180.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4462.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_03",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4482,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4483,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4491,
+        -39,
+        9,
+        4495,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4491,
+        -39,
+        9,
+        4495,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4483,
+        -39,
+        1,
+        4503,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_03/setup",
+      "place_command_blocks_function": "maze:maze_hard_03/place_command_blocks",
+      "tick_function": "maze:maze_hard_03/tick",
+      "clear_function": "maze:maze_hard_03/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4486,
+        -57,
+        4,
+        4500,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9103,
+      "maze_route_points_local": [
+        [
+          12,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4498.5,
+          -57.0,
+          7.5
+        ],
+        [
+          4492.5,
+          -57.0,
+          7.5
+        ],
+        [
+          4492.5,
+          -57.0,
+          11.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          4,
+          3,
+          5,
+          3
+        ],
+        [
+          2,
+          3,
+          3,
+          3
+        ],
+        [
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          1,
+          4
+        ],
+        [
+          1,
+          5,
+          2,
+          5
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.211,
+      "maze_start_region": [
+        4498,
+        -57,
+        7,
+        4499,
+        -57,
+        8
+      ],
+      "maze_goal_region": [
+        4492,
+        -57,
+        11,
+        4493,
+        -57,
+        12
+      ],
+      "goal_region": [
+        4492,
+        -57,
+        11,
+        4493,
+        -57,
+        12
+      ],
+      "goal_floor_region": [
+        4492,
+        -58,
+        11,
+        4493,
+        -58,
+        12
+      ],
+      "target_region": [
+        4492,
+        -57,
+        11,
+        4493,
+        -57,
+        12
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4498.5,
+        -57,
+        7.5
+      ],
+      "agent_a_start_rotation": [
+        90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4493.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_04",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4513,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4514,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4522,
+        -39,
+        9,
+        4526,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4522,
+        -39,
+        9,
+        4526,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4514,
+        -39,
+        1,
+        4534,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_04/setup",
+      "place_command_blocks_function": "maze:maze_hard_04/place_command_blocks",
+      "tick_function": "maze:maze_hard_04/tick",
+      "clear_function": "maze:maze_hard_04/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4517,
+        -57,
+        4,
+        4531,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9104,
+      "maze_route_points_local": [
+        [
+          4,
+          4
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          10,
+          8
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4521.5,
+          -57.0,
+          8.5
+        ],
+        [
+          4527.5,
+          -57.0,
+          8.5
+        ],
+        [
+          4527.5,
+          -57.0,
+          12.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          2,
+          4,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          4,
+          1,
+          5
+        ],
+        [
+          1,
+          6,
+          2,
+          6
+        ],
+        [
+          1,
+          7,
+          2,
+          7
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.211,
+      "maze_start_region": [
+        4521,
+        -57,
+        8,
+        4522,
+        -57,
+        9
+      ],
+      "maze_goal_region": [
+        4527,
+        -57,
+        12,
+        4528,
+        -57,
+        13
+      ],
+      "goal_region": [
+        4527,
+        -57,
+        12,
+        4528,
+        -57,
+        13
+      ],
+      "goal_floor_region": [
+        4527,
+        -58,
+        12,
+        4528,
+        -58,
+        13
+      ],
+      "target_region": [
+        4527,
+        -57,
+        12,
+        4528,
+        -57,
+        13
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4521.5,
+        -57,
+        8.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4524.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_05",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4544,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4545,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4553,
+        -39,
+        9,
+        4557,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4553,
+        -39,
+        9,
+        4557,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4545,
+        -39,
+        1,
+        4565,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_05/setup",
+      "place_command_blocks_function": "maze:maze_hard_05/place_command_blocks",
+      "tick_function": "maze:maze_hard_05/tick",
+      "clear_function": "maze:maze_hard_05/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4548,
+        -57,
+        4,
+        4562,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9105,
+      "maze_route_points_local": [
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4558.5,
+          -57.0,
+          15.5
+        ],
+        [
+          4558.5,
+          -57.0,
+          10.5
+        ],
+        [
+          4553.5,
+          -57.0,
+          10.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          3,
+          6,
+          4,
+          6
+        ],
+        [
+          1,
+          6,
+          2,
+          6
+        ],
+        [
+          1,
+          4,
+          1,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          7,
+          2,
+          7
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.071,
+      "maze_start_region": [
+        4558,
+        -57,
+        15,
+        4559,
+        -57,
+        16
+      ],
+      "maze_goal_region": [
+        4553,
+        -57,
+        10,
+        4554,
+        -57,
+        11
+      ],
+      "goal_region": [
+        4553,
+        -57,
+        10,
+        4554,
+        -57,
+        11
+      ],
+      "goal_floor_region": [
+        4553,
+        -58,
+        10,
+        4554,
+        -58,
+        11
+      ],
+      "target_region": [
+        4553,
+        -57,
+        10,
+        4554,
+        -57,
+        11
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4558.5,
+        -57,
+        15.5
+      ],
+      "agent_a_start_rotation": [
+        -180.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4555.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_06",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4575,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4576,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4584,
+        -39,
+        9,
+        4588,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4584,
+        -39,
+        9,
+        4588,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4576,
+        -39,
+        1,
+        4596,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_06/setup",
+      "place_command_blocks_function": "maze:maze_hard_06/place_command_blocks",
+      "tick_function": "maze:maze_hard_06/tick",
+      "clear_function": "maze:maze_hard_06/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4579,
+        -57,
+        4,
+        4593,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9106,
+      "maze_route_points_local": [
+        [
+          2,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          4
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4581.5,
+          -57.0,
+          13.5
+        ],
+        [
+          4586.5,
+          -57.0,
+          13.5
+        ],
+        [
+          4586.5,
+          -57.0,
+          8.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          1,
+          8,
+          2,
+          8
+        ],
+        [
+          1,
+          6,
+          1,
+          7
+        ],
+        [
+          1,
+          4,
+          1,
+          5
+        ],
+        [
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          9,
+          1,
+          10
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.071,
+      "maze_start_region": [
+        4581,
+        -57,
+        13,
+        4582,
+        -57,
+        14
+      ],
+      "maze_goal_region": [
+        4586,
+        -57,
+        8,
+        4587,
+        -57,
+        9
+      ],
+      "goal_region": [
+        4586,
+        -57,
+        8,
+        4587,
+        -57,
+        9
+      ],
+      "goal_floor_region": [
+        4586,
+        -58,
+        8,
+        4587,
+        -58,
+        9
+      ],
+      "target_region": [
+        4586,
+        -57,
+        8,
+        4587,
+        -57,
+        9
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4581.5,
+        -57,
+        13.5
+      ],
+      "agent_a_start_rotation": [
+        -90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4586.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_07",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4606,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4607,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4615,
+        -39,
+        9,
+        4619,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4615,
+        -39,
+        9,
+        4619,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4607,
+        -39,
+        1,
+        4627,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_07/setup",
+      "place_command_blocks_function": "maze:maze_hard_07/place_command_blocks",
+      "tick_function": "maze:maze_hard_07/tick",
+      "clear_function": "maze:maze_hard_07/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4610,
+        -57,
+        4,
+        4624,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9107,
+      "maze_route_points_local": [
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          12,
+          7
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4618.5,
+          -57.0,
+          6.5
+        ],
+        [
+          4618.5,
+          -57.0,
+          11.5
+        ],
+        [
+          4622.5,
+          -57.0,
+          11.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          6,
+          2,
+          7,
+          2
+        ],
+        [
+          4,
+          2,
+          5,
+          2
+        ],
+        [
+          2,
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          4,
+          2,
+          4
+        ],
+        [
+          1,
+          5,
+          2,
+          5
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 6.403,
+      "maze_start_region": [
+        4618,
+        -57,
+        6,
+        4619,
+        -57,
+        7
+      ],
+      "maze_goal_region": [
+        4622,
+        -57,
+        11,
+        4623,
+        -57,
+        12
+      ],
+      "goal_region": [
+        4622,
+        -57,
+        11,
+        4623,
+        -57,
+        12
+      ],
+      "goal_floor_region": [
+        4622,
+        -58,
+        11,
+        4623,
+        -58,
+        12
+      ],
+      "target_region": [
+        4622,
+        -57,
+        11,
+        4623,
+        -57,
+        12
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4618.5,
+        -57,
+        6.5
+      ],
+      "agent_a_start_rotation": [
+        -0.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4617.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_08",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4637,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4638,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4646,
+        -39,
+        9,
+        4650,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4646,
+        -39,
+        9,
+        4650,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4638,
+        -39,
+        1,
+        4658,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_08/setup",
+      "place_command_blocks_function": "maze:maze_hard_08/place_command_blocks",
+      "tick_function": "maze:maze_hard_08/tick",
+      "clear_function": "maze:maze_hard_08/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4641,
+        -57,
+        4,
+        4655,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9108,
+      "maze_route_points_local": [
+        [
+          12,
+          10
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          5
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4653.5,
+          -57.0,
+          14.5
+        ],
+        [
+          4648.5,
+          -57.0,
+          14.5
+        ],
+        [
+          4648.5,
+          -57.0,
+          9.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          5,
+          5,
+          6,
+          5
+        ],
+        [
+          3,
+          5,
+          4,
+          5
+        ],
+        [
+          1,
+          5,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          1,
+          4
+        ],
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          6,
+          2,
+          6
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.071,
+      "maze_start_region": [
+        4653,
+        -57,
+        14,
+        4654,
+        -57,
+        15
+      ],
+      "maze_goal_region": [
+        4648,
+        -57,
+        9,
+        4649,
+        -57,
+        10
+      ],
+      "goal_region": [
+        4648,
+        -57,
+        9,
+        4649,
+        -57,
+        10
+      ],
+      "goal_floor_region": [
+        4648,
+        -58,
+        9,
+        4649,
+        -58,
+        10
+      ],
+      "target_region": [
+        4648,
+        -57,
+        9,
+        4649,
+        -57,
+        10
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4653.5,
+        -57,
+        14.5
+      ],
+      "agent_a_start_rotation": [
+        90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4648.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_09",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4668,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4669,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4677,
+        -39,
+        9,
+        4681,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4677,
+        -39,
+        9,
+        4681,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4669,
+        -39,
+        1,
+        4689,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_09/setup",
+      "place_command_blocks_function": "maze:maze_hard_09/place_command_blocks",
+      "tick_function": "maze:maze_hard_09/tick",
+      "clear_function": "maze:maze_hard_09/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4672,
+        -57,
+        4,
+        4686,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9109,
+      "maze_route_points_local": [
+        [
+          4,
+          11
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          9,
+          6
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4676.5,
+          -57.0,
+          15.5
+        ],
+        [
+          4676.5,
+          -57.0,
+          10.5
+        ],
+        [
+          4681.5,
+          -57.0,
+          10.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          2,
+          6,
+          3,
+          6
+        ],
+        [
+          1,
+          5,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          1,
+          4
+        ],
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          6,
+          1,
+          7
+        ],
+        [
+          1,
+          8,
+          2,
+          8
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.071,
+      "maze_start_region": [
+        4676,
+        -57,
+        15,
+        4677,
+        -57,
+        16
+      ],
+      "maze_goal_region": [
+        4681,
+        -57,
+        10,
+        4682,
+        -57,
+        11
+      ],
+      "goal_region": [
+        4681,
+        -57,
+        10,
+        4682,
+        -57,
+        11
+      ],
+      "goal_floor_region": [
+        4681,
+        -58,
+        10,
+        4682,
+        -58,
+        11
+      ],
+      "target_region": [
+        4681,
+        -57,
+        10,
+        4682,
+        -57,
+        11
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4676.5,
+        -57,
+        15.5
+      ],
+      "agent_a_start_rotation": [
+        -180.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4679.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    },
+    {
+      "scene_id": "maze_hard_10",
+      "variant_of": null,
+      "variant_index": null,
+      "variant_label": "",
+      "variant_key": "",
+      "variant_options": null,
+      "namespace": "maze",
+      "task_template": "maze_command_guidance",
+      "origin": [
+        4699,
+        -58,
+        0
+      ],
+      "room_size": [
+        23,
+        20,
+        23
+      ],
+      "wall_backing_thickness": 1,
+      "wall_backing_block": "minecraft:white_concrete",
+      "command_block_base": [
+        4700,
+        -40,
+        1
+      ],
+      "ceiling_light_region": [
+        4708,
+        -39,
+        9,
+        4712,
+        -39,
+        13
+      ],
+      "ceiling_light_block": "minecraft:glowstone",
+      "ceiling_light_mode": "inner_ring_spotlight",
+      "ceiling_inner_light_region": [
+        4708,
+        -39,
+        9,
+        4712,
+        -39,
+        13
+      ],
+      "ceiling_spotlight_ring_region": [
+        4700,
+        -39,
+        1,
+        4720,
+        -39,
+        21
+      ],
+      "ceiling_spotlight_block": "minecraft:glowstone",
+      "ceiling_spotlight_width": 3,
+      "setup_function": "maze:maze_hard_10/setup",
+      "place_command_blocks_function": "maze:maze_hard_10/place_command_blocks",
+      "tick_function": "maze:maze_hard_10/tick",
+      "clear_function": "maze:maze_hard_10/clear",
+      "house_height": 20,
+      "interior_height": 18,
+      "wall_light_height": 7,
+      "wall_light_y": -51,
+      "maze_region": [
+        4703,
+        -57,
+        4,
+        4717,
+        -55,
+        18
+      ],
+      "maze_size": [
+        15,
+        3,
+        15
+      ],
+      "maze_path_width": 2,
+      "maze_wall_block": "minecraft:light_gray_concrete",
+      "maze_wall_base_block": "minecraft:glowstone",
+      "maze_wall_base_y": -57,
+      "maze_middle_layer_y": -56,
+      "maze_middle_layer_block": "minecraft:light_gray_concrete",
+      "maze_middle_layer_lighting": "upper_wall_layers",
+      "maze_seed": 9110,
+      "maze_route_points_local": [
+        [
+          10,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "maze_route_points_world": [
+        [
+          4713.5,
+          -57.0,
+          8.5
+        ],
+        [
+          4708.5,
+          -57.0,
+          8.5
+        ],
+        [
+          4708.5,
+          -57.0,
+          13.5
+        ]
+      ],
+      "maze_branch_rects_local": [
+        [
+          3,
+          4,
+          4,
+          4
+        ],
+        [
+          1,
+          4,
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          5,
+          2,
+          5
+        ],
+        [
+          1,
+          6,
+          2,
+          6
+        ]
+      ],
+      "maze_walkable_area": 36,
+      "target_walkable_area": 36,
+      "route_turn_count": 1,
+      "route_straight_line_distance": 7.071,
+      "maze_start_region": [
+        4713,
+        -57,
+        8,
+        4714,
+        -57,
+        9
+      ],
+      "maze_goal_region": [
+        4708,
+        -57,
+        13,
+        4709,
+        -57,
+        14
+      ],
+      "goal_region": [
+        4708,
+        -57,
+        13,
+        4709,
+        -57,
+        14
+      ],
+      "goal_floor_region": [
+        4708,
+        -58,
+        13,
+        4709,
+        -58,
+        14
+      ],
+      "target_region": [
+        4708,
+        -57,
+        13,
+        4709,
+        -57,
+        14
+      ],
+      "observation_platform": null,
+      "observer_mode": "flying_top_center",
+      "agent_a_start_pos": [
+        4713.5,
+        -57,
+        8.5
+      ],
+      "agent_a_start_rotation": [
+        90.0,
+        0.0
+      ],
+      "agent_b_start_pos": [
+        4710.5,
+        -46,
+        11.5
+      ],
+      "agent_b_start_rotation": [
+        180.0,
+        90.0
+      ],
+      "agent_b_start_region": "flying_top_center_observer",
+      "difficulty": "hard",
+      "difficulty_zh": "困难",
+      "difficulty_constraints": {
+        "zh": "困难",
+        "count": 33,
+        "turn_count": 1,
+        "distance": [
+          4.5,
+          7.5
+        ],
+        "walkable_area": 36
+      }
+    }
+  ]
+}

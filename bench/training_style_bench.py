@@ -456,6 +456,12 @@ def run_episode_subprocess(
         str(args.pack_src),
         "--rollout-yaml",
         str(args.rollout_yaml),
+        "--randomize-start-agents",
+        str(args.randomize_start_agents or ""),
+        "--start-position-jitter",
+        str(args.start_position_jitter),
+        "--start-yaw-jitter",
+        str(args.start_yaw_jitter),
         "--max-steps",
         str(args.max_steps),
         "--task-mode",
@@ -479,6 +485,8 @@ def run_episode_subprocess(
     ]
     if args.refresh_pack:
         command.append("--refresh-pack")
+    if args.randomize_starts:
+        command.append("--randomize-starts")
     started = time.time()
     proc = subprocess.Popen(
         command,
@@ -781,6 +789,10 @@ def run_worker(args: argparse.Namespace) -> int:
                 refresh_pack=bool(args.refresh_pack),
                 task_index=spec.task_index,
                 random_seed=spec.random_seed,
+                randomize_starts=bool(args.randomize_starts),
+                randomize_start_agents=str(args.randomize_start_agents or "") or None,
+                start_position_jitter=float(args.start_position_jitter),
+                start_yaw_jitter=float(args.start_yaw_jitter),
                 max_steps=args.max_steps,
                 mock=False,
                 instance_index=spec.instance_index,
@@ -949,6 +961,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--base-port", type=int, default=25690)
     parser.add_argument("--instance-config", type=Path, default=ROOT / "yaml" / "instance_train_single.yaml")
     parser.add_argument("--rollout-yaml", type=Path, default=ROOT / "yaml" / "lowlevel_train_episode.yaml")
+    parser.add_argument("--randomize-starts", action="store_true")
+    parser.add_argument("--randomize-start-agents", default="")
+    parser.add_argument("--start-position-jitter", type=float, default=0.6)
+    parser.add_argument("--start-yaw-jitter", type=float, default=35.0)
     parser.add_argument("--pack-src", type=Path, default=ROOT / "assert" / "ConstructScene" / "generated" / "datapacks" / "multiagent_scene_pack")
     parser.add_argument("--max-steps", type=int, default=32)
     parser.add_argument("--seed", type=int, default=None)

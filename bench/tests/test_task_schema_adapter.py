@@ -15,7 +15,7 @@ for path in (ROOT, ROOT / "mc_rollout", ROOT / "bench"):
 
 from completion import evaluate_task_conditions
 from prompts import build_agent_action_prompt
-from rollout import rollout_success, rollout_terminal
+from rollout import maze_flight_agents, rollout_success, rollout_terminal
 
 
 def load_task(index: int) -> dict:
@@ -99,7 +99,7 @@ def test_pressure_path_prompt_explains_opposite_bank_completion():
         poses={},
     )
     assert "pressure-path reveal cooperation" in prompt
-    assert "reach the opposite-bank goal marker" in prompt
+    assert "gold-block goal marker on the opposite bank" in prompt
     assert "inspect only your own current image" in prompt
 
 
@@ -131,11 +131,18 @@ def test_truck_prompt_assigns_driver_and_guide_roles():
     assert "blind truck driver" in prompt_a
     assert "following Agent B's latest navigation message" in prompt_a
     assert "gives you a clear action instruction, follow it strictly" in prompt_a
+    assert "intentionally black for this blind-driving task" in prompt_a
+    assert "do not wait for visual confirmation" in prompt_a
+    assert "execute it immediately" in prompt_a
+    assert "This message may be stale" not in prompt_a
+    assert "Use visual evidence first" not in prompt_a
     assert "navigation guide" in prompt_b
     assert "rotate your view or reposition yourself" in prompt_b
     assert "choose wait to keep your observation position" in prompt_b
     assert "exactly which action to take" in prompt_b
     assert "from Agent A's perspective" in prompt_b
+    assert "This message may be stale" in prompt_b
+    assert "Use visual evidence first" in prompt_b
     assert "floor, walls, and ceiling are white" in prompt_a
     assert "colored floor region is the destination" in prompt_b
 
@@ -151,6 +158,7 @@ def test_truck_driver_succeeds_when_agent_a_enters_target_region():
     result = evaluate_task_conditions(task, poses)
     assert result["task_success"] is True
     assert result["agent_a_in_target_region"] is True
+    assert result["agent_a_in_target_center_half_area"] is True
 
 
 def test_truck_driver_does_not_require_agent_b_in_target_region():
@@ -163,6 +171,19 @@ def test_truck_driver_does_not_require_agent_b_in_target_region():
     result = evaluate_task_conditions(task, poses)
     assert result["task_success"] is False
     assert result["agent_a_in_target_region"] is False
+
+
+def test_truck_driver_uses_center_two_thirds_area_not_full_region():
+    data = json.loads((ROOT / "bench/data/final_data/truck/generated_tasks.json").read_text())
+    task = copy.deepcopy(data["tasks"][0])
+    region = task["players"]["player_a"]["goal"]["target_region"]
+    poses = {
+        "AgentA": {"pos": [float(region[3]) + 1.0, float(region[1]), float(region[5]) + 1.0]},
+        "AgentB": {"pos": list(task["players"]["player_b"]["start_pos"])},
+    }
+    result = evaluate_task_conditions(task, poses)
+    assert result["task_success"] is False
+    assert result["agent_a_in_target_center_two_thirds_area"] is False
 
 
 
@@ -200,6 +221,103 @@ def test_picture_prompt_assigns_placer_and_alignment_guide_roles():
     assert "reliably see the colored target area" in prompt_b
     assert "From the perspective of Agent A" in prompt_b
     assert "lies completely and exactly beneath the platform" in prompt_b
+
+
+def test_picture_dataset_template_uses_picture_prompt():
+    data = json.loads((ROOT / "bench/data/final_data/picture/generated_tasks.json").read_text())
+    task = data["tasks"][0]
+    prompt = build_agent_action_prompt(
+        agent_name="AgentA",
+        teammate_name="AgentB",
+        task=task,
+        step_index=0,
+        allowed_actions=["wait", "forward", "turn_left", "turn_right"],
+        poses={},
+    )
+    assert "responsible for aligning the picture from the elevated platform" in prompt
+
+
+def test_picture_succeeds_only_when_agent_a_enters_target_region():
+    data = json.loads((ROOT / "bench/data/final_data/picture/generated_tasks.json").read_text())
+    task = copy.deepcopy(data["tasks"][0])
+    poses = {
+        "AgentA": {"pos": list(task["players"]["player_a"]["goal"]["target_pos"])},
+        "AgentB": {"pos": list(task["players"]["player_b"]["start_pos"])},
+    }
+    result = evaluate_task_conditions(task, poses)
+    assert result["task_success"] is True
+    assert result["task_failed"] is False
+    assert result["agent_a_aligned_over_target_region"] is True
+    assert result["agent_a_aligned_over_target_center_half_area"] is True
+
+    poses["AgentA"]["pos"] = list(task["players"]["player_a"]["start_pos"])
+    result = evaluate_task_conditions(task, poses)
+    assert result["task_success"] is False
+    assert result["task_failed"] is False
+    assert result["agent_a_aligned_over_target_region"] is False
+
+
+def test_picture_far_edge_overlap_does_not_count_as_centered():
+    data = json.loads((ROOT / "bench/data/final_data/picture/generated_tasks.json").read_text())
+    task = copy.deepcopy(data["tasks"][8])
+    poses = {
+        "AgentA": {"pos": [2860.0, -51.0, 6.0]},
+        "AgentB": {"pos": list(task["players"]["player_b"]["start_pos"])},
+    }
+    result = evaluate_task_conditions(task, poses)
+    assert result["task_success"] is False
+    assert result["agent_a_aligned_over_target_center_two_thirds_area"] is False
+
+
+def test_maze_prompt_assigns_walker_and_overhead_guide_roles():
+    data = json.loads((ROOT / "bench/data/final_data/maze/generated_tasks.json").read_text())
+    task = data["tasks"][0]
+    prompt_a = build_agent_action_prompt(
+        agent_name="AgentA",
+        teammate_name="AgentB",
+        task=task,
+        step_index=0,
+        allowed_actions=["wait", "forward", "turn_left", "turn_right"],
+        poses={},
+    )
+    prompt_b = build_agent_action_prompt(
+        agent_name="AgentB",
+        teammate_name="AgentA",
+        task=task,
+        step_index=0,
+        allowed_actions=["wait", "forward", "turn_left", "turn_right"],
+        poses={},
+    )
+    assert "overhead maze-guidance cooperation" in prompt_a
+    assert "maze walker" in prompt_a
+    assert "stand directly above the colored target area on the ground" in prompt_a
+    assert "If you cannot see the colored target area" in prompt_a
+    assert "overhead maze guide" in prompt_b
+    assert "top-center of the room looking down at the maze" in prompt_b
+    assert "keep this observation position by choosing wait" in prompt_b
+    assert "from Agent A's perspective" in prompt_b
+    assert maze_flight_agents(task) == {"AgentB"}
+    non_maze_task = copy.deepcopy(task)
+    non_maze_task["task_template"] = "truck_driver"
+    assert maze_flight_agents(non_maze_task) == set()
+
+
+def test_maze_succeeds_when_agent_a_reaches_goal_region():
+    data = json.loads((ROOT / "bench/data/final_data/maze/generated_tasks.json").read_text())
+    task = copy.deepcopy(data["tasks"][0])
+    poses = {
+        "AgentA": {"pos": list(task["players"]["player_a"]["goal"]["target_pos"])},
+        "AgentB": {"pos": list(task["players"]["player_b"]["start_pos"])},
+    }
+    result = evaluate_task_conditions(task, poses)
+    assert result["task_success"] is True
+    assert result["task_failed"] is False
+    assert result["agent_a_in_maze_goal_region"] is True
+
+    poses["AgentA"]["pos"] = list(task["players"]["player_a"]["start_pos"])
+    result = evaluate_task_conditions(task, poses)
+    assert result["task_success"] is False
+    assert result["agent_a_in_maze_goal_region"] is False
 
 def test_failure_condition_ends_without_success():
     task = load_task(50)

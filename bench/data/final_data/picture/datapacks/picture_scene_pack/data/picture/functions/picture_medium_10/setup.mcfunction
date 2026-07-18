@@ -21,7 +21,7 @@ fill 3278 -48 15 3288 -48 15 minecraft:glowstone
 fill 3278 -48 4 3278 -48 14 minecraft:glowstone
 fill 3288 -48 4 3288 -48 14 minecraft:glowstone
 fill 3281 -48 7 3285 -48 11 minecraft:glowstone
-fill 3276 -53 1 3290 -53 5 minecraft:glowstone
+fill 3276 -53 1 3290 -53 5 minecraft:white_concrete
 fill 3276 -52 1 3290 -52 5 minecraft:smooth_stone
 fill 3276 -51 6 3290 -51 6 minecraft:oak_fence
 fill 3284 -57 1 3287 -57 4 minecraft:magenta_concrete
